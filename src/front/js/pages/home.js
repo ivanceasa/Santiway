@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/home.scss";
+import Topbar from "../component/topbar/Topbar";
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
@@ -12,8 +13,9 @@ export const Home = () => {
 	);
 
 	return (
-		<div className="text-center mt-5">
+		<>
+			<Topbar />
 			<h1>Esto es Home</h1>
-		</div>
+		</>
 	);
 };
