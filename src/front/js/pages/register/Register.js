@@ -8,13 +8,20 @@ export default function Register() {
 	const [password, setPassword] = useState("");
 	const [confirmPassword, setConfirmPassword] = useState("");
 
+	function savePersonalData() {
+		//Está función no hace la tarea correspondiente
+		actions.login(email, password).then(() => {
+			history.push("/");
+		});
+	}
+
 	async function signUp(event) {
 		event.preventDefault();
 		if (password !== confirmPassword) {
 			alert("Las contraseñas no coinciden");
 			return;
 		}
-		const url = "";
+		const url = "https://3001-cyan-swan-i0eisbjb.ws-eu18.gitpod.io/api/register";
 		const response = await fetch(url, {
 			method: "POST",
 			headers: {
@@ -26,13 +33,9 @@ export default function Register() {
 			})
 		});
 		const responseJson = await response.json();
-		if (responseJson.accessToken) {
+		if (responseJson.access_token) {
 			localStorage.setItem("accessToken", responseJson.accessToken);
 		}
-	}
-
-	function savePersonalData() {
-		history.push("/login");
 	}
 
 	return (
@@ -44,9 +47,6 @@ export default function Register() {
 				</div>
 				<div className="loginRight">
 					<form className="loginBox" onSubmit={signUp}>
-						<input type="text" placeholder="Name" className="loginInput" />
-						<input type="text" placeholder="Surname" className="loginInput" />
-						<input type="number" placeholder="age" className="loginInput" />
 						<input
 							type="email"
 							placeholder="Email"

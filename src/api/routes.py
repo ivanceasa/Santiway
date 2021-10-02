@@ -40,6 +40,27 @@ def login():
     access_token = create_access_token(identity=email)
     return jsonify(access_token=access_token) 
     
+@api.route('/register', methods=["POST"])
+def signUp():
+    json = request.get_json()
+
+    if json is None:
+        return
+
+    user = User(
+        email=json.get('email'), 
+        password=json.get('password'),
+        is_active=True
+    )
+
+    db.session.add(user)
+    db.session.commit()
+
+    access_token = create_access_token(user.id)
+    
+
+    return jsonify({"access_token": access_token})
+
 
 @api.route("/protected", methods=["GET"])
 @jwt_required()
