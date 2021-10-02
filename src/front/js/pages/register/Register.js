@@ -47,6 +47,10 @@ export default function Register() {
 				</div>
 				<div className="loginRight">
 					<form className="loginBox" onSubmit={signUp}>
+						<input type="text" placeholder="Name" className="loginInput" />
+						<input type="text" placeholder="Surname" className="loginInput" />
+						<input type="text" placeholder="Username" className="loginInput" />
+						<input type="number" placeholder="Age" className="loginInput" />
 						<input
 							type="email"
 							placeholder="Email"
