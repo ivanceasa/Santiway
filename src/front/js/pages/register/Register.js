@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import "./register.css";
 
-export default function Register() {
+const Register = () => {
 	return (
 		<div className="login">
 			<div className="loginWrapper">
@@ -22,4 +22,6 @@ export default function Register() {
 			</div>
 		</div>
 	);
-}
+};
+
+export default Register;

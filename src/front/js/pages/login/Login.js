@@ -3,7 +3,7 @@ import { Context } from "../../store/appContext";
 import { useHistory } from "react-router-dom";
 import "./login.css";
 
-export const Login = () => {
+const Login = () => {
 	const { store, actions } = useContext(Context);
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
