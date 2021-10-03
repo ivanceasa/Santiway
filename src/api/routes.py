@@ -39,6 +39,33 @@ def login():
     # create a new token with the user id inside
     access_token = create_access_token(identity=email)
     return jsonify(access_token=access_token) 
+
+@api.route('/register', methods=["POST"])
+def signUp():
+    json = request.get_json()
+
+    if json is None:
+        return
+
+    user = User(
+        name=json.get('name'),
+        surname=json.get('surname'),
+        username=json.get('userName'),
+        age=json.get('age'),
+        country=json.get('country'),
+        city=json.get('city'),
+        email=json.get('email'), 
+        password=json.get('password'),
+        is_active=True
+    )
+
+    db.session.add(user)
+    db.session.commit()
+
+    access_token = create_access_token(user.id)
+    
+
+    return jsonify({"access_token": access_token})
     
 
 @api.route("/protected", methods=["GET"])
