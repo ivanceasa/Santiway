@@ -49,24 +49,25 @@ const Register = () => {
 		}
 	}
 
-	function userNameRepeat(event) {
+	// function userNameRepeat() {
+	// 	if (userName === userName) {
+	// 		alert("El nombre de usuario ya existe, escoja otro!");
+	// 	} else {
+	// 		signUpAlert();
+	// 	}
+	// }
+
+	function signUpAlert(event) {
 		event.preventDefault();
-		if (userName === userName) {
-			alert("El nombre de usuario ya existe, escoja otro!");
+		signUp(event);
+		if (signUp) {
+			alert("El registro se ha realizado correctamente!");
+			return savePersonalData();
+		} else {
+			alert("Ha ocurrido un problema con el registro, vuelva a intentarlo!");
 			return;
 		}
 	}
-
-	// function signUpAlert(event) {
-	// 	event.preventDefault();
-	// 	if (signUp) {
-	// 		alert("El registro se ha realizado correctamente!");
-	// 		return savePersonalData();
-	// 	} else {
-	// 		alert("Ha ocurrido un problema con el registro, vuelva a intentarlo!");
-	// 		return;
-	// 	}
-	// };
 
 	return (
 		<div className="login">
@@ -76,8 +77,8 @@ const Register = () => {
 					<span className="loginDesc">Conecta con peregrinos de todo el mundo.</span>
 				</div>
 				<div className="loginRight">
-					{/* <form className="loginBox" onSubmit={signUpAlert}> */}
-					<form className="loginBox" onSubmit={(signUp, userNameRepeat)}>
+					<form className="loginBox" onSubmit={signUpAlert}>
+						{/* <form className="loginBox" onSubmit={(signUp, userNameRepeat)}>
 						{/* <input
 							type="text"
 							placeholder="Name"
@@ -138,12 +139,12 @@ const Register = () => {
 						/>
 						<input type="submit" value="save" className="loginButton" />
 
-						<input //quitar este boton y que save redirija a /login
+						{/* <input //quitar este boton y que save redirija a /login
 							type="button"
 							value="Log into Account"
 							className="loginRegisterButton"
 							onClick={savePersonalData}
-						/>
+						/> */}
 					</form>
 				</div>
 			</div>
