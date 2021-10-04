@@ -6,12 +6,12 @@ import { Context } from "../../store/appContext";
 const Register = () => {
 	const { store, actions } = useContext(Context);
 	const history = useHistory();
-	const [name, setName] = useState("");
-	const [surname, setSurName] = useState("");
+	// const [name, setName] = useState("");
+	// const [surname, setSurName] = useState("");
 	const [userName, setUserName] = useState("");
-	const [age, setAge] = useState("");
-	const [country, setCountry] = useState("");
-	const [city, setCity] = useState("");
+	// const [age, setAge] = useState("");
+	// const [country, setCountry] = useState("");
+	// const [city, setCity] = useState("");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [confirmPassword, setConfirmPassword] = useState("");
@@ -33,12 +33,12 @@ const Register = () => {
 				"Content-Type": "application/json"
 			},
 			body: JSON.stringify({
-				name: name,
-				surname: surname,
+				// name: name,
+				// surname: surname,
 				userName: userName,
-				age: age,
-				country: country,
-				city: city,
+				// age: age,
+				// country: country,
+				// city: city,
 				email: email,
 				password: password
 			})
@@ -46,6 +46,14 @@ const Register = () => {
 		const responseJson = await response.json();
 		if (responseJson.access_token) {
 			localStorage.setItem("accessToken", responseJson.accessToken);
+		}
+	}
+
+	function userNameRepeat(event) {
+		event.preventDefault();
+		if (userName === userName) {
+			alert("El nombre de usuario ya existe, escoja otro!");
+			return;
 		}
 	}
 
@@ -69,8 +77,8 @@ const Register = () => {
 				</div>
 				<div className="loginRight">
 					{/* <form className="loginBox" onSubmit={signUpAlert}> */}
-					<form className="loginBox" onSubmit={signUp}>
-						<input
+					<form className="loginBox" onSubmit={(signUp, userNameRepeat)}>
+						{/* <input
 							type="text"
 							placeholder="Name"
 							className="loginInput"
@@ -81,7 +89,7 @@ const Register = () => {
 							placeholder="Surname"
 							className="loginInput"
 							onChange={event => setSurName(event.target.value)}
-						/>
+						/> */}
 						<input
 							type="text"
 							placeholder="Username"
@@ -89,7 +97,7 @@ const Register = () => {
 							onChange={event => setUserName(event.target.value)}
 							required
 						/>
-						<input
+						{/* <input
 							type="number"
 							placeholder="Age"
 							className="loginInput"
@@ -106,7 +114,7 @@ const Register = () => {
 							placeholder="City"
 							className="loginInput"
 							onChange={event => setCity(event.target.value)}
-						/>
+						/> */}
 						<input
 							type="email"
 							placeholder="Email"

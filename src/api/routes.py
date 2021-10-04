@@ -48,12 +48,12 @@ def signUp():
         return
 
     user = User(
-        name=json.get('name'),
-        surname=json.get('surname'),
+        # name=json.get('name'),
+        # surname=json.get('surname'),
         username=json.get('userName'),
-        age=json.get('age'),
-        country=json.get('country'),
-        city=json.get('city'),
+        # age=json.get('age'),
+        # country=json.get('country'),
+        # city=json.get('city'),
         email=json.get('email'), 
         password=json.get('password'),
         is_active=True
