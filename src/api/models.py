@@ -15,7 +15,11 @@ class User(db.Model):
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(80), unique=False, nullable=False)
     is_active = db.Column(db.Boolean(), unique=False, nullable=False)
-    posts = relationship("Post", back_populates="user")  #relación 1 a muchos
+    posts_user = db.relationship("Post", backref="user", lazy=True)  #relación 1 a muchos
+    comments_user = db.relationship("Comment", backref="user", lazy=True)  #relación 1 a muchos
+    albergues_relation = db.relationship("Albergue", secondary=user_albergue, backref=db.backref("users")) #muchos a muchos(bidireccional)
+    rutas_relation = db.relationship("Ruta", secondary=association_user_ruta, backref=db.backref("users")) #muchos a muchos(bidireccional)
+    etapas_relation = db.relationship("Etapa", secondary=association_user_etapa, backref=db.backref("users")) #muchos a muchos(bidireccional)
 
     def __repr__(self):
         return '<User %r>' % self.username
@@ -23,43 +27,74 @@ class User(db.Model):
     def serialize(self):
         return {
             "id": self.id,
+            "username": self.username,
             "email": self.email,
             # do not serialize the password, its a security breach
         }
+
+user_albergue = db.Table('article_tag',
+    db.Column('user_id', db.Integer, db.ForeignKey('user.id'), primary_key=True),
+    db.Column('albergue_id', db.Integer, db.ForeignKey('albergue.id'), primary_key=True))
+
+    
+    
+
+
+
+association_user_ruta = db.Table('association_user_ruta', 
+    Column('user_id', db.Integer, db.ForeignKey('user.id'), primary_key=True),
+    Column('ruta_id', db.Integer, db.ForeignKey('ruta.id'), primary_key=True)
+)
+
+association_user_etapa = db.Table('association_user_etapa',
+    Column('user_id', db.Integer, db.ForeignKey('user.id'), primary_key=True),
+    Column('etapa_id', db.Integer, db.ForeignKey('etapa.id'), primary_key=True)
+)
+       
 
 class Albergue(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(120), unique=False, nullable=False)        
     city = db.Column(db.String(120), unique=False, nullable=False)
+    ruta_id = Column(Integer, ForeignKey("ruta.id"))
+    etapa_id = Column(Integer, ForeignKey("etapa.id"))
 
    
     def __repr__(self):
-        return '<User %r>' % self.name
+        return '<Albergue %r>' % self.name
 
     def serialize(self):
         return {
             "id": self.id,
             "name": self.name,
+            "city": self.city
             # do not serialize the password, its a security breach
         }
 
 class Ruta(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(120), unique=False, nullable=False)  
-    foto = db.Column(db.String(120), unique=False, nullable=False) 
+    foto = db.Column(db.String(120), unique=False, nullable=True) 
     longitud = db.Column(db.String(120), unique=False, nullable=False) 
     perfil = db.Column(db.String(120), unique=False, nullable=False) 
     mapa = db.Column(db.String(120), unique=False, nullable=False) 
-    etapas = relationship("Etapa", back_populates="ruta")
+    albergues_ruta = db.relationship("Albergue", backref="ruta", lazy=True)
+    etapas_ruta = db.relationship("Etapa", backref="ruta", lazy=True)
+
+   
         
        
     def __repr__(self):
-        return '<User %r>' % self.name
+        return '<Ruta %r>' % self.name
 
     def serialize(self):
         return {
             "id": self.id,
             "name": self.name,
+            "foto": self.foto,
+            "longitud": self.longitud,
+            "perfil": self.perfil,
+            "mapa": self.mapa
             # do not serialize the password, its a security breach
         }
 
@@ -70,33 +105,40 @@ class Etapa(db.Model):
     dificultad = db.Column(db.String(120), unique=False, nullable=False)  
     foto = db.Column(db.String(120), unique=False, nullable=False) 
     ruta_id = Column(Integer, ForeignKey("ruta.id"))
+    albergues_etapa = db.relationship("Albergue", backref="etapa", lazy=True)
    
         
        
     def __repr__(self):
-        return '<User %r>' % self.name
+        return '<Etapa %r>' % self.name
 
     def serialize(self):
         return {
             "id": self.id,
             "name": self.name,
+            "longitud": self.longitud,
+            "dificultad": self.dificultad,
+            "foto": self.foto,
             # do not serialize the password, its a security breach
         }
 
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    post_content = db.Column(db.String(1000), unique=False, nullable=False)
+    post_content = db.Column(db.String(1000), unique=False, nullable=True)
     date = db.Column(db.String(120), unique=False, nullable=False) 
     foto = db.Column(db.String(120), unique=False, nullable=True)
     user_id = Column(Integer, ForeignKey("user.id")) 
+    comments_post = db.relationship("Comment", backref="post", lazy=True)
                       
     def __repr__(self):
-        return '<User %r>' % self.name
+        return '<Post %r>' % self.name
 
     def serialize(self):
         return {
             "id": self.id,
-            "name": self.name,
+            "post_content": self.post_content,
+            "date": self.name,
+            "foto": self.foto
             # do not serialize the password, its a security breach
         }
 
@@ -104,29 +146,50 @@ class Post(db.Model):
 
 class Comment(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    comment = db.Column(db.String(300)), unique=False, nullable=False)
+    comment = db.Column(db.String(300), unique=False, nullable=True)
     date = db.Column(db.String(120), unique=False, nullable=False)
-    author_comment = Column(Integer, ForeignKey("user.id"))
-    post_commented = Column(Integer, ForeignKey("post.id"))
+    user_comments = Column(Integer, ForeignKey("user.id"))
+    post_comments = Column(Integer, ForeignKey("post.id"))
    
         
        
     def __repr__(self):
-        return '<User %r>' % self.name
+        return '<Comment %r>' % self.name
 
     def serialize(self):
         return {
             "id": self.id,
-            "name": self.name,
+            "comment": self.comment,
+            "date": self.date
             # do not serialize the password, its a security breach
         }
 
-"""
-falta poner comments en post, y comments en user
-Falta  relaciones user-rutas (relación muchos a muchos, mirar documentación)
-                  user-albergues
-                  user-etapas
-"""
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
