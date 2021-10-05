@@ -12,7 +12,7 @@ const Login = () => {
 	console.log("This is your token", store.token);
 	const handleClick = () => {
 		actions.login(email, password).then(() => {
-			history.push("/");
+			history.push("/profile");
 		});
 	};
 
@@ -25,7 +25,7 @@ const Login = () => {
 					<div className="loginWrapper">
 						<div className="loginLeft">
 							<h3 className="loginLogo">Bienvenido!</h3>
-							<span className="loginDesc">Conecta con peregrinos de todo el mundo.</span>
+							<span className="loginDesc">Conecta con peregrinos de todo el mundo</span>
 						</div>
 						<div className="loginRight">
 							<div className="loginBox">
