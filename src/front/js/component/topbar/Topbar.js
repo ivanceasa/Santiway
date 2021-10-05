@@ -11,10 +11,10 @@ const Topbar = () => {
 				<span className="logo">Camino de Santiago</span>
 			</div>
 			<div className="topbarCenter">
-				<div className="searchbar">
-					{/*<Search className="searchIcon" />*/}
+				{/*<div className="searchbar">
+					<Search className="searchIcon" />
 					<input placeholder="Search" className="searchInput" />
-				</div>
+				</div>*/}
 			</div>
 			<div className="topbarRight">
 				<div className="topbarLinks">
