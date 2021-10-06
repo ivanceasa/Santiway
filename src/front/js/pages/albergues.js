@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import SearchAlbergues from "../component/SearchAlbergues";
 
 const Albergues = () => {
 	return (
@@ -7,7 +8,8 @@ const Albergues = () => {
 			<Link to="/">
 				<span className="navbar-brand">Home</span>
 			</Link>
-			<h1>Esto son Albergues</h1>
+			<h1>Búsqueda de albergues</h1>
+			<SearchAlbergues />
 		</>
 	);
 };
