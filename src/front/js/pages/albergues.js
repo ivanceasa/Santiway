@@ -9,8 +9,6 @@ const Albergues = () => {
 				<span className="navbar-brand">Home</span>
 			</Link>
 			<h1>Esto son Albergues</h1>
-
-			<Search />
 		</>
 	);
 };

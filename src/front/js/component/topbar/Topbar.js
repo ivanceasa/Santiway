@@ -11,7 +11,7 @@ const Topbar = () => {
 				<span className="logo">Camino de Santiago</span>
 			</div>
 			<div className="topbarCenter">
- feature/search2
+				feature/search2
 				{/*<div className="searchbar">
 					<Search className="searchIcon" />
 
