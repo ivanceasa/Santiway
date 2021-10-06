@@ -10,17 +10,7 @@ const Topbar = () => {
 			<div className="topbarLeft">
 				<span className="logo">Camino de Santiago</span>
 			</div>
-			<div className="topbarCenter">
-				feature/search2
-				{/*<div className="searchbar">
-					<Search className="searchIcon" />
-
-				<div className="searchbar">
-					<i className="fas fa-search" />
- main
-					<input placeholder="Search" className="searchInput" />
-				</div>*/}
-			</div>
+			<div className="topbarCenter" />
 			<div className="topbarRight">
 				<div className="topbarLinks">
 					<Link to="/rutas">
