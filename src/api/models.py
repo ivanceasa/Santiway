@@ -17,9 +17,9 @@ class User(db.Model):
     is_active = db.Column(db.Boolean(), unique=False, nullable=False)
     posts_user = db.relationship("Post", backref="user", lazy=True)  #relación 1 a muchos
     comments_user = db.relationship("Comment", backref="user", lazy=True)  #relación 1 a muchos
-    albergues_relation = db.relationship("Albergue", secondary="user_albergue", backref=db.backref("users")) #muchos a muchos(bidireccional)
-    rutas_relation = db.relationship("Ruta", secondary="user_ruta", backref=db.backref("users")) #muchos a muchos(bidireccional)
-    etapas_relation = db.relationship("Etapa", secondary="user_etapa", backref=db.backref("users")) #muchos a muchos(bidireccional)
+    hostels = db.relationship("Hostel", secondary="user_hostel", backref=db.backref("users")) #muchos a muchos(bidireccional)
+    routes = db.relationship("Route", secondary="user_route", backref=db.backref("users")) #muchos a muchos(bidireccional)
+    stages = db.relationship("Stage", secondary="user_stage", backref=db.backref("users")) #muchos a muchos(bidireccional)
 
     def __repr__(self):
         return '<User %r>' % self.username
@@ -32,36 +32,36 @@ class User(db.Model):
             # do not serialize the password, its a security breach
         }
 
-user_albergue = db.Table('user_albergue',
+user_hostel = db.Table('user_hostel',
     db.Column('user_id', db.Integer, db.ForeignKey('user.id'), primary_key=True),
-    db.Column('albergue_id', db.Integer, db.ForeignKey('albergue.id'), primary_key=True))
+    db.Column('hostel_id', db.Integer, db.ForeignKey('hostel.id'), primary_key=True))
 
     
     
 
 
 
-user_ruta = db.Table('user_ruta', 
+user_route = db.Table('user_route', 
     db.Column('user_id', db.Integer, db.ForeignKey('user.id'), primary_key=True),
-    db.Column('ruta_id', db.Integer, db.ForeignKey('ruta.id'), primary_key=True)
+    db.Column('route_id', db.Integer, db.ForeignKey('route.id'), primary_key=True)
 )
 
-user_etapa = db.Table('user_etapa',
+user_stage = db.Table('user_stage',
     db.Column('user_id', db.Integer, db.ForeignKey('user.id'), primary_key=True),
-    db.Column('etapa_id', db.Integer, db.ForeignKey('etapa.id'), primary_key=True)
+    db.Column('stage_id', db.Integer, db.ForeignKey('stage.id'), primary_key=True)
 )
        
 
-class Albergue(db.Model):
+class Hostel(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(120), unique=False, nullable=False)        
     city = db.Column(db.String(120), unique=False, nullable=False)
-    ruta_id = db.Column(db.Integer, db.ForeignKey("ruta.id"))
-    etapa_id = db.Column(db.Integer, db.ForeignKey("etapa.id"))
+    route_id = db.Column(db.Integer, db.ForeignKey("route.id"))
+    stage_id = db.Column(db.Integer, db.ForeignKey("stage.id"))
 
    
     def __repr__(self):
-        return '<Albergue %r>' % self.name
+        return '<Hostel %r>' % self.name
 
     def serialize(self):
         return {
@@ -71,54 +71,54 @@ class Albergue(db.Model):
             # do not serialize the password, its a security breach
         }
 
-class Ruta(db.Model):
+class Route(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(120), unique=False, nullable=False)  
     foto = db.Column(db.String(120), unique=False, nullable=True) 
     longitud = db.Column(db.String(120), unique=False, nullable=False) 
     perfil = db.Column(db.String(120), unique=False, nullable=False) 
     mapa = db.Column(db.String(120), unique=False, nullable=False) 
-    albergues_ruta = db.relationship("Albergue", backref="ruta", lazy=True)
-    etapas_ruta = db.relationship("Etapa", backref="ruta", lazy=True)
+    hostels_route = db.relationship("Hostel", backref="route", lazy=True)
+    stages_route = db.relationship("Stage", backref="route", lazy=True)
 
    
         
        
     def __repr__(self):
-        return '<Ruta %r>' % self.name
+        return '<Route %r>' % self.name
 
     def serialize(self):
         return {
             "id": self.id,
             "name": self.name,
-            "foto": self.foto,
-            "longitud": self.longitud,
-            "perfil": self.perfil,
-            "mapa": self.mapa
+            "photo": self.photo,
+            "length": self.length,
+            "profile": self.profile,
+            "map": self.map
             # do not serialize the password, its a security breach
         }
 
-class Etapa(db.Model):
+class Stage(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(120), unique=False, nullable=False)
-    longitud = db.Column(db.String(120), unique=False, nullable=False)  
-    dificultad = db.Column(db.String(120), unique=False, nullable=False)  
-    foto = db.Column(db.String(120), unique=False, nullable=False) 
-    ruta_id = db.Column(db.Integer, db.ForeignKey("ruta.id"))
-    albergues_etapa = db.relationship("Albergue", backref="etapa", lazy=True)
+    length = db.Column(db.String(120), unique=False, nullable=False)  
+    difficulty = db.Column(db.String(120), unique=False, nullable=False)  
+    photo = db.Column(db.String(120), unique=False, nullable=False) 
+    route_id = db.Column(db.Integer, db.ForeignKey("route.id"))
+    hostels_stage = db.relationship("Hostel", backref="stage", lazy=True)
    
         
        
     def __repr__(self):
-        return '<Etapa %r>' % self.name
+        return '<Stage %r>' % self.name
 
     def serialize(self):
         return {
             "id": self.id,
             "name": self.name,
-            "longitud": self.longitud,
-            "dificultad": self.dificultad,
-            "foto": self.foto,
+            "longitud": self.length,
+            "dificultad": self.difficulty,
+            "foto": self.photo,
             # do not serialize the password, its a security breach
         }
 
@@ -126,7 +126,7 @@ class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     post_content = db.Column(db.String(1000), unique=False, nullable=True)
     date = db.Column(db.String(120), unique=False, nullable=False) 
-    foto = db.Column(db.String(120), unique=False, nullable=True)
+    photo = db.Column(db.String(120), unique=False, nullable=True)
     user_id = db.Column(db.Integer, db.ForeignKey("user.id")) 
     comments_post = db.relationship("Comment", backref="post", lazy=True)
                       
