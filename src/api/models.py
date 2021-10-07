@@ -74,10 +74,10 @@ class Hostel(db.Model):
 class Route(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(120), unique=False, nullable=False)  
-    foto = db.Column(db.String(120), unique=False, nullable=True) 
-    longitud = db.Column(db.String(120), unique=False, nullable=False) 
-    perfil = db.Column(db.String(120), unique=False, nullable=False) 
-    mapa = db.Column(db.String(120), unique=False, nullable=False) 
+    photo = db.Column(db.String(120), unique=False, nullable=True) 
+    length = db.Column(db.String(120), unique=False, nullable=False) 
+    profile = db.Column(db.String(120), unique=False, nullable=False) 
+    map = db.Column(db.String(120), unique=False, nullable=False) 
     hostels_route = db.relationship("Hostel", backref="route", lazy=True)
     stages_route = db.relationship("Stage", backref="route", lazy=True)
 
@@ -116,9 +116,9 @@ class Stage(db.Model):
         return {
             "id": self.id,
             "name": self.name,
-            "longitud": self.length,
-            "dificultad": self.difficulty,
-            "foto": self.photo,
+            "length": self.length,
+            "difficulty": self.difficulty,
+            "photo": self.photo,
             # do not serialize the password, its a security breach
         }
 

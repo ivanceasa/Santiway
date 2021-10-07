@@ -142,7 +142,7 @@ def single_hostel(id):
 @app.route('/hostel', methods=['POST'])
 def create_hostel():
     request_body = request.get_json()
-    hostel = Hostel(id=request_body["id"], name=request_body["name"], city=request_body["city"]
+    hostel = Hostel(id=request_body["id"], name=request_body["name"], city=request_body["city"])
     db.session.add(hostel)
     db.session.commit()
     return jsonify(request_body), 200
@@ -165,6 +165,52 @@ def get_all_hostels_in_city():
     if all_hostels_in_city is None:
         return ("No hostels in this city")    
     return jsonify(all_hostels_in_city), 200
+
+@api.route('/routes',  methods=["GET"])
+def get_all_routes():
+    all_routes = User.query.all()
+    all_routes = list(map(lambda x: x.serialize(), all_routes))
+    return jsonify(all_routes), 200
+
+@api.route('/route/<int:id>', methods=["GET"])
+def single_route(id):
+    route = User.query.get(id)
+    if route is None:
+        raise APIException("Route not found", status_code=404)
+    return jsonify(route.serialize()), 200
+
+@app.route('/route', methods=['POST'])
+def create_route():
+    request_body = request.get_json()
+    route = Route(id=request_body["id"], name=request_body["name"], photo=request_body["photo"], length=request_body["length"], profile=request_body["profile"], map=request_body["map"])
+    db.session.add(route)
+    db.session.commit()
+    return jsonify(request_body), 200
+
+@api.route('/stages',  methods=["GET"])
+def get_all_stages():
+    all_stages = User.query.all()
+    all_stages = list(map(lambda x: x.serialize(), all_stages))
+    return jsonify(all_stages), 200
+
+@api.route('/stage/<int:id>', methods=["GET"])
+def single_route(id):
+    stage = User.query.get(id)
+    if stage is None:
+        raise APIException("Stage not found", status_code=404)
+    return jsonify(stagee.serialize()), 200
+
+@app.route('/stage', methods=['POST'])
+def create_route():
+    request_body = request.get_json()
+    stagee = Route(id=request_body["id"], name=request_body["name"], length=request_body["length"], difficulty=request_body["difficulty"], photo=request_body["photo"])
+    db.session.add(stage)
+    db.session.commit()
+    return jsonify(all_routes), 200
+
+
+
+
     
 
 
