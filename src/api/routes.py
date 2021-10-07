@@ -165,6 +165,7 @@ def get_all_hostels_in_city():
     if all_hostels_in_city is None:
         return ("No hostels in this city")    
     return jsonify(all_hostels_in_city), 200
+    
 
 
    
