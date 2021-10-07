@@ -159,7 +159,7 @@ def delete_hostel(id):
     }
 
 
-@api.route('/hostels/<int:city>',  methods=["GET"])
+@api.route('/hostels/<:city>',  methods=["GET"])
 def get_all_hostels_in_city():
     all_hostels_in_city = Hostel.query.get(city) 
     if all_hostels_in_city is None:
