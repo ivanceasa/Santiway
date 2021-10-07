@@ -126,6 +126,56 @@ def delete_profile(id):
 
     return jsonify(request_body), 200
 
+@api.route('/hostels',  methods=["GET"])
+def get_all_hostels():
+    all_hostels = User.query.all()
+    all_hostels = list(map(lambda x: x.serialize(), all_hostels))
+    return jsonify(all_profiles), 200
+
+@api.route('/hostel/<int:id>', methods=["GET"])
+def single_hostel(id):
+    hostel = User.query.get(id)
+    if hostel is None:
+        raise APIException("Hostel not found", status_code=404)
+    return jsonify(profile.serialize()), 200
+
+@app.route('/hostel', methods=['POST'])
+def create_hostel():
+    request_body = request.get_json()
+    hostel = Hostel(id=request_body["id"], name=request_body["name"], city=request_body["city"]
+    db.session.add(hostel)
+    db.session.commit()
+    return jsonify(request_body), 200
+
+@api.route('/hostel/<int:id>', methods=["DELETE"])
+def delete_hostel(id):
+    hostel = User.query.get(id)
+    if hostel is None:
+        raise APIException("Hostel not found", status_code=404)
+    db.session.delete(hostel)
+    db.session.commit()
+    response_body = {
+        "msg": "Hostel successfully deleted"       
+    }
+
+
+@api.route('/hostels/<int:city>',  methods=["GET"])
+def get_all_hostels_in_city():
+    all_hostels_in_city = Hostel.query.get(city) 
+    if all_hostels_in_city is None:
+        return ("No hostels in this city")    
+    return jsonify(all_hostels_in_city), 200
+
+
+   
+
+
+
+
+
+
+
+
 
   
    
