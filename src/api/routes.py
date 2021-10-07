@@ -78,9 +78,54 @@ def protected():
     
     return jsonify(user.serialize()), 200   
 
- 
+@api.route('/profile', methods=["GET"])
+def get_all_profiles():
+    #metodo GET para todos los usuarios
+    all_profiles = User.query.all()
+    all_profiles = list(map(lambda x: x.serialize(), all_profiles))
+    print("GET all_profiles: ", all_profiles )
+    return jsonify(all_profiles), 200
+
+@api.route('/profile/<int:id>', methods=["GET"])
+def single_profile(id):
+    #metodo GET para 1 usuario
+    profile = User.query.get(id)
+    if profile is None:
+        raise APIException("User not found", status_code=404)
+    print("GET profile: ", profile )
+    return jsonify(profile.serialize()), 200
+
+@api.route('/profile/<int:id>', methods=["PUT"])
+def update_profile(id):
+    #metodo PUT para actualizar Username y password
+    request_body = request.get_json()
+    profile = User.query.get(id)
+    if profile is None:
+        raise APIException("User not found", status_code=404)
+    if "username" in request_body:
+        profile.username = request_body["username"]
+    if "password" in request_body:
+        profile.password = request_body["password"]
     
-     
+    db.session.commit()
+    print("Profile property updated: ", request_body)
+    return jsonify(request_body), 200
+
+@api.route('/profile/<int:id>', methods=["DELETE"])
+def delete_profile(id):
+    #metodo DELETE para borrar a un usuario
+    profile = User.query.get(id)
+    if profile is None:
+        raise APIException("User not found", status_code=404)
+    db.session.delete(profile)
+    db.session.commit()
+    response_body = {
+        "msg": "Profile successfully deleted"
+    }
+    print("Profile successfully deleted", request_body)
+
+    return jsonify(request_body), 200
+
 
   
    

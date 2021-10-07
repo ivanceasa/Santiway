@@ -6,9 +6,10 @@ import { Home } from "./pages/home";
 import Albergues from "./pages/albergues";
 import Rutas from "./pages/rutas";
 import Consejos from "./pages/consejos";
+import Profile from "./pages/profile";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
-import Profile from "./pages/profile/Profile";
+import Posts from "./pages/posts/posts";
 import { Demo } from "./pages/demo";
 import { Single } from "./pages/single";
 import injectContext from "./store/appContext";
@@ -37,14 +38,17 @@ const Layout = () => {
 						<Route exact path="/register">
 							<Register />
 						</Route>
-						<Route exact path="/profile">
-							<Profile />
+						<Route exact path="/posts">
+							<Posts />
 						</Route>
 						<Route exact path="/albergues">
 							<Albergues />
 						</Route>
 						<Route exact path="/rutas">
 							<Rutas />
+						</Route>
+						<Route exact path="/profile">
+							<Profile />
 						</Route>
 						<Route exact path="/consejos">
 							<Consejos />
