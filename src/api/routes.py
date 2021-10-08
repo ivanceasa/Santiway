@@ -244,7 +244,7 @@ def create_post():
 @api.route('/comments',  methods=["GET"])
 def get_all_comments():
     all_comments = Comment.query.all()
-    all_comments = list(map(lambda Comment: Comment.serialize(), all_comments))
+    all_comments = list(map(lambda comment: comment.serialize(), all_comments))
     return jsonify(all_comments), 200
 
 @api.route('/comments/<int:id>', methods=["GET"])
