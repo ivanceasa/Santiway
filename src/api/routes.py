@@ -68,17 +68,8 @@ def signUp():
     return jsonify({"access_token": access_token})
     
 
-@api.route("/protected", methods=["GET"])
-@jwt_required()
-def protected():
-    # Access the identity of the current user with get_jwt_identity
-    current_user_id = get_jwt_identity()
-    user = User.filter.get(current_user_id)
-    print(current_user_id, user)
-    
-    return jsonify(user.serialize()), 200   
-
 @api.route('/profile', methods=["GET"])
+@jwt_required()
 def get_all_profiles():
     #metodo GET para todos los usuarios
     all_profiles = User.query.all()
@@ -87,6 +78,7 @@ def get_all_profiles():
     return jsonify(all_profiles), 200
 
 @api.route('/profile/<int:id>', methods=["GET"])
+@jwt_required()
 def single_profile(id):
     #metodo GET para 1 usuario
     profile = User.query.get(id)
@@ -96,6 +88,7 @@ def single_profile(id):
     return jsonify(profile.serialize()), 200
 
 @api.route('/profile/<int:id>', methods=["PUT"])
+@jwt_required()
 def update_profile(id):
     #metodo PUT para actualizar Username y password
     request_body = request.get_json()
@@ -112,6 +105,7 @@ def update_profile(id):
     return jsonify(request_body), 200
 
 @api.route('/profile/<int:id>', methods=["DELETE"])
+@jwt_required()
 def delete_profile(id):
     #metodo DELETE para borrar a un usuario
     profile = User.query.get(id)
@@ -160,7 +154,7 @@ def delete_hostel(id):
 
 
 @api.route('/hostels/<:city>',  methods=["GET"])
-def get_all_hostels_in_city():
+def get_all_hostels_in_city(city):
     all_hostels_in_city = Hostel.query.filter_by(city=city).one_or_none()
     if all_hostels_in_city is None:
         return ("No hostels in this city")    
