@@ -161,7 +161,7 @@ def delete_hostel(id):
 
 @api.route('/hostels/<:city>',  methods=["GET"])
 def get_all_hostels_in_city():
-    all_hostels_in_city = Hostel.query.filter_by(city).one_or_none()
+    all_hostels_in_city = Hostel.query.filter_by(city=city).one_or_none()
     if all_hostels_in_city is None:
         return ("No hostels in this city")    
     return jsonify(all_hostels_in_city), 200
