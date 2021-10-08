@@ -2,7 +2,7 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User
+from api.models import db, User, Hostel, Route, Stage, Post, Comment
 from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
@@ -50,7 +50,7 @@ def signUp():
     user = User(
         # name=json.get('name'),
         # surname=json.get('surname'),
-        username=json.get('userName'),
+        username=json.get('username'),
         # age=json.get('age'),
         # country=json.get('country'),
         # city=json.get('city'),
@@ -69,7 +69,7 @@ def signUp():
     
 
 @api.route('/profile', methods=["GET"])
-@jwt_required()
+#@jwt_required()
 def get_all_profiles():
     #metodo GET para todos los usuarios
     users = User.query.all()
@@ -78,9 +78,9 @@ def get_all_profiles():
     return jsonify(users), 200
 
 @api.route('/profile/<int:id>', methods=["GET"])
-@jwt_required()
+#@jwt_required()
 def single_profile(id):
-    token = get_jwt_identity()
+   # token = get_jwt_identity()
     #metodo GET para 1 usuario
     user = User.query.get(id)
     if user is None:
@@ -89,7 +89,7 @@ def single_profile(id):
     return jsonify(user.serialize()), 200
 
 @api.route('/profile/<int:id>', methods=["PUT"])
-@jwt_required()
+#@jwt_required()
 def update_profile(id):
     #metodo PUT para actualizar Username y password
     request_body = request.get_json()
@@ -106,7 +106,7 @@ def update_profile(id):
     return jsonify(request_body), 200
 
 @api.route('/profile/<int:id>', methods=["DELETE"])
-@jwt_required()
+#@jwt_required()
 def delete_profile(id):
     #metodo DELETE para borrar a un usuario
     user = User.query.get(id)
@@ -123,28 +123,28 @@ def delete_profile(id):
 
 @api.route('/hostels',  methods=["GET"])
 def get_all_hostels():
-    all_hostels = User.query.all()
+    all_hostels = Hostel.query.all()
     all_hostels = list(map(lambda hostel: hostel.serialize(), all_hostels))
     return jsonify(all_hostels), 200
 
 @api.route('/hostel/<int:id>', methods=["GET"])
 def single_hostel(id):
-    hostel = User.query.get(id)
+    hostel = Hostel.query.get(id)
     if hostel is None:
         raise APIException("Hostel not found", status_code=404)
     return jsonify(hostel.serialize()), 200
 
-@app.route('/hostel', methods=['POST'])
+@api.route('/hostel', methods=['POST'])
 def create_hostel():
     request_body = request.get_json()
-    hostel = Hostel(id=request_body["id"], name=request_body["name"], city=request_body["city"])
+    hostel = Hostel(name=request_body["name"], city=request_body["city"])
     db.session.add(hostel)
     db.session.commit()
     return jsonify(request_body), 200
 
 @api.route('/hostel/<int:id>', methods=["DELETE"])
 def delete_hostel(id):
-    hostel = User.query.get(id)
+    hostel = Hostel.query.get(id)
     if hostel is None:
         raise APIException("Hostel not found", status_code=404)
     db.session.delete(hostel)
@@ -154,7 +154,7 @@ def delete_hostel(id):
     }
 
 
-@api.route('/hostels/<:city>',  methods=["GET"])
+@api.route('/hostels/<string:city>',  methods=["GET"])
 def get_all_hostels_in_city(city):
     all_hostels_in_city = Hostel.query.filter_by(city=city).one_or_none()
     if all_hostels_in_city is None:
@@ -163,18 +163,18 @@ def get_all_hostels_in_city(city):
 
 @api.route('/routes',  methods=["GET"])
 def get_all_routes():
-    all_routes = User.query.all()
+    all_routes = Route.query.all()
     all_routes = list(map(lambda route: route.serialize(), all_routes))
     return jsonify(all_routes), 200
 
 @api.route('/route/<int:id>', methods=["GET"])
 def single_route(id):
-    route = User.query.get(id)
+    route = Route.query.get(id)
     if route is None:
         raise APIException("Route not found", status_code=404)
     return jsonify(route.serialize()), 200
 
-@app.route('/route', methods=['POST'])
+@api.route('/route', methods=['POST'])
 def create_route():
     request_body = request.get_json()
     route = Route(id=request_body["id"], name=request_body["name"], photo=request_body["photo"], length=request_body["length"], profile=request_body["profile"], map=request_body["map"])
@@ -184,21 +184,21 @@ def create_route():
 
 @api.route('/stages',  methods=["GET"])
 def get_all_stages():
-    all_stages = User.query.all()
+    all_stages = Stage.query.all()
     all_stages = list(map(lambda stage: stage.serialize(), all_stages))
     return jsonify(all_stages), 200
 
 @api.route('/stage/<int:id>', methods=["GET"])
 def single_stage(id):
-    stage = User.query.get(id)
+    stage = Stage.query.get(id)
     if stage is None:
         raise APIException("Stage not found", status_code=404)
     return jsonify(stage.serialize()), 200
 
-@app.route('/stage', methods=['POST'])
-def create_route():
+@api.route('/stage', methods=['POST'])
+def create_stage():
     request_body = request.get_json()
-    stagee = Route(id=request_body["id"], name=request_body["name"], length=request_body["length"], difficulty=request_body["difficulty"], photo=request_body["photo"])
+    stage = Route(id=request_body["id"], name=request_body["name"], length=request_body["length"], difficulty=request_body["difficulty"], photo=request_body["photo"])
     db.session.add(stage)
     db.session.commit()
     return jsonify(all_routes), 200
@@ -217,7 +217,7 @@ def single_post(id):
     return jsonify(post.serialize()), 200
 
 @api.route('/posts/<int:id>', methods=["PUT"])
-@jwt_required()
+#@jwt_required()
 def update_post(id):
     #metodo PUT para actualizar el Post
     request_body = request.get_json()
@@ -233,10 +233,10 @@ def update_post(id):
   
     return jsonify(request_body), 200
 
-@app.route('/profile/post', methods=['POST'])
+@api.route('/profile/post', methods=['POST'])
 def create_post():
     request_body = request.get_json()
-    post = Post(id=request_body["id"], post_content=request_body["post_content"], date=request_body["date"], photo=request_body["photo"]])
+    post = Post(id=request_body["id"], post_content=request_body["post_content"], date=request_body["date"], photo=request_body["photo"])
     db.session.add(post)
     db.session.commit()
     return jsonify(request_body), 200    #tendremos que decidir si hacemos un Post de viajes y otro para Experiencias. En tal caso, se deberán crear las rutas.
@@ -254,10 +254,10 @@ def single_comment(id):
         raise APIException("Comment not found", status_code=404)
     return jsonify(comment.serialize()), 200
 
-@app.route('/comments', methods=['POST'])
+@api.route('/comments', methods=['POST'])
 def create_comment():
     request_body = request.get_json()
-    comment = Comment(id=request_body["id"], comment=request_body["comment"], date=request_body["date"]])
+    comment = Comment(id=request_body["id"], comment=request_body["comment"], date=request_body["date"])
     db.session.add(comment)
     db.session.commit()
     return jsonify(request_body), 200    

@@ -8,7 +8,7 @@ const Register = () => {
 	const history = useHistory();
 	// const [name, setName] = useState("");
 	// const [surname, setSurName] = useState("");
-	const [userName, setUserName] = useState("");
+	const [username, setUserName] = useState("");
 	// const [age, setAge] = useState("");
 	// const [country, setCountry] = useState("");
 	// const [city, setCity] = useState("");
@@ -26,7 +26,8 @@ const Register = () => {
 			alert("Las contraseñas no coinciden");
 			return;
 		}
-		const url = "https://3001-blue-dove-q61urqie.ws-eu18.gitpod.io/api/register";
+		const url = process.env.BACKEND_URL + "/api/register";
+		//const url = "https://3001-amaranth-cricket-uzm7r1o0.ws-eu18.gitpod.io/api/register";
 		const response = await fetch(url, {
 			method: "POST",
 			headers: {
@@ -35,7 +36,7 @@ const Register = () => {
 			body: JSON.stringify({
 				// name: name,
 				// surname: surname,
-				userName: userName,
+				username: username,
 				// age: age,
 				// country: country,
 				// city: city,
