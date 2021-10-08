@@ -72,33 +72,34 @@ def signUp():
 @jwt_required()
 def get_all_profiles():
     #metodo GET para todos los usuarios
-    all_profiles = User.query.all()
-    all_profiles = list(map(lambda x: x.serialize(), all_profiles))
-    print("GET all_profiles: ", all_profiles )
-    return jsonify(all_profiles), 200
+    users = User.query.all()
+    users = list(map(lambda user: user.serialize(), users))
+    print("GET users: ", users )
+    return jsonify(users), 200
 
 @api.route('/profile/<int:id>', methods=["GET"])
 @jwt_required()
 def single_profile(id):
+    token = get_jwt_identity()
     #metodo GET para 1 usuario
-    profile = User.query.get(id)
-    if profile is None:
+    user = User.query.get(id)
+    if user is None:
         raise APIException("User not found", status_code=404)
-    print("GET profile: ", profile )
-    return jsonify(profile.serialize()), 200
+    print("GET user: ", user )
+    return jsonify(user.serialize()), 200
 
 @api.route('/profile/<int:id>', methods=["PUT"])
 @jwt_required()
 def update_profile(id):
     #metodo PUT para actualizar Username y password
     request_body = request.get_json()
-    profile = User.query.get(id)
-    if profile is None:
+    user = User.query.get(id)
+    if user is None:
         raise APIException("User not found", status_code=404)
     if "username" in request_body:
-        profile.username = request_body["username"]
+        user.username = request_body["username"]
     if "password" in request_body:
-        profile.password = request_body["password"]
+        user.password = request_body["password"]
     
     db.session.commit()
     print("Profile property updated: ", request_body)
@@ -108,10 +109,10 @@ def update_profile(id):
 @jwt_required()
 def delete_profile(id):
     #metodo DELETE para borrar a un usuario
-    profile = User.query.get(id)
-    if profile is None:
+    user = User.query.get(id)
+    if user is None:
         raise APIException("User not found", status_code=404)
-    db.session.delete(profile)
+    db.session.delete(user)
     db.session.commit()
     response_body = {
         "msg": "Profile successfully deleted"
@@ -123,15 +124,15 @@ def delete_profile(id):
 @api.route('/hostels',  methods=["GET"])
 def get_all_hostels():
     all_hostels = User.query.all()
-    all_hostels = list(map(lambda x: x.serialize(), all_hostels))
-    return jsonify(all_profiles), 200
+    all_hostels = list(map(lambda hostel: hostel.serialize(), all_hostels))
+    return jsonify(all_hostels), 200
 
 @api.route('/hostel/<int:id>', methods=["GET"])
 def single_hostel(id):
     hostel = User.query.get(id)
     if hostel is None:
         raise APIException("Hostel not found", status_code=404)
-    return jsonify(profile.serialize()), 200
+    return jsonify(hostel.serialize()), 200
 
 @app.route('/hostel', methods=['POST'])
 def create_hostel():
@@ -163,7 +164,7 @@ def get_all_hostels_in_city(city):
 @api.route('/routes',  methods=["GET"])
 def get_all_routes():
     all_routes = User.query.all()
-    all_routes = list(map(lambda x: x.serialize(), all_routes))
+    all_routes = list(map(lambda route: route.serialize(), all_routes))
     return jsonify(all_routes), 200
 
 @api.route('/route/<int:id>', methods=["GET"])
@@ -184,7 +185,7 @@ def create_route():
 @api.route('/stages',  methods=["GET"])
 def get_all_stages():
     all_stages = User.query.all()
-    all_stages = list(map(lambda x: x.serialize(), all_stages))
+    all_stages = list(map(lambda stage: stage.serialize(), all_stages))
     return jsonify(all_stages), 200
 
 @api.route('/stage/<int:id>', methods=["GET"])
