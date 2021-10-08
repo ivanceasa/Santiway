@@ -138,7 +138,7 @@ class Post(db.Model):
             "id": self.id,
             "post_content": self.post_content,
             "date": self.name,
-            "foto": self.foto
+            "photo": self.photo
             # do not serialize the password, its a security breach
         }
 
