@@ -189,11 +189,11 @@ def get_all_stages():
     return jsonify(all_stages), 200
 
 @api.route('/stage/<int:id>', methods=["GET"])
-def single_route(id):
+def single_stage(id):
     stage = User.query.get(id)
     if stage is None:
         raise APIException("Stage not found", status_code=404)
-    return jsonify(stagee.serialize()), 200
+    return jsonify(stage.serialize()), 200
 
 @app.route('/stage', methods=['POST'])
 def create_route():
@@ -203,10 +203,64 @@ def create_route():
     db.session.commit()
     return jsonify(all_routes), 200
 
+@api.route('/posts',  methods=["GET"])
+def get_all_posts():
+    all_posts = Post.query.all()
+    all_posts = list(map(lambda post: post.serialize(), all_posts))
+    return jsonify(all_posts), 200
 
+@api.route('/posts/<int:id>', methods=["GET"])
+def single_post(id):
+    post = Post.query.get(id)
+    if post is None:
+        raise APIException("Post not found", status_code=404)
+    return jsonify(post.serialize()), 200
 
-
+@api.route('/posts/<int:id>', methods=["PUT"])
+@jwt_required()
+def update_post(id):
+    #metodo PUT para actualizar el Post
+    request_body = request.get_json()
+    post = Post.query.get(id)
+    if post is None:
+        raise APIException("Post not found", status_code=404)
+    if "post_content" in request_body:
+        post.post_content = request_body["post_content"]
+    if "photo" in request_body:
+        post.photo = request_body["photo"]
     
+    db.session.commit()
+  
+    return jsonify(request_body), 200
+
+@app.route('/profile/post', methods=['POST'])
+def create_post():
+    request_body = request.get_json()
+    post = Post(id=request_body["id"], post_content=request_body["post_content"], date=request_body["date"], photo=request_body["photo"]])
+    db.session.add(post)
+    db.session.commit()
+    return jsonify(request_body), 200    #tendremos que decidir si hacemos un Post de viajes y otro para Experiencias. En tal caso, se deberán crear las rutas.
+
+@api.route('/comments',  methods=["GET"])
+def get_all_comments():
+    all_comments = Comment.query.all()
+    all_comments = list(map(lambda Comment: Comment.serialize(), all_comments))
+    return jsonify(all_comments), 200
+
+@api.route('/comments/<int:id>', methods=["GET"])
+def single_comment(id):
+    comment = Comment.query.get(id)
+    if comment is None:
+        raise APIException("Comment not found", status_code=404)
+    return jsonify(comment.serialize()), 200
+
+@app.route('/comments', methods=['POST'])
+def create_comment():
+    request_body = request.get_json()
+    comment = Comment(id=request_body["id"], comment=request_body["comment"], date=request_body["date"]])
+    db.session.add(comment)
+    db.session.commit()
+    return jsonify(request_body), 200    
 
 
    
