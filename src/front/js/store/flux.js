@@ -44,10 +44,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				};
 
 				try {
-					const resp = await fetch(
-						"https://3001-amaranth-cricket-uzm7r1o0.ws-eu18.gitpod.io/api/login",
-						options
-					);
+					const resp = await fetch(process.env.BACKEND_URL + "/api/login", options);
 					if (resp.status !== 200) {
 						alert("There was been some error");
 						return false;
@@ -70,7 +67,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					}
 				};
 
-				fetch("https://3001-amaranth-cricket-uzm7r1o0.ws-eu18.gitpod.io/api/protected", options)
+				fetch(process.env.BACKEND_URL + "/api/profile", options)
 					.then(resp => resp.json())
 					.then(data => setStore({ message: data.message }))
 					.catch(error => console.log("Error loading message from backend", error));
