@@ -38,15 +38,11 @@ user_hostel = db.Table('user_hostel',
 )
 
     
+    
 
 
 
 user_route = db.Table('user_route', 
-=======
-
-
-user_route = db.Table('user_route',
- main
     db.Column('user_id', db.Integer, db.ForeignKey('user.id'), primary_key=True, nullable=True),
     db.Column('route_id', db.Integer, db.ForeignKey('route.id'), primary_key=True, nullable=True)
 )
@@ -54,7 +50,8 @@ user_route = db.Table('user_route',
 user_stage = db.Table('user_stage',
     db.Column('user_id', db.Integer, db.ForeignKey('user.id'), primary_key=True, nullable=True),
     db.Column('stage_id', db.Integer, db.ForeignKey('stage.id'), primary_key=True, nullable=True)
-
+)
+       
 
 class Hostel(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -135,13 +132,13 @@ class Post(db.Model):
     comments_post = db.relationship("Comment", backref="post", lazy=True)
                       
     def __repr__(self):
-        return '<Post %r>' % self.post_content
+        return '<Post %r>' % self.name
 
     def serialize(self):
         return {
             "id": self.id,
             "post_content": self.post_content,
-            "date": self.date,
+            "date": self.name,
             "photo": self.photo
             # do not serialize the password, its a security breach
         }
