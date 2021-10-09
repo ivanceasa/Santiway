@@ -33,31 +33,28 @@ class User(db.Model):
         }
 
 user_hostel = db.Table('user_hostel',
-    db.Column('user_id', db.Integer, db.ForeignKey('user.id'), primary_key=True),
-    db.Column('hostel_id', db.Integer, db.ForeignKey('hostel.id'), primary_key=True))
-
-    
-    
+    db.Column('user_id', db.Integer, db.ForeignKey('user.id'), primary_key=True, nullable=True),
+    db.Column('hostel_id', db.Integer, db.ForeignKey('hostel.id'), primary_key=True, nullable=True)
+)
 
 
-
-user_route = db.Table('user_route', 
-    db.Column('user_id', db.Integer, db.ForeignKey('user.id'), primary_key=True),
-    db.Column('route_id', db.Integer, db.ForeignKey('route.id'), primary_key=True)
+user_route = db.Table('user_route',
+    db.Column('user_id', db.Integer, db.ForeignKey('user.id'), primary_key=True, nullable=True),
+    db.Column('route_id', db.Integer, db.ForeignKey('route.id'), primary_key=True, nullable=True)
 )
 
 user_stage = db.Table('user_stage',
-    db.Column('user_id', db.Integer, db.ForeignKey('user.id'), primary_key=True),
-    db.Column('stage_id', db.Integer, db.ForeignKey('stage.id'), primary_key=True)
-)
+    db.Column('user_id', db.Integer, db.ForeignKey('user.id'), primary_key=True, nullable=True),
+    db.Column('stage_id', db.Integer, db.ForeignKey('stage.id'), primary_key=True, nullable=True)
+) 
        
 
 class Hostel(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(120), unique=False, nullable=False)        
     city = db.Column(db.String(120), unique=False, nullable=False)
-    route_id = db.Column(db.Integer, db.ForeignKey("route.id"))
-    stage_id = db.Column(db.Integer, db.ForeignKey("stage.id"))
+    route_id = db.Column(db.Integer, db.ForeignKey("route.id"), nullable=True)
+    stage_id = db.Column(db.Integer, db.ForeignKey("stage.id"), nullable=True)
 
    
     def __repr__(self):
@@ -104,7 +101,7 @@ class Stage(db.Model):
     length = db.Column(db.String(120), unique=False, nullable=False)  
     difficulty = db.Column(db.String(120), unique=False, nullable=False)  
     photo = db.Column(db.String(120), unique=False, nullable=False) 
-    route_id = db.Column(db.Integer, db.ForeignKey("route.id"))
+    route_id = db.Column(db.Integer, db.ForeignKey("route.id"), nullable=True)
     hostels_stage = db.relationship("Hostel", backref="stage", lazy=True)
    
         
@@ -127,17 +124,17 @@ class Post(db.Model):
     post_content = db.Column(db.String(1000), unique=False, nullable=True)
     date = db.Column(db.String(120), unique=False, nullable=False) 
     photo = db.Column(db.String(120), unique=False, nullable=True)
-    user_id = db.Column(db.Integer, db.ForeignKey("user.id")) 
+    user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=True) 
     comments_post = db.relationship("Comment", backref="post", lazy=True)
                       
     def __repr__(self):
-        return '<Post %r>' % self.name
+        return '<Post %r>' % self.post_content
 
     def serialize(self):
         return {
             "id": self.id,
             "post_content": self.post_content,
-            "date": self.name,
+            "date": self.date,
             "photo": self.photo
             # do not serialize the password, its a security breach
         }
@@ -148,8 +145,8 @@ class Comment(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     comment = db.Column(db.String(300), unique=False, nullable=True)
     date = db.Column(db.String(120), unique=False, nullable=False)
-    user_comments = db.Column(db.Integer, db.ForeignKey("user.id"))
-    post_comments = db.Column(db.Integer, db.ForeignKey("post.id"))
+    user_comments = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=True)
+    post_comments = db.Column(db.Integer, db.ForeignKey("post.id"), nullable=True)
    
         
        
