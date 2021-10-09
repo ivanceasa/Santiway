@@ -37,8 +37,16 @@ user_hostel = db.Table('user_hostel',
     db.Column('hostel_id', db.Integer, db.ForeignKey('hostel.id'), primary_key=True, nullable=True)
 )
 
+    
+
+
+
+user_route = db.Table('user_route', 
+=======
+
 
 user_route = db.Table('user_route',
+ main
     db.Column('user_id', db.Integer, db.ForeignKey('user.id'), primary_key=True, nullable=True),
     db.Column('route_id', db.Integer, db.ForeignKey('route.id'), primary_key=True, nullable=True)
 )
@@ -46,8 +54,7 @@ user_route = db.Table('user_route',
 user_stage = db.Table('user_stage',
     db.Column('user_id', db.Integer, db.ForeignKey('user.id'), primary_key=True, nullable=True),
     db.Column('stage_id', db.Integer, db.ForeignKey('stage.id'), primary_key=True, nullable=True)
-) 
-       
+
 
 class Hostel(db.Model):
     id = db.Column(db.Integer, primary_key=True)
