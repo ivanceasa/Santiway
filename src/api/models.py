@@ -155,7 +155,7 @@ class Comment(db.Model):
         
        
     def __repr__(self):
-        return '<Comment %r>' % self.name
+        return '<Comment %r>' % self.name 
 
     def serialize(self):
         return {
