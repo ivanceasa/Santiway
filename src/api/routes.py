@@ -176,6 +176,7 @@ def get_all_hostels_in_city(city):
         return ("No hostels in this city")    
     return jsonify(all_hostels_in_city.serialize()), 200
 
+
 @api.route('/routes',  methods=["GET"])
 def get_all_routes():
     all_routes = Route.query.all()
@@ -276,6 +277,26 @@ def create_comment():
     db.session.add(comment)
     db.session.commit()
     return jsonify(request_body), 200    
+
+
+   
+
+
+
+
+
+
+
+
+
+  
+   
+
+
+
+        
+
+     
 
 
    
