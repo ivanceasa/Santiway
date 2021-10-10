@@ -156,18 +156,6 @@ def delete_hostel(id):
     }
     return jsonify(hostel), 200
 
-# @api.route('/hostel/<int:id>', methods=["DELETE"])
-# def delete_hostel(id):
-#     hostel = Hostel.query.get(id)
-#     if hostel is None:
-#         raise APIException("Hostel not found", status_code=404)
-#     db.session.delete(hostel)
-#     db.session.commit()
-#     response_body = {
-#         "msg": "Hostel successfully deleted"       
-#     }
-#     return jsonify(hostel), 200
-
 
 @api.route('/hostels/<string:city>',  methods=["GET"])
 def get_all_hostels_in_city(city):
