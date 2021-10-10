@@ -68,7 +68,7 @@ def signUp():
     return jsonify({"access_token": access_token})
     
 
-@api.route('/profile', methods=["GET"])
+@api.route('/profiles', methods=["GET"])
 #@jwt_required()
 def get_all_profiles():
     #metodo GET para todos los usuarios
@@ -119,7 +119,7 @@ def delete_profile(id):
     }
     print("Profile successfully deleted", request_body)
 
-    return jsonify(request_body), 200
+    return jsonify(user), 200
 
 @api.route('/hostels',  methods=["GET"])
 def get_all_hostels():
@@ -143,15 +143,30 @@ def create_hostel():
     return jsonify(request_body), 200
 
 @api.route('/hostel/<int:id>', methods=["DELETE"])
+#@jwt_required()
 def delete_hostel(id):
+    #metodo DELETE para borrar a un usuario
     hostel = Hostel.query.get(id)
     if hostel is None:
         raise APIException("Hostel not found", status_code=404)
     db.session.delete(hostel)
     db.session.commit()
     response_body = {
-        "msg": "Hostel successfully deleted"       
+        "msg": "Hostel successfully deleted"
     }
+    return jsonify(hostel), 200
+
+# @api.route('/hostel/<int:id>', methods=["DELETE"])
+# def delete_hostel(id):
+#     hostel = Hostel.query.get(id)
+#     if hostel is None:
+#         raise APIException("Hostel not found", status_code=404)
+#     db.session.delete(hostel)
+#     db.session.commit()
+#     response_body = {
+#         "msg": "Hostel successfully deleted"       
+#     }
+#     return jsonify(hostel), 200
 
 
 @api.route('/hostels/<string:city>',  methods=["GET"])

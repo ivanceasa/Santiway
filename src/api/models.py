@@ -119,7 +119,7 @@ class Stage(db.Model):
             "name": self.name,
             "length": self.length,
             "difficulty": self.difficulty,
-            "photo": self.photo,
+            "photo": self.photo
             # do not serialize the password, its a security breach
         }
 
@@ -138,7 +138,7 @@ class Post(db.Model):
         return {
             "id": self.id,
             "post_content": self.post_content,
-            "date": self.name,
+            "date": self.date,
             "photo": self.photo
             # do not serialize the password, its a security breach
         }
