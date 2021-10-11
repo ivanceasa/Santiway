@@ -11,7 +11,7 @@ from flask_jwt_extended import JWTManager
 #modulo para calcular el tiempo
 import datetime
 
-
+#añadir columna imágenes a user, ampliar columnas en albergues(teléfono...), crear tabla fotos
 
 
 api = Blueprint('api', __name__)
@@ -117,8 +117,6 @@ def delete_profile(id):
     response_body = {
         "msg": "Profile successfully deleted"
     }
-    print("Profile successfully deleted", request_body)
-
     return jsonify(user), 200
 
 @api.route('/hostels',  methods=["GET"])
@@ -157,12 +155,13 @@ def delete_hostel(id):
     return jsonify(hostel), 200
 
 
-@api.route('/hostels/<string:city>',  methods=["GET"])
+@api.route('/hostels/<string:city>',  methods=["GET"])  #poner .tolowercase
 def get_all_hostels_in_city(city):
-    all_hostels_in_city = Hostel.query.filter_by(city=city).first()
+    all_hostels_in_city = Hostel.query.filter_by(city=city).all()   
     if all_hostels_in_city is None:
-        return ("No hostels in this city")    
-    return jsonify(all_hostels_in_city.serialize()), 200
+        return ("No hostels in this city") 
+    all_hostels_in_city = list(map(lambda hostel: hostel.serialize(), all_hostels_in_city))   
+    return jsonify(all_hostels_in_city), 200
 
 
 @api.route('/routes',  methods=["GET"])
