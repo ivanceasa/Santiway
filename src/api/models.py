@@ -33,23 +33,20 @@ class User(db.Model):
         }
 
 user_hostel = db.Table('user_hostel',
-    db.Column('user_id', db.Integer, db.ForeignKey('user.id'), primary_key=True, nullable=True),
-    db.Column('hostel_id', db.Integer, db.ForeignKey('hostel.id'), primary_key=True, nullable=True)
+    db.Column('user_id', db.Integer, db.ForeignKey('user.id'), primary_key=True, nullable=False),
+    db.Column('hostel_id', db.Integer, db.ForeignKey('hostel.id'), primary_key=True, nullable=False)
 )
 
     
-    
-
-
 
 user_route = db.Table('user_route', 
-    db.Column('user_id', db.Integer, db.ForeignKey('user.id'), primary_key=True, nullable=True),
-    db.Column('route_id', db.Integer, db.ForeignKey('route.id'), primary_key=True, nullable=True)
+    db.Column('user_id', db.Integer, db.ForeignKey('user.id'), primary_key=True, nullable=False),
+    db.Column('route_id', db.Integer, db.ForeignKey('route.id'), primary_key=True, nullable=False)
 )
 
 user_stage = db.Table('user_stage',
-    db.Column('user_id', db.Integer, db.ForeignKey('user.id'), primary_key=True, nullable=True),
-    db.Column('stage_id', db.Integer, db.ForeignKey('stage.id'), primary_key=True, nullable=True)
+    db.Column('user_id', db.Integer, db.ForeignKey('user.id'), primary_key=True, nullable=False),
+    db.Column('stage_id', db.Integer, db.ForeignKey('stage.id'), primary_key=True, nullable=False)
 )
        
 
@@ -57,6 +54,8 @@ class Hostel(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(120), unique=False, nullable=False)        
     city = db.Column(db.String(120), unique=False, nullable=False)
+    photo_hostel = db.Column(db.String(250), unique=False, nullable=False)
+    phone_number = db.Column(db.String(120), unique=False, nullable=False)
     route_id = db.Column(db.Integer, db.ForeignKey("route.id"), nullable=True)
     stage_id = db.Column(db.Integer, db.ForeignKey("stage.id"), nullable=True)
 
@@ -68,17 +67,21 @@ class Hostel(db.Model):
         return {
             "id": self.id,
             "name": self.name,
-            "city": self.city
-            # do not serialize the password, its a security breach
+            "city": self.city,
+            "photo_hostel": self.photo_hostel,
+            "phone_number": self.phone_number
+           
         }
 
 class Route(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(120), unique=False, nullable=False)  
-    photo = db.Column(db.String(120), unique=False, nullable=True) 
+    photo = db.Column(db.String(250), unique=False, nullable=True) 
     length = db.Column(db.String(120), unique=False, nullable=False) 
-    profile = db.Column(db.String(120), unique=False, nullable=False) 
-    map = db.Column(db.String(120), unique=False, nullable=False) 
+    profile = db.Column(db.String(250), unique=False, nullable=False) 
+    map = db.Column(db.String(250), unique=False, nullable=False)
+    stages_number = db.Column(db.String(120), unique=False, nullable=True) 
+    start_point = db.Column(db.String(200), unique=False, nullable=False)
     hostels_route = db.relationship("Hostel", backref="route", lazy=True)
     stages_route = db.relationship("Stage", backref="route", lazy=True)
 
@@ -95,9 +98,12 @@ class Route(db.Model):
             "photo": self.photo,
             "length": self.length,
             "profile": self.profile,
-            "map": self.map
-            # do not serialize the password, its a security breach
+            "map": self.map,
+            "stages_number": self.stages_number,
+            "start_point": self.start_point
+
         }
+
 
 class Stage(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -120,7 +126,6 @@ class Stage(db.Model):
             "length": self.length,
             "difficulty": self.difficulty,
             "photo": self.photo
-            # do not serialize the password, its a security breach
         }
 
 class Post(db.Model):
@@ -140,7 +145,6 @@ class Post(db.Model):
             "post_content": self.post_content,
             "date": self.date,
             "photo": self.photo
-            # do not serialize the password, its a security breach
         }
 
 
@@ -162,5 +166,4 @@ class Comment(db.Model):
             "id": self.id,
             "comment": self.comment,
             "date": self.date
-            # do not serialize the password, its a security breach
         }

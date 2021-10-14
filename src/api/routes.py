@@ -135,7 +135,11 @@ def single_hostel(id):
 @api.route('/hostel', methods=['POST'])
 def create_hostel():
     request_body = request.get_json()
-    hostel = Hostel(name=request_body["name"], city=request_body["city"])
+    hostel = Hostel(
+        name=request_body["name"],
+        city=request_body["city"], 
+        photo_hostel=response_body["photo_hostel"],
+        phone_number=request_body["phone_number"])
     db.session.add(hostel)
     db.session.commit()
     return jsonify(request_body), 200
@@ -155,7 +159,7 @@ def delete_hostel(id):
     return jsonify(hostel), 200
 
 
-@api.route('/hostels/<string:city>',  methods=["GET"])  #poner .tolowercase
+@api.route('/hostels/<string:city>',  methods=["GET"]) 
 def get_all_hostels_in_city(city):
     all_hostels_in_city = Hostel.query.filter_by(city=city).all()   
     if all_hostels_in_city is None:
@@ -180,7 +184,15 @@ def single_route(id):
 @api.route('/route', methods=['POST'])
 def create_route():
     request_body = request.get_json()
-    route = Route(name=request_body["name"], photo=request_body["photo"], length=request_body["length"], profile=request_body["profile"], map=request_body["map"])
+    route = Route(
+        name=request_body["name"], 
+        photo=request_body["photo"], 
+        length=request_body["length"], 
+        profile=request_body["profile"], 
+        map=request_body["map"],
+        stages_number=request_body["stages_number"],
+        start_point=request_body["start_point"]
+        )
     db.session.add(route)
     db.session.commit()
     return jsonify(request_body), 200
@@ -265,42 +277,3 @@ def create_comment():
     db.session.commit()
     return jsonify(request_body), 200    
 
-
-   
-
-
-
-
-
-
-
-
-
-  
-   
-
-
-
-        
-
-     
-
-
-   
-
-
-
-
-
-
-
-
-
-  
-   
-
-
-
-        
-
-   
