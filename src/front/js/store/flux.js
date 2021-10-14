@@ -1,6 +1,7 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
+			routes: [],
 			message: null,
 			demo: [
 				{
@@ -16,6 +17,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 			]
 		},
 		actions: {
+			getRoutes: () => {
+				fetch(process.env.BACKEND_URL + "/api/routes")
+					.then(resp => resp.json())
+					.then(data => setStore({ routes: data }))
+					.catch(error => console.log(error));
+			},
+
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
@@ -72,6 +80,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(data => setStore({ message: data.message }))
 					.catch(error => console.log("Error loading message from backend", error));
 			},
+
 			/*
 			getMessage: () => {
 				// fetching data from the backend

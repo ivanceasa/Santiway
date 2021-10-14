@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: 7a4fd02e939a
+Revision ID: 20ee0aea4ab6
 Revises: 
-Create Date: 2021-10-11 17:15:55.041698
+Create Date: 2021-10-14 09:35:44.449443
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '7a4fd02e939a'
+revision = '20ee0aea4ab6'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -21,10 +21,12 @@ def upgrade():
     op.create_table('route',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('name', sa.String(length=120), nullable=False),
-    sa.Column('photo', sa.String(length=120), nullable=True),
+    sa.Column('photo', sa.String(length=250), nullable=True),
     sa.Column('length', sa.String(length=120), nullable=False),
-    sa.Column('profile', sa.String(length=120), nullable=False),
-    sa.Column('map', sa.String(length=120), nullable=False),
+    sa.Column('profile', sa.String(length=250), nullable=False),
+    sa.Column('map', sa.String(length=250), nullable=False),
+    sa.Column('stages_number', sa.String(length=120), nullable=True),
+    sa.Column('start_point', sa.String(length=200), nullable=False),
     sa.PrimaryKeyConstraint('id')
     )
     op.create_table('user',
@@ -57,8 +59,8 @@ def upgrade():
     sa.PrimaryKeyConstraint('id')
     )
     op.create_table('user_route',
-    sa.Column('user_id', sa.Integer(), nullable=True),
-    sa.Column('route_id', sa.Integer(), nullable=True),
+    sa.Column('user_id', sa.Integer(), nullable=False),
+    sa.Column('route_id', sa.Integer(), nullable=False),
     sa.ForeignKeyConstraint(['route_id'], ['route.id'], ),
     sa.ForeignKeyConstraint(['user_id'], ['user.id'], ),
     sa.PrimaryKeyConstraint('user_id', 'route_id')
@@ -77,6 +79,8 @@ def upgrade():
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('name', sa.String(length=120), nullable=False),
     sa.Column('city', sa.String(length=120), nullable=False),
+    sa.Column('photo_hostel', sa.String(length=250), nullable=False),
+    sa.Column('phone_number', sa.String(length=120), nullable=False),
     sa.Column('route_id', sa.Integer(), nullable=True),
     sa.Column('stage_id', sa.Integer(), nullable=True),
     sa.ForeignKeyConstraint(['route_id'], ['route.id'], ),
@@ -84,15 +88,15 @@ def upgrade():
     sa.PrimaryKeyConstraint('id')
     )
     op.create_table('user_stage',
-    sa.Column('user_id', sa.Integer(), nullable=True),
-    sa.Column('stage_id', sa.Integer(), nullable=True),
+    sa.Column('user_id', sa.Integer(), nullable=False),
+    sa.Column('stage_id', sa.Integer(), nullable=False),
     sa.ForeignKeyConstraint(['stage_id'], ['stage.id'], ),
     sa.ForeignKeyConstraint(['user_id'], ['user.id'], ),
     sa.PrimaryKeyConstraint('user_id', 'stage_id')
     )
     op.create_table('user_hostel',
-    sa.Column('user_id', sa.Integer(), nullable=True),
-    sa.Column('hostel_id', sa.Integer(), nullable=True),
+    sa.Column('user_id', sa.Integer(), nullable=False),
+    sa.Column('hostel_id', sa.Integer(), nullable=False),
     sa.ForeignKeyConstraint(['hostel_id'], ['hostel.id'], ),
     sa.ForeignKeyConstraint(['user_id'], ['user.id'], ),
     sa.PrimaryKeyConstraint('user_id', 'hostel_id')
