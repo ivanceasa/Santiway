@@ -138,7 +138,7 @@ def create_hostel():
     hostel = Hostel(
         name=request_body["name"],
         city=request_body["city"], 
-        photo_hostel=response_body["photo_hostel"],
+        photo_hostel=request_body["photo_hostel"],
         phone_number=request_body["phone_number"])
     db.session.add(hostel)
     db.session.commit()
