@@ -40,8 +40,8 @@ const SearchAlbergues = () => {
 					</span>
 				</div>
 			</div>
-			<div className="hostels-Container">
-				<Row lg="4" className="ml-4">
+			<div className="hostels-Container text-center">
+				<Row lg="4" className="ml-5">
 					{store.hostels
 						.filter(element => {
 							if (search == "") {
