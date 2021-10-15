@@ -46,7 +46,13 @@ const SearchAlbergues = () => {
 						.filter(element => {
 							if (search == "") {
 								return "";
-							} else if (element.city.toLowerCase().includes(search.toLowerCase())) {
+							} else if (
+								element.city
+									.toLowerCase()
+									.normalize("NFD")
+									.replace(/[\u0300-\u036f]/g, "")
+									.includes(search.toLowerCase())
+							) {
 								return element;
 							}
 						})
