@@ -56,7 +56,7 @@ const SearchAlbergues = () => {
 				</div>
 			</div>
 			{filteredResults.length == 0 && search.length != 0 ? (
-				<h1>No hay albergues en ese municipio</h1>
+				<h1 className="text-center mt-3 font-italic">No hay albergues en ese municipio</h1>
 			) : (
 				<div className="hostels-Container text-center">
 					<Row lg="4" className="ml-5">
