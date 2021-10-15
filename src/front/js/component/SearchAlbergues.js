@@ -12,8 +12,7 @@ const SearchAlbergues = () => {
 	const handleChange = e => {
 		setSearch(e.target.value);
 	};
-	let filteredResults = [];
-	filteredResults = store.hostels.filter(element => {
+	let filteredResults = store.hostels.filter(element => {
 		if (search == "") {
 			return "";
 		} else if (
@@ -23,11 +22,9 @@ const SearchAlbergues = () => {
 				.replace(/[\u0300-\u036f]/g, "")
 				.includes(search.toLowerCase())
 		) {
-			console.log(element, "***");
 			return element;
 		}
 	});
-	console.log(filteredResults);
 	return (
 		<div className="container">
 			<h1 className="text-center pt-5">Encuentra tu albergue</h1>
