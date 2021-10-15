@@ -28,8 +28,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 				fetch(process.env.BACKEND_URL + "/api/hostels")
 					.then(resp => resp.json())
 					.then(data => setStore({ hostels: data }))
-					//setHostels(response.data);
-					//setHostelsGroup(response.data);
 					.catch(error => console.log(error));
 			},
 
