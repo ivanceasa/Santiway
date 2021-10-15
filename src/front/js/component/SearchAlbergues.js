@@ -12,7 +12,22 @@ const SearchAlbergues = () => {
 	const handleChange = e => {
 		setSearch(e.target.value);
 	};
-
+	let filteredResults = [];
+	filteredResults = store.hostels.filter(element => {
+		if (search == "") {
+			return "";
+		} else if (
+			element.city
+				.toLowerCase()
+				.normalize("NFD")
+				.replace(/[\u0300-\u036f]/g, "")
+				.includes(search.toLowerCase())
+		) {
+			console.log(element, "***");
+			return element;
+		}
+	});
+	console.log(filteredResults);
 	return (
 		<div className="container">
 			<h1 className="text-center pt-5">Encuentra tu albergue</h1>
@@ -40,23 +55,12 @@ const SearchAlbergues = () => {
 					</span>
 				</div>
 			</div>
-			<div className="hostels-Container text-center">
-				<Row lg="4" className="ml-5">
-					{store.hostels
-						.filter(element => {
-							if (search == "") {
-								return "";
-							} else if (
-								element.city
-									.toLowerCase()
-									.normalize("NFD")
-									.replace(/[\u0300-\u036f]/g, "")
-									.includes(search.toLowerCase())
-							) {
-								return element;
-							}
-						})
-						.map((item, id) => (
+			{filteredResults.length == 0 && search.length != 0 ? (
+				<h1>No hay albergues en ese municipio</h1>
+			) : (
+				<div className="hostels-Container text-center">
+					<Row lg="4" className="ml-5">
+						{filteredResults.map((item, id) => (
 							<Card key={id} className="m-3 card">
 								<Card.Img variant="top" src={item.photo_hostel} />
 								<Card.Body>
@@ -66,8 +70,9 @@ const SearchAlbergues = () => {
 								</Card.Body>
 							</Card>
 						))}
-				</Row>
-			</div>
+					</Row>
+				</div>
+			)}
 		</div>
 	);
 };
