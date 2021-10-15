@@ -1,12 +1,30 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { Context } from "../store/appContext";
+import { useHistory } from "react-router-dom";
+import { Button, Card, CardGroup, Row } from "react-bootstrap";
 
 const SearchAlbergues = () => {
+	const { store, actions } = useContext(Context);
+	const history = useHistory();
+
+	const [search, setSearch] = useState("");
+
+	const handleChange = e => {
+		setSearch(e.target.value);
+	};
+
 	return (
 		<div className="container">
 			<h1 className="text-center pt-5">Encuentra tu albergue</h1>
 			<div className="container mt-3">
 				<div className="input-group  mx-auto w-75 p-3">
-					<input type="text" className="form-control" placeholder="Búsqueda por municipio" />
+					<input
+						type="text"
+						className="form-control"
+						value={search}
+						onChange={handleChange}
+						placeholder="Búsqueda por municipio"
+					/>
 					<span className="input-group-btn">
 						<button className="btn btn-success" type="submit">
 							<svg
@@ -22,43 +40,35 @@ const SearchAlbergues = () => {
 					</span>
 				</div>
 			</div>
+			<div className="hostels-Container text-center">
+				<Row lg="4" className="ml-5">
+					{store.hostels
+						.filter(element => {
+							if (search == "") {
+								return "";
+							} else if (
+								element.city
+									.toLowerCase()
+									.normalize("NFD")
+									.replace(/[\u0300-\u036f]/g, "")
+									.includes(search.toLowerCase())
+							) {
+								return element;
+							}
+						})
+						.map((item, id) => (
+							<Card key={id} className="m-3 card">
+								<Card.Img variant="top" src={item.photo_hostel} />
+								<Card.Body>
+									<Card.Title>{item.name}</Card.Title>
+									<Card.Text>{`Municipio: ${item.city}`}</Card.Text>
+									<Card.Text> {`Teléfono: ${item.phone_number}`}</Card.Text>
+								</Card.Body>
+							</Card>
+						))}
+				</Row>
+			</div>
 		</div>
-		/*
-		<div className="container">
-			<form>
-				<div className="form-row">
-					<div className="col-md-6 mb-3">
-						<label htmlFor="validationDefault01">Nombre:</label>
-						<input type="text" className="form-control" id="validationDefault01" value="" />
-					</div>
-				</div>
-
-				<div className="form-row">
-					<div className="col-md-3 mb-3">
-						<label htmlFor="validationServer04">Ruta</label>
-						<select className="custom-select">
-							<option selected disabled value="" />
-							<option value="" />
-						</select>
-					</div>
-				</div>
-
-				<div className="form-row">
-					<div className="col-md-3 mb-3">
-						<label htmlFor="validationServer04">Municipio</label>
-						<select className="custom-select">
-							<option selected disabled value="" />
-							<option value="" />
-						</select>
-					</div>
-				</div>
-
-				<button className="btn btn-primary" type="submit">
-					Buscar
-				</button>
-			</form>
-		</div>
-		*/
 	);
 };
 
