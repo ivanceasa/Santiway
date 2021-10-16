@@ -8,8 +8,8 @@ const CardRutas = () => {
 	const history = useHistory();
 	const { store, actions } = useContext(Context);
 	return (
-		<div className="content bg-warning">
-			<h1 className="text-success text-center pt-3">RUTAS</h1>
+		<div className="content">
+			<h1 className="text-success text-center pt-3 font-italic">RUTAS</h1>
 			<div className="card-Container">
 				<Row lg="auto" className="ml-4">
 					{store.routes.map((item, id) => (
