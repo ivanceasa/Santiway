@@ -12,9 +12,6 @@ const Rutas = () => {
 
 	return (
 		<>
-			<Link to="/">
-				<span className="navbar-brand">Home</span>
-			</Link>
 			<CardRutas />
 		</>
 	);

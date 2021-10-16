@@ -11,11 +11,6 @@ const Albergues = () => {
 	}, []);
 	return (
 		<>
-			<Navbar1 />
-			<Link to="/">
-				<span className="navbar-brand">Home</span>
-			</Link>
-
 			<SearchAlbergues />
 		</>
 	);

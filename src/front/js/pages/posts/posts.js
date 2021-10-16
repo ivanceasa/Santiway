@@ -6,7 +6,6 @@ import Feed from "../../component/feed/Feed";
 const Posts = () => {
 	return (
 		<>
-			<Topbar />
 			<h1>Esto es Posts</h1>
 			<div className="posts">
 				<Feed />

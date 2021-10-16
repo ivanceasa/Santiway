@@ -1,8 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/home.scss";
-import Topbar from "../component/topbar/Topbar";
-import Feed from "../component/feed/Feed";
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
@@ -15,7 +13,6 @@ export const Home = () => {
 
 	return (
 		<>
-			<Topbar />
 			<div className="card bg-dark text-white">
 				<img
 					src="https://p2.piqsels.com/preview/981/921/185/spain-santiago-path-road-path-thumbnail.jpg"
