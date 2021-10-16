@@ -19,7 +19,7 @@ const Login = () => {
 	return (
 		<div className="text-center mt-5">
 			{store.token && store.token != "" && store.token != undefined ? (
-				"You are logged in whit this token" + store.token
+				"You are logged in with this token" + store.token
 			) : (
 				<div className="login">
 					<div className="loginWrapper">
