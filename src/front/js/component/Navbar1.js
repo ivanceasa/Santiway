@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
-import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap";
+import { Navbar, Nav, Button } from "react-bootstrap";
+import shell from "../../img/shell.jpg";
 
 const Navbar1 = () => {
 	const { store, actions } = useContext(Context);
@@ -11,7 +12,7 @@ const Navbar1 = () => {
 				<Navbar.Brand href="/">
 					<img
 						alt=""
-						src="https://i.ibb.co/9vG48T0/concha-vieira-camino-santiago.jpg"
+						src={shell}
 						width="30"
 						height="30"
 						className="d-inline-block align-top rounded-circle"
