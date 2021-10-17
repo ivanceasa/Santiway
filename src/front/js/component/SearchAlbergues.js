@@ -30,8 +30,8 @@ const SearchAlbergues = () => {
 	console.log(filteredResults);
 	return (
 		<div className="container">
-			<h1 className="text-center pt-5">Encuentra tu albergue</h1>
-			<div className="container mt-3">
+			<h1 className="text-center p-5 font-weight-bold">ENCUENTRA TU ALBERGUE</h1>
+			<div className="container mt-4">
 				<div className="input-group  mx-auto w-75 p-3">
 					<input
 						type="text"
@@ -56,7 +56,7 @@ const SearchAlbergues = () => {
 				</div>
 			</div>
 			{filteredResults.length == 0 && search.length != 0 ? (
-				<h1 className="text-center mt-3 font-italic">No hay albergues en ese municipio</h1>
+				<h1 className="text-center mt-4 font-italic">No hay albergues en ese municipio</h1>
 			) : (
 				<div className="hostels-Container text-center">
 					<Row lg="4" className="ml-5">
