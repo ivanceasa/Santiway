@@ -138,7 +138,7 @@ const Register = () => {
 							onChange={event => setConfirmPassword(event.target.value)}
 							required
 						/>
-						<input type="submit" value="save" className="loginButton" />
+						<input type="submit" value="Save" className="loginButton" />
 
 						{/* <input //quitar este boton y que save redirija a /login
 							type="button"
