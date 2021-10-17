@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/home.scss";
+import portada from "../../img/santiago-path.jpg";
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
@@ -14,11 +15,7 @@ export const Home = () => {
 	return (
 		<>
 			<div className="card bg-dark text-white">
-				<img
-					src="https://p2.piqsels.com/preview/981/921/185/spain-santiago-path-road-path-thumbnail.jpg"
-					className="img-fluid"
-					alt="..."
-				/>
+				<img src={portada} className="img" alt="..." />
 				<div className="card-img-overlay text-center m-4">
 					<h1 className="card-title font-weight-bold display-1 m-4">Bienvenido Peregrino!</h1>
 					<p className="card-text display-4">
