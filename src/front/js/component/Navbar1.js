@@ -21,19 +21,19 @@ const Navbar1 = () => {
 
 				<div className="d-flex justify-content-center ml-auto">
 					<Link to="/">
-						<span className="topbarLink">Home</span>
+						<span className="topbarLink text-white p-1">Home</span>
 					</Link>
 					<Link to="/rutas">
-						<span className="topbarLink">Rutas</span>
+						<span className="topbarLink text-white p-1">Rutas</span>
 					</Link>
 					<Link to="/albergues">
-						<span className="topbarLink">Albergues</span>
+						<span className="topbarLink text-white p-1">Albergues</span>
 					</Link>
 					<Link to="/consejos">
-						<span className="topbarLink">Consejos</span>
+						<span className="topbarLink text-white p-1">Consejos</span>
 					</Link>
 					<Link to="/profile">
-						<span className="topbarLink">Mi perfil</span>
+						<span className="topbarLink text-white p-1">Mi perfil</span>
 					</Link>
 				</div>
 

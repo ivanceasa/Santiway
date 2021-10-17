@@ -1,6 +1,5 @@
 import React from "react";
 import "./posts.css";
-import Topbar from "../../component/topbar/Topbar";
 import Feed from "../../component/feed/Feed";
 
 const Posts = () => {
