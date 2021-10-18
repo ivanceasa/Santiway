@@ -23,7 +23,7 @@ const CardRutas = () => {
 								<Button
 									className="m-2"
 									variant="outline-primary"
-									onClick={() => history.push(`/route/${id}`)}>
+									onClick={() => history.push(`/rutas/${id}`)}>
 									Ver más
 								</Button>
 							</Card.Body>
