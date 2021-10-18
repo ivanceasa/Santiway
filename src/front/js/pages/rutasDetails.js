@@ -17,7 +17,7 @@ const RutasDetails = () => {
 									<h1>{item.name}</h1>
 									<img src={item.map} />
 								</div>
-								<div className="text-center text-success ">
+								<div className="text-center text-success px-3 mx-3">
 									<h1>Perfil-etapas</h1>
 									<img src={item.profile} />
 								</div>
