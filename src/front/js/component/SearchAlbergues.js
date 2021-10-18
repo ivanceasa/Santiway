@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../store/appContext";
 import { useHistory } from "react-router-dom";
 import { Button, Card, CardGroup, Row } from "react-bootstrap";
-import hostelImage from "../../img/hostel.jpg";
+import hostelImage from "../../img/orreo.jpg";
 import "../../styles/searchAlbergues.scss";
 
 const SearchAlbergues = () => {
@@ -62,7 +62,9 @@ const SearchAlbergues = () => {
 				</div>
 
 				{filteredResults.length == 0 && search.length != 0 ? (
-					<h1 className="text-center mt-4 font-italic">No hay albergues en ese municipio</h1>
+					<h1 className="text-center text-white font-weight-bold mt-4 font-italic">
+						No hay albergues en ese municipio
+					</h1>
 				) : (
 					<div className="hostels-Container text-center">
 						<Row lg="4" className="ml-5">
