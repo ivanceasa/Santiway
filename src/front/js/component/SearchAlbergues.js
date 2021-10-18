@@ -2,8 +2,8 @@ import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../store/appContext";
 import { useHistory } from "react-router-dom";
 import { Button, Card, CardGroup, Row } from "react-bootstrap";
-import pilgrimage from "../../img/hostel.jpg";
-//import "../../styles/searchAlbergues.scss";
+import hostelImage from "../../img/hostel.jpg";
+import "../../styles/searchAlbergues.scss";
 
 const SearchAlbergues = () => {
 	const { store, actions } = useContext(Context);
@@ -33,7 +33,7 @@ const SearchAlbergues = () => {
 
 	return (
 		<div className="card">
-			<img src={pilgrimage} className="img-hostel" alt="..." />
+			<img src={hostelImage} className="img-hostel" alt="..." />
 			<div className="card-img-overlay">
 				<h1 className="text-center p-4 font-weight-bold">ENCUENTRA TU ALBERGUE</h1>
 				<div className="container mt-3">
