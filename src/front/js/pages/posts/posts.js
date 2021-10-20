@@ -1,14 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import "./posts.css";
 import Feed from "../../component/feed/Feed";
+import UserPosts from "../../component/userPosts/UserPosts";
 
 const Posts = () => {
 	return (
 		<>
-			<h1>Esto es Posts</h1>
-			<div className="posts">
-				<Feed />
-			</div>
+			<Feed />
+			<UserPosts />
 		</>
 	);
 };
