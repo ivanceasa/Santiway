@@ -12,7 +12,7 @@ const Login = () => {
 	console.log("This is your token", store.token);
 	const handleClick = () => {
 		actions.login(email, password).then(() => {
-			history.push("/posts");
+			history.push("/profile");
 		});
 	};
 

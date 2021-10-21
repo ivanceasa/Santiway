@@ -15,6 +15,8 @@ import { Single } from "./pages/single";
 import injectContext from "./store/appContext";
 import Navbar1 from "./component/Navbar1";
 import RutasDetails from "./pages/rutasDetails";
+import Booking from "./pages/booking";
+import Confirm from "./pages/confirm";
 
 import { Footer } from "./component/footer";
 
@@ -45,6 +47,9 @@ const Layout = () => {
 						<Route exact path="/albergues">
 							<Albergues />
 						</Route>
+						<Route exact path="/albergues/:detailsId">
+							<Booking />
+						</Route>
 						<Route exact path="/rutas">
 							<Rutas />
 						</Route>
@@ -57,6 +62,10 @@ const Layout = () => {
 						<Route exact path="/consejos">
 							<Consejos />
 						</Route>
+						<Route exact path="/confirmation">
+							<Confirm />
+						</Route>
+
 						<Route exact path="/demo">
 							<Demo />
 						</Route>

@@ -56,6 +56,8 @@ class Hostel(db.Model):
     city = db.Column(db.String(120), unique=False, nullable=False)
     photo_hostel = db.Column(db.String(250), unique=False, nullable=False)
     phone_number = db.Column(db.String(120), unique=False, nullable=False)
+    capacity = db.Column(db.Integer, unique=False, nullable=True)
+    booking_hostel = db.relationship("Booking", backref="hostel", lazy=True)
     route_id = db.Column(db.Integer, db.ForeignKey("route.id"), nullable=True)
     stage_id = db.Column(db.Integer, db.ForeignKey("stage.id"), nullable=True)
 
@@ -69,8 +71,8 @@ class Hostel(db.Model):
             "name": self.name,
             "city": self.city,
             "photo_hostel": self.photo_hostel,
-            "phone_number": self.phone_number
-           
+            "phone_number": self.phone_number ,
+            "capacity": self.capacity    
         }
 
 class Route(db.Model):
@@ -166,4 +168,25 @@ class Comment(db.Model):
             "id": self.id,
             "comment": self.comment,
             "date": self.date
+        }
+
+class Booking(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    year = db.Column(db.Integer, unique=False, nullable=False)
+    month = db.Column(db.Integer, unique=False, nullable=False)
+    day = db.Column(db.Integer, unique=False, nullable=False)
+    hostel_id = db.Column(db.Integer, db.ForeignKey("hostel.id"), nullable=True)
+         
+    def save(self):
+        db.session.add(self)
+        db.session.commit()
+       
+    
+
+    def serialize(self):
+        return {
+            "id": self.id,
+            "year": self.year,
+            "month": self.month,
+            "day": self.day,
         }
