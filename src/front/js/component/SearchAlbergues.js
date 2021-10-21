@@ -25,7 +25,6 @@ const SearchAlbergues = () => {
 				.replace(/[\u0300-\u036f]/g, "")
 				.includes(search.toLowerCase())
 		) {
-			console.log(element, "***");
 			return element;
 		}
 	});
