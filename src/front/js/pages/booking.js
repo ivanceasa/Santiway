@@ -34,23 +34,33 @@ const Booking = () => {
 	}
 
 	return (
-		<div className="text-center mt-5">
-			{store.hostels.map((item, id) => {
-				if (id === parseInt(detailsId)) {
-					return (
-						<div>
-							<div key={id}>
-								<div className="text-center m-4 p-4">
-									<h1>{item.name}</h1>
+		<>
+			<div className=" text-center mt-5">
+				<input type="date" onChange={setDate} className="p-1 m-3" />
+				<button onClick={createBooking} className="btn btn-warning">
+					Realizar reserva
+				</button>
+			</div>
+			<div className="text-center m-4">
+				{store.hostels.map((item, id) => {
+					if (id === parseInt(detailsId)) {
+						return (
+							<div>
+								<div key={id}>
+									<div className="text-center m-4 p-4">
+										<h1>{item.name}</h1>
+										<h1>({item.city})</h1>
+									</div>
+									<div className>
+										<img src={item.photo_hostel} />
+									</div>
 								</div>
 							</div>
-						</div>
-					);
-				}
-			})}
-			<input type="date" onChange={setDate} />
-			<button onClick={createBooking}>Realizar reserva</button>
-		</div>
+						);
+					}
+				})}
+			</div>
+		</>
 	);
 };
 
