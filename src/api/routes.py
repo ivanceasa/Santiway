@@ -2,8 +2,7 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User, Hostel, Route, Stage, Post, Comment
-from api.utils import generate_sitemap, APIException
+from api.models import db, User, Hostel, Route, Stage, Post, Comment, Booking
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
 from flask_jwt_extended import jwt_required
@@ -11,7 +10,7 @@ from flask_jwt_extended import JWTManager
 #modulo para calcular el tiempo
 import datetime
 
-#añadir columna imágenes a user, ampliar columnas en albergues(teléfono...), crear tabla fotos
+#añadir columna imágenes a user, crear tabla fotos
 
 
 api = Blueprint('api', __name__)
@@ -275,5 +274,35 @@ def create_comment():
     comment = Comment(comment=request_body["comment"], date=request_body["date"])
     db.session.add(comment)
     db.session.commit()
-    return jsonify(request_body), 200    
+    return jsonify(request_body), 200   
+
+@api.route('/create-booking', methods=['POST'])  
+def create_booking():
+    json = request.get_json()
+    year = json.get('year')
+    month = json.get('month')
+    day = json.get('day')
+
+    #hostel = Hostel.query.get(1)
+    #capacity = hostel.capacity
+    #capacity_used = Booking.query.filter_by(year=year, month=month, day=day).count()
+
+    #if capacity_used >= capacity:
+    #    return jsonify({"msg": "Plazas no disponibles"}), 401
+
+    booking = Booking(
+        year=year,
+        month=month,
+        day=day
+    )
+    booking.save()
+    return jsonify(booking.serialize()), 200
+
+
+
+
+
+
+
+ 
 

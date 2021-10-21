@@ -15,6 +15,7 @@ import { Single } from "./pages/single";
 import injectContext from "./store/appContext";
 import Navbar1 from "./component/Navbar1";
 import RutasDetails from "./pages/rutasDetails";
+import Booking from "./pages/booking";
 
 import { Footer } from "./component/footer";
 
@@ -56,6 +57,9 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/consejos">
 							<Consejos />
+						</Route>
+						<Route exact path="/booking">
+							<Booking />
 						</Route>
 						<Route exact path="/demo">
 							<Demo />
