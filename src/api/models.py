@@ -176,8 +176,7 @@ class Booking(db.Model):
     month = db.Column(db.Integer, unique=False, nullable=False)
     day = db.Column(db.Integer, unique=False, nullable=False)
     hostel_id = db.Column(db.Integer, db.ForeignKey("hostel.id"), nullable=True)
-    #user_id      
-
+         
     def save(self):
         db.session.add(self)
         db.session.commit()
@@ -189,5 +188,5 @@ class Booking(db.Model):
             "id": self.id,
             "year": self.year,
             "month": self.month,
-            "day": self.day
+            "day": self.day,
         }
