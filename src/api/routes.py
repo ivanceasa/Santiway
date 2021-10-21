@@ -283,12 +283,14 @@ def create_booking():
     month = json.get('month')
     day = json.get('day')
 
+    
+
     #hostel = Hostel.query.get(1)
     #capacity = hostel.capacity
     #capacity_used = Booking.query.filter_by(year=year, month=month, day=day).count()
 
     #if capacity_used >= capacity:
-    #    return jsonify({"msg": "Plazas no disponibles"}), 401
+        #return jsonify({"msg": "Plazas no disponibles"}), 401
 
     booking = Booking(
         year=year,

@@ -77,7 +77,7 @@ const SearchAlbergues = () => {
 										<Button
 											className="m-2"
 											variant="outline-primary"
-											onClick={() => history.push(`/albergues/${id}`)}>
+											onClick={() => history.push(`/albergues/${item.name}`)}>
 											Reservar
 										</Button>
 									</Card.Body>

@@ -41,9 +41,10 @@ const Booking = () => {
 					Realizar reserva
 				</button>
 			</div>
+
 			<div className="text-center m-4">
 				{store.hostels.map((item, id) => {
-					if (id === parseInt(detailsId)) {
+					if (item.name === detailsId) {
 						return (
 							<div>
 								<div key={id}>
