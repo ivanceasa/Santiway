@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../store/appContext";
 import { useHistory, Link } from "react-router-dom";
-import { Card, Row } from "react-bootstrap";
+import { Card, Row, Button } from "react-bootstrap";
 import hostelImage from "../../img/orreo.jpg";
 import "../../styles/searchAlbergues.scss";
 
@@ -74,9 +74,12 @@ const SearchAlbergues = () => {
 										<Card.Title>{item.name}</Card.Title>
 										<Card.Text>{`Municipio: ${item.city}`}</Card.Text>
 										<Card.Text> {`Teléfono: ${item.phone_number}`}</Card.Text>
-										<Card.Title>
-											<Link to="/booking">Reservar</Link>
-										</Card.Title>
+										<Button
+											className="m-2"
+											variant="outline-primary"
+											onClick={() => history.push(`/albergues/${id}`)}>
+											Reservar
+										</Button>
 									</Card.Body>
 								</Card>
 							))}

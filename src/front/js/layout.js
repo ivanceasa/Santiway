@@ -46,6 +46,9 @@ const Layout = () => {
 						<Route exact path="/albergues">
 							<Albergues />
 						</Route>
+						<Route exact path="/albergues/:detailsId">
+							<Booking />
+						</Route>
 						<Route exact path="/rutas">
 							<Rutas />
 						</Route>
@@ -58,9 +61,7 @@ const Layout = () => {
 						<Route exact path="/consejos">
 							<Consejos />
 						</Route>
-						<Route exact path="/booking">
-							<Booking />
-						</Route>
+
 						<Route exact path="/demo">
 							<Demo />
 						</Route>
