@@ -29,6 +29,7 @@ const Booking = () => {
 				year: year,
 				month: month,
 				day: day
+				//id_hotel: item.id
 			})
 		});
 	}

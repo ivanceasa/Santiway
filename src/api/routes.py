@@ -282,6 +282,7 @@ def create_booking():
     year = json.get('year')
     month = json.get('month')
     day = json.get('day')
+    #id_hostel = json.get('id_hostel')
    
 
     #hostel = Hostel.query.get(1)
@@ -294,7 +295,8 @@ def create_booking():
     booking = Booking(
         year=year,
         month=month,
-        day=day,
+        day=day
+        #hostel_id=id_hostel
     )
     booking.save()
     return jsonify(booking.serialize()), 200
