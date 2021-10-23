@@ -188,5 +188,5 @@ class Booking(db.Model):
             "id": self.id,
             "year": self.year,
             "month": self.month,
-            "day": self.day,
+            "day": self.day    
         }

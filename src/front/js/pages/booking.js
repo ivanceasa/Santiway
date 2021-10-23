@@ -20,6 +20,7 @@ const Booking = () => {
 	}
 
 	async function createBooking() {
+		let hostel = store.hostels;
 		const response = await fetch(`${process.env.BACKEND_URL}/api/create-booking`, {
 			method: "POST",
 			headers: {
@@ -28,8 +29,8 @@ const Booking = () => {
 			body: JSON.stringify({
 				year: year,
 				month: month,
-				day: day
-				//id_hotel: item.id
+				day: day,
+				hostel_id: hostel.id
 			})
 		});
 	}
