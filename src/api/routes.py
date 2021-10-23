@@ -50,6 +50,7 @@ def signUp():
         # name=json.get('name'),
         # surname=json.get('surname'),
         username=json.get('username'),
+        profile_picture=json.get('profile_picture'),
         # age=json.get('age'),
         # country=json.get('country'),
         # city=json.get('city'),
@@ -97,6 +98,8 @@ def update_profile(id):
         raise APIException("User not found", status_code=404)
     if "username" in request_body:
         user.username = request_body["username"]
+    if "profile_picture" in request_body:
+        user.profile_picture = request_body["profile_picture"]
     if "password" in request_body:
         user.password = request_body["password"]
     
