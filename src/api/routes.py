@@ -256,8 +256,8 @@ def create_post():
     post = Post(post_content=request_body["post_content"], date=request_body["date"], photo=request_body["photo"], user_id=request_body["user_id"])
     db.session.add(post)
     db.session.commit()
-    return jsonify(request_body), 200    #tendremos que decidir si hacemos un Post de viajes y otro para Experiencias. En tal caso, se deberán crear las rutas.
-
+    return jsonify(request_body), 200    
+    
 @api.route('/comments',  methods=["GET"])
 def get_all_comments():
     all_comments = Comment.query.all()

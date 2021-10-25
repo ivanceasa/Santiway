@@ -22,12 +22,14 @@ div{
 .postDate{
     font-size: 12px;
 }
-img{
+.bodyImage{
     padding:5px;
     width: 100%;
-    height: 340PX;
+    object-fit: cover;
+    object-position: center center;
+    height: auto;
    
-}
+} 
 .header, .footer{
     padding: 10px;
     margin: 0;

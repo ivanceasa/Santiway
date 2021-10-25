@@ -31,7 +31,7 @@ const UserPosts = ({ postUsers }) => {
 				<p>First Post</p>
 			</div>
 			<div className="bodyImage">
-				<img src={fotocamino1} />
+				<img className="bodyImage" src={fotocamino1} />
 			</div>
 		</div>
 	);
