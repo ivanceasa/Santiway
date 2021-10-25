@@ -8,6 +8,15 @@
     background-repeat: no-repeat
 }
 
+.ProfileImg{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+  
+  }
+
 /* body {
     background: #654ea3;
     background: linear-gradient(to right, #e96443, #904e95);

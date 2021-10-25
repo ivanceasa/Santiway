@@ -253,7 +253,7 @@ def update_post(id):
 @api.route('/profile/post', methods=['POST'])
 def create_post():
     request_body = request.get_json()
-    post = Post(post_content=request_body["post_content"], date=request_body["date"], photo=request_body["photo"])
+    post = Post(post_content=request_body["post_content"], date=request_body["date"], photo=request_body["photo"], user_id=request_body["user_id"])
     db.session.add(post)
     db.session.commit()
     return jsonify(request_body), 200    #tendremos que decidir si hacemos un Post de viajes y otro para Experiencias. En tal caso, se deberán crear las rutas.

@@ -2,25 +2,20 @@ import React from "react";
 import "./userProfile.css";
 import PropTypes from "prop-types";
 import UserPosts from "../../component/userPosts/UserPosts.jsx";
-
-import { Users, PostsOfUsers } from "../../dummyData";
+import fotoPerfil from "../../../img/fotoPerfilPrueba.jpg";
 
 const UserProfile = () => {
 	return (
 		<div className="row py-5 px-4">
-			<div className="col-md-5 mx-auto">
+			<div className="col-md-11 mx-auto">
 				<div className="bg-white shadow rounded overflow-hidden">
 					<div className="px-4 pt-0 pb-4 cover">
 						<div className="media align-items-end profile-head">
 							<div className="profile mr-3">
-								<img
-									src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
-									alt="..."
-									width="130"
-									className="rounded mb-2 img-thumbnail"
-								/>
-								<a href="#" className="btn btn-outline-dark btn-sm btn-block" />
-								Edit profile
+								<img src={fotoPerfil} className="ProfileImg" />
+								<button type="button" className="btn btn-outline-secondary h-1">
+									Edit profile
+								</button>
 							</div>
 							<div className="media-body mb-5 text-white">
 								<h4 className="mt-0 mb-0">Mark Williams</h4>
@@ -49,9 +44,7 @@ const UserProfile = () => {
 							</a>
 						</div>
 						<div className="row">
-							{PostsOfUsers.map(e => (
-								<UserPosts key={e.id} postUsers={e} />
-							))}
+							<UserPosts />
 						</div>
 					</div>
 				</div>

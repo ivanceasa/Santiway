@@ -5,7 +5,7 @@ import fotoPerfil2 from "../../../img/photoperfil2.jpg";
 import fotoPerfil3 from "../../../img/photoPerfil.jpg";
 import fotocamino1 from "../../../img/fotocamino1.jpg";
 import PropTypes from "prop-types";
-import { Users, PostsOfUsers } from "../../dummyData";
+// import { Users, PostsOfUsers } from "../../dummyData";
 // import { Posts } from "../../dummyData";
 
 const UserPosts = ({ postUsers }) => {
@@ -20,18 +20,17 @@ const UserPosts = ({ postUsers }) => {
 					alt=""
 				/>
 				<span className="postUsername">
-					<strong>{Users.filter(e => e.id === postUsers.user_id)[0].username}</strong>
+					<strong>Peregrino1</strong>
 				</span>
-				<span className="postDate">{postUsers.date}</span>
+				<span className="postDate">Hace 5 minutos</span>
 				<div className="icono1">
 					<i className="fas fa-ellipsis-v fa-2x" />
 				</div>
 			</div>
 			<div className="texto">
-				<p>{postUsers.post_content}</p>
+				<p>First Post</p>
 			</div>
 			<div className="bodyImage">
-				{/* <img src={postUsers.photo} /> */}
 				<img src={fotocamino1} />
 			</div>
 		</div>
