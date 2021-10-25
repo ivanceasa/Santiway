@@ -50,6 +50,7 @@ def signUp():
         # name=json.get('name'),
         # surname=json.get('surname'),
         username=json.get('username'),
+        profile_picture=json.get('profile_picture'),
         # age=json.get('age'),
         # country=json.get('country'),
         # city=json.get('city'),
@@ -97,6 +98,8 @@ def update_profile(id):
         raise APIException("User not found", status_code=404)
     if "username" in request_body:
         user.username = request_body["username"]
+    if "profile_picture" in request_body:
+        user.profile_picture = request_body["profile_picture"]
     if "password" in request_body:
         user.password = request_body["password"]
     
@@ -250,11 +253,11 @@ def update_post(id):
 @api.route('/profile/post', methods=['POST'])
 def create_post():
     request_body = request.get_json()
-    post = Post(post_content=request_body["post_content"], date=request_body["date"], photo=request_body["photo"])
+    post = Post(post_content=request_body["post_content"], date=request_body["date"], photo=request_body["photo"], user_id=request_body["user_id"])
     db.session.add(post)
     db.session.commit()
-    return jsonify(request_body), 200    #tendremos que decidir si hacemos un Post de viajes y otro para Experiencias. En tal caso, se deberán crear las rutas.
-
+    return jsonify(request_body), 200    
+    
 @api.route('/comments',  methods=["GET"])
 def get_all_comments():
     all_comments = Comment.query.all()
