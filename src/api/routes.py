@@ -282,7 +282,7 @@ def create_booking():
     year = json.get('year')
     month = json.get('month')
     day = json.get('day')
-    hostel_id = json.get('hostel_id')
+    hostel_id = json.get('hostelId')
    
 
     #hostel = Hostel.query.get(1)

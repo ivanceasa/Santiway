@@ -19,8 +19,8 @@ const Booking = () => {
 		setDay(dateSplitted[2]);
 	}
 
-	async function createBooking() {
-		let hostel = store.hostels;
+	async function createBooking(id) {
+		console.log(id);
 		const response = await fetch(`${process.env.BACKEND_URL}/api/create-booking`, {
 			method: "POST",
 			headers: {
@@ -30,7 +30,7 @@ const Booking = () => {
 				year: year,
 				month: month,
 				day: day,
-				hostel_id: hostel.id
+				hostelId: id
 			})
 		});
 	}
@@ -39,11 +39,12 @@ const Booking = () => {
 		<>
 			<div className=" text-center mt-5">
 				<input type="date" onChange={setDate} className="p-1 m-3" />
-				<Link to="/confirmation">
+				{/*<Link to="/confirmation">
 					<button onClick={createBooking} className="btn btn-warning">
 						Realizar reserva
 					</button>
 				</Link>
+	*/}
 			</div>
 
 			<div className="text-center m-4">
@@ -56,9 +57,18 @@ const Booking = () => {
 										<h1>{item.name}</h1>
 										<h1>({item.city})</h1>
 									</div>
-									<div className>
+									<div className="mb-4">
 										<img src={item.photo_hostel} />
 									</div>
+									<Link to="/confirmation">
+										<button
+											onClick={() => {
+												createBooking(item.id);
+											}}
+											className="btn btn-warning">
+											Realizar reserva
+										</button>
+									</Link>
 								</div>
 							</div>
 						);
