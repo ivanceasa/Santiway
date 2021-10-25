@@ -1,11 +1,13 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { Navbar, Nav, Button } from "react-bootstrap";
+
 import shell from "../../img/shell.jpg";
 
 const Navbar1 = () => {
 	const { store, actions } = useContext(Context);
+	const history = useHistory();
 	return (
 		<div>
 			<Navbar /*bg="dark"*/ variant="dark" style={{ background: " #42b72a" }}>
@@ -44,7 +46,12 @@ const Navbar1 = () => {
 							<Button variant="warning">Login/Sign up</Button>
 						</Link>
 					) : (
-						<Button onClick={() => actions.logout()} variant="warning">
+						<Button
+							onClick={() => {
+								actions.logout();
+								history.push("/");
+							}}
+							variant="warning">
 							Log out
 						</Button>
 					)}
