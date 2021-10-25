@@ -54,7 +54,6 @@ const Login = () => {
 								<button type="submit" className="loginButton" onClick={handleClick}>
 									Log In
 								</button>
-								<span className="loginForgot">Forgot Password?</span>
 								<Link to="/register">
 									<button className="loginRegisterButton">Create a New Account</button>
 								</Link>
