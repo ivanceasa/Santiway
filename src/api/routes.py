@@ -260,7 +260,7 @@ def create_post():
     json = request.get_json()
 
     new_post_text = json.get('post')
-    photo = json.get('photo')
+    photo = json.get('file')
     
     post = Post(
         post_content=new_post_text, 
