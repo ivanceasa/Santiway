@@ -257,15 +257,19 @@ def update_post(id):
 
 @api.route('/profile/post', methods=['POST'])
 def create_post():
-    request_body = request.get_json()
+    json = request.get_json()
+
+    new_post_text = json.get('post')
+    photo = json.get('photo')
+    
     post = Post(
-        post_content=request_body["post_content"], 
-        created_at=request_body["created_at"], 
-        photo=request_body["photo"]
+        post_content=new_post_text, 
+        created_at=datetime.date(year=2021, month=11, day=1), 
+        photo=photo
     )
     db.session.add(post)
     db.session.commit()
-    return jsonify(request_body), 200    
+    return jsonify(post.serialize()), 200    
 
 
 @api.route('/comments',  methods=["GET"])

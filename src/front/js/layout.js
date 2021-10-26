@@ -6,7 +6,7 @@ import { Home } from "./pages/home";
 import Albergues from "./pages/albergues";
 import Rutas from "./pages/rutas";
 import Consejos from "./pages/consejos";
-import Profile from "./pages/profile/profile.jsx";
+import MyProfile from "./pages/myprofile";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
 import Posts from "./pages/posts/posts";
@@ -56,8 +56,8 @@ const Layout = () => {
 						<Route exact path="/rutas/:detailsId">
 							<RutasDetails />
 						</Route>
-						<Route exact path="/profile">
-							<Profile />
+						<Route exact path="/myprofile">
+							<MyProfile />
 						</Route>
 						<Route exact path="/consejos">
 							<Consejos />
