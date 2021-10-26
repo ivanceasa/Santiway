@@ -6,7 +6,7 @@ import { Home } from "./pages/home";
 import Albergues from "./pages/albergues";
 import Rutas from "./pages/rutas";
 import Consejos from "./pages/consejos";
-import Profile from "./pages/profile";
+import Profile from "./pages/profile/profile.jsx";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
 import Posts from "./pages/posts/posts";

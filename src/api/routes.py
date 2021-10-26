@@ -50,6 +50,7 @@ def signUp():
         # name=json.get('name'),
         # surname=json.get('surname'),
         username=json.get('username'),
+        profile_picture=json.get('profile_picture'),
         # age=json.get('age'),
         # country=json.get('country'),
         # city=json.get('city'),
@@ -97,6 +98,8 @@ def update_profile(id):
         raise APIException("User not found", status_code=404)
     if "username" in request_body:
         user.username = request_body["username"]
+    if "profile_picture" in request_body:
+        user.profile_picture = request_body["profile_picture"]
     if "password" in request_body:
         user.password = request_body["password"]
     
@@ -264,6 +267,7 @@ def create_post():
     db.session.commit()
     return jsonify(request_body), 200    
 
+
 @api.route('/comments',  methods=["GET"])
 def get_all_comments():
     all_comments = Comment.query.all()
@@ -294,7 +298,7 @@ def create_booking():
     year = json.get('year')
     month = json.get('month')
     day = json.get('day')
-    hostel_id = json.get('hostel_id')
+    hostel_id = json.get('hostelId')
    
 
     #hostel = Hostel.query.get(1)
