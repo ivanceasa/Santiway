@@ -133,19 +133,19 @@ class Stage(db.Model):
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     post_content = db.Column(db.String(1000), unique=False, nullable=True)
-    date = db.Column(db.String(120), unique=False, nullable=False) 
+    created_at = db.Column(db.Date, unique=False, nullable=True) 
     photo = db.Column(db.String(120), unique=False, nullable=True)
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=True) 
     comments_post = db.relationship("Comment", backref="post", lazy=True)
                       
     def __repr__(self):
-        return '<Post %r>' % self.name
+        return '<Post %r>' % self.id
 
     def serialize(self):
         return {
             "id": self.id,
             "post_content": self.post_content,
-            "date": self.date,
+            "created_at": self.created_at,
             "photo": self.photo
         }
 
