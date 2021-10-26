@@ -215,7 +215,12 @@ def single_stage(id):
 @api.route('/stage', methods=['POST'])
 def create_stage():
     request_body = request.get_json()
-    stage = Stage(name=request_body["name"], length=request_body["length"], difficulty=request_body["difficulty"], photo=request_body["photo"])
+    stage = Stage(
+        name=request_body["name"], 
+        length=request_body["length"], 
+        difficulty=request_body["difficulty"], 
+        photo=request_body["photo"]
+    )
     db.session.add(stage)
     db.session.commit()
     return jsonify(request_body), 200
@@ -253,11 +258,16 @@ def update_post(id):
 @api.route('/profile/post', methods=['POST'])
 def create_post():
     request_body = request.get_json()
-    post = Post(post_content=request_body["post_content"], date=request_body["date"], photo=request_body["photo"], user_id=request_body["user_id"])
+    post = Post(
+        post_content=request_body["post_content"], 
+        created_at=request_body["created_at"], 
+        photo=request_body["photo"]
+    )
     db.session.add(post)
     db.session.commit()
     return jsonify(request_body), 200    
-    
+
+
 @api.route('/comments',  methods=["GET"])
 def get_all_comments():
     all_comments = Comment.query.all()
@@ -274,7 +284,10 @@ def single_comment(id):
 @api.route('/comment', methods=['POST'])
 def create_comment():
     request_body = request.get_json()
-    comment = Comment(comment=request_body["comment"], date=request_body["date"])
+    comment = Comment(
+        comment=request_body["comment"], 
+        date=request_body["date"]
+    )
     db.session.add(comment)
     db.session.commit()
     return jsonify(request_body), 200   
