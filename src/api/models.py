@@ -9,7 +9,6 @@ class User(db.Model):
     # name = db.Column(db.String(120), unique=False, nullable=False)
     # surname = db.Column(db.String(120), unique=False, nullable=False)
     username = db.Column(db.String(120), unique=True, nullable=False)
-    profile_picture = db.Column(db.String(120), unique=False, nullable=True)
     # age = db.Column(db.Integer, unique=False, nullable=False)
     # country = db.Column(db.String(120), unique=False, nullable=False)
     # city = db.Column(db.String(120), unique=False, nullable=False)
@@ -29,8 +28,7 @@ class User(db.Model):
         return {
             "id": self.id,
             "username": self.username,
-            "email": self.email,
-            "profile_picture": self.profile_picture,
+            "email": self.email            
             # do not serialize the password, its a security breach
         }
 
