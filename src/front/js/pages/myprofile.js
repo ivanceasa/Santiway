@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { useParams } from "react-router-dom";
+import fotoPerfil from "../../img/fotoPerfilPrueba.jpg";
 
 const MyProfile = () => {
 	const { store, actions } = useContext(Context);
@@ -33,6 +34,7 @@ const MyProfile = () => {
 	}
 
 	return (
+		/*
 		<div className="text-center mt-5">
 			<button onClick={getPosts}>Recibir posts</button>
 			<div className="posts">
@@ -47,6 +49,42 @@ const MyProfile = () => {
 				<button onClick={sendPost}>Enviar</button>
 			</div>
 		</div>
+		*/
+
+		<>
+			<div className="share mt-4">
+				<div className="shareWrapper">
+					<div className="shareTop">
+						<img className="shareProfileImg" src={fotoPerfil} alt="" />
+
+						<input
+							placeholder="Escribe algo"
+							className="shareInput"
+							onChange={event => setNewPost(event.target.value)}
+						/>
+					</div>
+					<hr className="shareHr" />
+					<div className="shareBottom">
+						<div className="shareOptions">
+							<div className="shareOption">
+								<i className="fas fa-camera " />
+								<span className="shareOptionText">Añade una foto</span>
+							</div>
+						</div>
+						<button className="shareButton" onClick={sendPost}>
+							Compartir
+						</button>
+					</div>
+				</div>
+			</div>
+			<div className="posts text-center mt-5">
+				{posts.map(post => (
+					<div key={post.id}>
+						{post.created_at}-{post.post_content}
+					</div>
+				))}
+			</div>
+		</>
 	);
 };
 
@@ -57,7 +95,7 @@ export default MyProfile;
 		<div className="shareTop">
 			<img className="shareProfileImg" src={fotoPerfil} alt="" />
 
-			<input placeholder="Escribe algo" className="shareInput" />
+			<input placeholder="Escribe algo" className="shareInput" onChange={event => setNewPost(event.target.value)} />
 		</div>
 		<hr className="shareHr" />
 		<div className="shareBottom">
@@ -67,8 +105,15 @@ export default MyProfile;
 					<span className="shareOptionText">Añade una foto</span>
 				</div>
 			</div>
-			<button className="shareButton">Compartir</button>
+			<button className="shareButton onClick={sendPost}">Compartir</button>
 		</div>
 	</div>
 </div>
+<div className="posts">
+				{posts.map(post => (
+					<div key={post.id}>
+						{post.created_at}-{post.post_content}
+					</div>
+				))}
+			</div>
 */
