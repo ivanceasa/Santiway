@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../../styles/consejos.css";
+import "../../styles/consejos.scss";
 import adviceImg1 from "../../img/imgAdvice/alice-donovan-rouse-199230-unsplash-1296x1024.jpg";
 import adviceImg2 from "../../img/imgAdvice/calzado-ideal-camino-santiago.jpg";
 import adviceImg3 from "../../img/imgAdvice/como-preparar-camino-santiago-1024x819.jpg";
@@ -26,7 +26,7 @@ const Consejos = () => {
 						</div>
 					</div>
 					<div className="card-container">
-						<div className="card">
+						<div className="grid">
 							<img className="photoAdvice" src={adviceImg2} />
 							<div className="grid__body">
 								<h2 className="grid__title">Title 2</h2>
@@ -37,7 +37,7 @@ const Consejos = () => {
 						</div>
 					</div>
 					<div className="card-container">
-						<div className="card">
+						<div className="grid">
 							<img className="photoAdvice" src={adviceImg3} />
 							<div className="grid__body">
 								<h2 className="grid__title">Title 3</h2>
@@ -48,7 +48,7 @@ const Consejos = () => {
 						</div>
 					</div>
 					<div className="card-container">
-						<div className="card">
+						<div className="grid">
 							<img className="photoAdvice" src={adviceImg4} />
 							<div className="grid__body">
 								<h2 className="grid__title">Title4</h2>
