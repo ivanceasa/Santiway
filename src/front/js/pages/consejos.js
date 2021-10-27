@@ -26,7 +26,7 @@ const Consejos = () => {
 						</div>
 					</div>
 					<div className="card-container">
-						<div className="card">
+						<div className="grid">
 							<img className="photoAdvice" src={adviceImg2} />
 							<div className="grid__body">
 								<h2 className="grid__title">Title 2</h2>
@@ -37,7 +37,7 @@ const Consejos = () => {
 						</div>
 					</div>
 					<div className="card-container">
-						<div className="card">
+						<div className="grid">
 							<img className="photoAdvice" src={adviceImg3} />
 							<div className="grid__body">
 								<h2 className="grid__title">Title 3</h2>
@@ -48,7 +48,7 @@ const Consejos = () => {
 						</div>
 					</div>
 					<div className="card-container">
-						<div className="card">
+						<div className="grid">
 							<img className="photoAdvice" src={adviceImg4} />
 							<div className="grid__body">
 								<h2 className="grid__title">Title4</h2>
