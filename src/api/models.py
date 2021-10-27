@@ -151,6 +151,10 @@ class Post(db.Model):
             "user_id": self.user_id
         }
 
+    def save(self):
+        db.session.add(self)
+        db.session.commit()
+
 
 class Comment(db.Model):
     id = db.Column(db.Integer, primary_key=True)

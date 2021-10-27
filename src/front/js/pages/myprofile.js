@@ -18,13 +18,13 @@ const MyProfile = () => {
 	*/
 
 	function save() {
-		const data = newFormData();
+		const data = new FormData();
 		const fileName = Date.now() + file.name;
 		data.append("name", fileName);
 		data.append("file", file);
-		newPost.img = fileName;
+		//newPost.img = fileName;
 
-		fetch(`${process.env.BACKEND_URL}/api/upload-file/post`, {
+		fetch(`${process.env.BACKEND_URL}/api/upload-file`, {
 			method: "POST",
 			body: data
 		});
