@@ -4,7 +4,6 @@ import { Context } from "../store/appContext";
 import { useParams } from "react-router-dom";
 import fotoPerfil from "../../img/fotoPerfilPrueba.jpg";
 
-
 const MyProfile = () => {
 	const { store, actions } = useContext(Context);
 	const [posts, setPosts] = useState([]);
@@ -17,6 +16,19 @@ const MyProfile = () => {
 	data.append("file", file);
 	newPost.img = fileName;
 	*/
+
+	function save() {
+		const data = newFormData();
+		const fileName = Date.now() + file.name;
+		data.append("name", fileName);
+		data.append("file", file);
+		newPost.img = fileName;
+
+		fetch(`${process.env.BACKEND_URL}/api/upload-file/post`, {
+			method: "POST",
+			body: data
+		});
+	}
 
 	async function sendPost() {
 		const response = await fetch(`${process.env.BACKEND_URL}/api/profile/post`, {
@@ -43,7 +55,6 @@ const MyProfile = () => {
 	}
 
 	return (
-
 		/*
 
 		<div className="text-center mt-5">
@@ -107,6 +118,7 @@ const MyProfile = () => {
 									accept=".png,.jpeg,.jpg"
 									onChange={e => setFile(e.target.files[0])}
 								/>
+								<input type="button" onClick={save} value="save" />
 							</label>
 						</div>
 						<button className="shareButton" onClick={sendPost}>
@@ -123,7 +135,6 @@ const MyProfile = () => {
 				))}
 			</div>
 		</>
-
 	);
 };
 
@@ -159,4 +170,3 @@ export default MyProfile;
 				))}
 			</div>
 */
-

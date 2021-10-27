@@ -321,6 +321,14 @@ def create_booking():
     booking.save()
     return jsonify(booking.serialize()), 200
 
+@api.route('/upload-file', methods=['POST'])  
+def upload_file():
+    file = request.file
+    print(file)
+    #print(file.get('file'))
+
+    return jsonify(''), 200
+
 
 
 
