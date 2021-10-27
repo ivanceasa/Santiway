@@ -1,4 +1,4 @@
-body{
+/*body{
     margin: 0;
     margin-top: -40px;
     padding: 0;
@@ -45,13 +45,14 @@ body{
   }
 
 @media screen and (max-width: 958px){
-    .card-columns{
+    .grid-columns{
         column-count:2;
     }
 }
 
 @media screen and (max-width: 420px){
-    .card-columns{
+    .grid-columns{
         column-count:1;
     }
 }
+*/

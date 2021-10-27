@@ -9,6 +9,13 @@ const MyProfile = () => {
 	const [posts, setPosts] = useState([]);
 	const [newPost, setNewPost] = useState("");
 	const [file, setFile] = useState(null);
+	/*
+	const data = new FormData();
+	const fileName = Date.now() + file.name;
+	data.append("name", fileName);
+	data.append("file", file);
+	newPost.img = fileName;
+	*/
 
 	async function sendPost() {
 		const response = await fetch(`${process.env.BACKEND_URL}/api/profile/post`, {
