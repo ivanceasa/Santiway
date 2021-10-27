@@ -53,6 +53,9 @@ const MyProfile = () => {
 		*/
 
 		<>
+			<div className="getPosts text-center mt-5">
+				<button onClick={getPosts}>Ver todos los posts</button>
+			</div>
 			<div className="share mt-4">
 				<div className="shareWrapper">
 					<div className="shareTop">
@@ -107,9 +110,6 @@ const MyProfile = () => {
 						{post.created_at}-{post.post_content}
 					</div>
 				))}
-			</div>
-			<div className="getPosts text-center mt-5">
-				<button onClick={getPosts}>Ver posts</button>
 			</div>
 		</>
 	);
