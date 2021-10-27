@@ -9,6 +9,11 @@ from flask_jwt_extended import jwt_required
 from flask_jwt_extended import JWTManager
 #modulo para calcular el tiempo
 import datetime
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
+import os
 
 #añadir columna imágenes a user, crear tabla fotos
 
@@ -323,8 +328,10 @@ def create_booking():
 
 @api.route('/upload-file', methods=['POST'])  
 def upload_file():
-    file = request.file
-    print(file)
+    files = request.files
+    print(files)
+    for file in files:
+        print(file)
     #print(file.get('file'))
 
     return jsonify(''), 200
