@@ -265,7 +265,9 @@ def create_post():
     json = request.get_json()
 
     new_post_text = json.get('post')
-    photo = json.get('file')
+
+    photo = json.get('photo')
+    
     
     post = Post(
         post_content=new_post_text, 
@@ -328,51 +330,31 @@ def create_booking():
 
 @api.route('/upload-file', methods=['POST'])  
 def upload_file():
-    post = Post.query.get(1)
+    #post = Post.query.get(1)
     cloudinary.config( 
         cloud_name=os.getenv('CLOUD_NAME'), 
         api_key=os.getenv('API_KEY'), 
         api_secret=os.getenv('API_SECRET')
     )
-    post_content = request.form.get('post_content')
-    created_at = request.form.get('created_at')
+    #post_content = request.form.get('post_content')
+    #created_at = request.form.get('created_at')
 
-    photo = None
+    #photo = None
     file_to_upload = request.files.get('file')
     if file_to_upload:
         upload_result = cloudinary.uploader.upload(file_to_upload)
         if upload_result:
-            post.photo = upload_result.get('secure_url')
+            photo = upload_result.get('secure_url')
+            
 
-    post = Post(
-        post_content=post_content,
-        created_at=created_at, 
-        photo=photo
-    )
-    post.save()
-        #print(upload_result)
-        #return jsonify(upload_result)
-    
-    #files = request.files
-    #print(files)
-    #for file_key in files:
-    #    file_to_upload = files.get(file_key)
-    #    print('%s file_to_upload', file_to_upload)
-    #    if file:
-    #        cloudinary.uploader.upload(file_to_upload)
-    #        print(upload_result)
-    #        return jsonify(upload_result)
+    #post = Post(
+    #    post_content=post_content,
+    #    created_at=created_at, 
+    #    photo=photo
+    #)
+    #post.save()
 
-            #cloudinary.uploader.upload(file,
-            #    folder ="/",
-            #    public_id = "profile",
-            #    overwrite = True,
-            #    resource_type = "image"       
-            #)
-        #print(file)
-    #print(file.get('file'))
-
-    return jsonify(''), 200
+    return jsonify(photo), 200
 
 
 

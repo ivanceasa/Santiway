@@ -18,11 +18,10 @@ const MyProfile = () => {
 	*/
 
 	function save() {
-		const data = new FormData();
-		const fileName = Date.now() + file.name;
-		data.append("name", fileName);
+		var data = new FormData();
+		//var fileName = Date.now() + file.name;
+		//data.append("name", fileName);
 		data.append("file", file);
-		//newPost.img = fileName;
 
 		fetch(`${process.env.BACKEND_URL}/api/upload-file`, {
 			method: "POST",
@@ -131,6 +130,7 @@ const MyProfile = () => {
 				{posts.map(post => (
 					<div key={post.id}>
 						{post.created_at}-{post.post_content}
+						<img src={post.photo} />
 					</div>
 				))}
 			</div>
