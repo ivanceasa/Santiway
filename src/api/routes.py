@@ -372,7 +372,7 @@ def upload_file(id):
         api_key=os.getenv('API_KEY'), 
         api_secret=os.getenv('API_SECRET')
     )
-
+    photo = None
     file_to_upload = request.files.get('file')
     if file_to_upload:
         upload_result = cloudinary.uploader.upload(file_to_upload)
