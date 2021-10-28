@@ -17,13 +17,13 @@ const MyProfile = () => {
 	newPost.img = fileName;
 	*/
 
-	function save() {
+	function save(id) {
 		var data = new FormData();
 		//var fileName = Date.now() + file.name;
 		//data.append("name", fileName);
 		data.append("file", file);
 
-		fetch(`${process.env.BACKEND_URL}/api/upload-file`, {
+		fetch(`${process.env.BACKEND_URL}/api/post/${id}/upload-file`, {
 			method: "POST",
 			body: data
 		});
@@ -41,6 +41,8 @@ const MyProfile = () => {
 		});
 		const responseJson = await response.json();
 		setPosts([...posts, responseJson]);
+		let post_id = responseJson.id;
+		save(post_id);
 	}
 
 	async function getPosts() {
@@ -117,7 +119,14 @@ const MyProfile = () => {
 									accept=".png,.jpeg,.jpg"
 									onChange={e => setFile(e.target.files[0])}
 								/>
-								<input type="button" onClick={save} value="save" />
+								{/*
+								<input
+									type="button"
+									onClick={() => {
+										save(id);
+									}}
+									value="save"
+								/>*/}
 							</label>
 						</div>
 						<button className="shareButton" onClick={sendPost}>
