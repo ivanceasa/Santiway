@@ -360,7 +360,11 @@ def upload_file():
 """
 @api.route('post/<int:id>/upload-file', methods=['POST'])  
 def upload_file(id):
+    files= request.files
     post = Post.query.get(id)
+
+    post_content = request.form.get('post_content')
+    created_at = request.form.get('created_at')
 
 
     cloudinary.config( 
@@ -369,14 +373,12 @@ def upload_file(id):
         api_secret=os.getenv('API_SECRET')
     )
 
-    post_content = request.form.get('post_content')
-    created_at = request.form.get('created_at')
-
     file_to_upload = request.files.get('file')
     if file_to_upload:
         upload_result = cloudinary.uploader.upload(file_to_upload)
         if upload_result:
-           photo = upload_result.get('secure_url')
+            photo = upload_result.get('secure_url')
+           
 
     post = Post(
         post_content=post_content,
@@ -384,8 +386,13 @@ def upload_file(id):
         photo=photo
     )
     post.save()
+    
 
     return jsonify(post.serialize()), 200
+        
+
+
+   
         
 
 

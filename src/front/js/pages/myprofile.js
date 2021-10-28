@@ -27,6 +27,7 @@ const MyProfile = () => {
 			method: "POST",
 			body: data
 		});
+		console.log(id);
 	}
 
 	async function sendPost() {
