@@ -18,7 +18,7 @@ const MyProfile = () => {
 	*/
 
 	function save(id) {
-		var data = new FormData();
+		const data = new FormData();
 		//var fileName = Date.now() + file.name;
 		//data.append("name", fileName);
 		data.append("file", file);
@@ -30,19 +30,17 @@ const MyProfile = () => {
 	}
 
 	async function sendPost() {
-		const response = await fetch(`${process.env.BACKEND_URL}/api/profile/post`, {
-			headers: {
-				"Content-Type": "application/json"
-			},
+		const data = new FormData();
+		data.append("newPost", newPost);
+		data.append("file", file);
+		const response = await fetch(`${process.env.BACKEND_URL}/api/post`, {
 			method: "POST",
-			body: JSON.stringify({
-				post: newPost
-			})
+			body: data
 		});
 		const responseJson = await response.json();
 		setPosts([...posts, responseJson]);
-		let post_id = responseJson.id;
-		save(post_id);
+		//let post_id = responseJson.id;
+		//save(post_id);
 	}
 
 	async function getPosts() {

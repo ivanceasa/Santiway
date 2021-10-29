@@ -259,7 +259,35 @@ def update_post(id):
     db.session.commit()
   
     return jsonify(request_body), 200
+   
 
+@api.route('/post', methods=['POST'])
+def create_post():
+
+    cloudinary.config(
+        cloud_name= os.getenv('CLOUD_NAME'),
+        api_key= os.getenv('API_KEY'),
+        api_secret= os.getenv('API_SECRET')
+    )
+    
+    new_post_text = request.form.get('newPost')
+    photo = None 
+
+    file_to_upload = request.files.get('file')   
+    if file_to_upload:
+        upload_result = cloudinary.uploader.upload(file_to_upload)
+        if upload_result:
+            photo = upload_result.get('secure_url')
+            post = Post(post_content=new_post_text, photo=photo)
+            post.save()
+    
+            return jsonify(post.serialize()), 200 
+    return jsonify(""), 400
+     
+          
+
+    
+"""
 @api.route('/profile/post', methods=['POST'])
 def create_post():
     json = request.get_json()
@@ -277,7 +305,7 @@ def create_post():
     db.session.add(post)
     db.session.commit()
     return jsonify(post.serialize()), 200    
-
+"""
 
 @api.route('/comments',  methods=["GET"])
 def get_all_comments():
@@ -363,8 +391,8 @@ def upload_file(id):
     files= request.files
     post = Post.query.get(id)
 
-    post_content = request.form.get('post_content')
-    created_at = request.form.get('created_at')
+    #post_content = request.form.get('post_content')
+    #created_at = request.form.get('created_at')
 
 
     cloudinary.config( 
@@ -372,23 +400,22 @@ def upload_file(id):
         api_key=os.getenv('API_KEY'), 
         api_secret=os.getenv('API_SECRET')
     )
-    photo = None
+    
     file_to_upload = request.files.get('file')
     if file_to_upload:
         upload_result = cloudinary.uploader.upload(file_to_upload)
         if upload_result:
+            #post.photo = upload_result.get('secure_url')
             photo = upload_result.get('secure_url')
+            #post.save()
+            #return jsonify(post.photo), 200
+            return jsonify(photo), 200
+            
+
+
            
 
-    post = Post(
-        post_content=post_content,
-        created_at=created_at, 
-        photo=photo
-    )
-    post.save()
-    
-
-    return jsonify(post.serialize()), 200
+  
         
 
 
