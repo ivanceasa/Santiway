@@ -3,37 +3,16 @@ import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { useParams } from "react-router-dom";
 import fotoPerfil from "../../img/fotoPerfilPrueba.jpg";
-//import CardPost from "../component/CardPost";
 
 const MyProfile = () => {
 	const { store, actions } = useContext(Context);
 	const [posts, setPosts] = useState([]);
 	const [newPost, setNewPost] = useState("");
 	const [file, setFile] = useState(null);
-	/*
-	const data = new FormData();
-	const fileName = Date.now() + file.name;
-	data.append("name", fileName);
-	data.append("file", file);
-	newPost.img = fileName;
-	*/
 
 	useEffect(() => {
 		getPosts();
 	}, []);
-	/*
-	function save(id) {
-		const data = new FormData();
-		//var fileName = Date.now() + file.name;
-		//data.append("name", fileName);
-		data.append("file", file);
-
-		fetch(`${process.env.BACKEND_URL}/api/post/${id}/upload-file`, {
-			method: "POST",
-			body: data
-		});
-	}
-*/
 
 	async function sendPost() {
 		const data = new FormData();
@@ -47,8 +26,6 @@ const MyProfile = () => {
 		});
 		const responseJson = await response.json();
 		setPosts([...posts, responseJson]);
-		//let post_id = responseJson.id;
-		//save(post_id);
 	}
 
 	async function getPosts() {
@@ -67,7 +44,7 @@ const MyProfile = () => {
 			<div className="getPosts text-center mt-5">
 				<button onClick={getPosts}>Ver todos los posts</button>
 			</div>
-	*/}
+	      */}
 			<div className="share mt-4">
 				<div className="shareWrapper">
 					<div className="shareTop">
@@ -112,14 +89,6 @@ const MyProfile = () => {
 									accept=".png,.jpeg,.jpg"
 									onChange={e => setFile(e.target.files[0])}
 								/>
-								{/*
-								<input
-									type="button"
-									onClick={() => {
-										save(id);
-									}}
-									value="save"
-								/>*/}
 							</label>
 						</div>
 						<button className="shareButton" onClick={sendPost}>
@@ -130,12 +99,6 @@ const MyProfile = () => {
 			</div>
 			<div className="posts mt-5">
 				{posts.map(post => (
-					/*
-					<div key={post.id}>
-						{post.created_at}-{post.post_content}
-						<img src={post.photo} />
-					</div>
-					*/
 					<div key={post.id} className="userpost">
 						<div className="header pl-auto">
 							<img
