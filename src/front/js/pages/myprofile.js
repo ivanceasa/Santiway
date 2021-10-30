@@ -21,7 +21,7 @@ const MyProfile = () => {
 	useEffect(() => {
 		getPosts();
 	}, []);
-
+	/*
 	function save(id) {
 		const data = new FormData();
 		//var fileName = Date.now() + file.name;
@@ -33,6 +33,7 @@ const MyProfile = () => {
 			body: data
 		});
 	}
+*/
 
 	async function sendPost() {
 		const data = new FormData();
@@ -78,8 +79,9 @@ const MyProfile = () => {
 							onChange={event => setNewPost(event.target.value)}
 						/>
 					</div>
-					{/*
+
 					<hr className="shareHr" />
+					{/*
 					{file && (
 						<div className="shareImgContainer">
 							<img className="shareImg" src={URL.createObjectURL(file)} alt="" />
@@ -102,7 +104,7 @@ const MyProfile = () => {
 						<div className="shareOptions">
 							<label htmlFor="file" className="shareOption">
 								<i className="fas fa-camera " />
-								<span className="shareOptionText">Añade una foto</span>
+								<span className="shareOptionText ml-1">Añade una foto</span>
 								<input
 									style={{ display: "none" }}
 									type="file"
