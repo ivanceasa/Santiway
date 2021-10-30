@@ -1,4 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime
 
 db = SQLAlchemy()
 
@@ -134,7 +135,7 @@ class Stage(db.Model):
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     post_content = db.Column(db.String(1000), unique=False, nullable=True)
-    created_at = db.Column(db.Date, unique=False, nullable=True) 
+    created_at = db.Column(db.DateTime, default=datetime.utcnow) 
     photo = db.Column(db.String(120), unique=False, nullable=True)
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=True) 
     comments_post = db.relationship("Comment", backref="post", lazy=True)
@@ -146,7 +147,7 @@ class Post(db.Model):
         return {
             "id": self.id,
             "post_content": self.post_content,
-            "created_at": self.created_at,
+            "created_at": "{0}/{1}/{2}".format(self.created_at.day,self.created_at.month,self.created_at.year),
             "photo": self.photo,
             "user_id": self.user_id
         }

@@ -271,6 +271,8 @@ def create_post():
     )
     
     new_post_text = request.form.get('newPost')
+    date = datetime.datetime.utcnow()
+    #created_at = request.form.get('date')
     photo = None 
 
     file_to_upload = request.files.get('file')   
@@ -278,34 +280,12 @@ def create_post():
         upload_result = cloudinary.uploader.upload(file_to_upload)
         if upload_result:
             photo = upload_result.get('secure_url')
-            post = Post(post_content=new_post_text, photo=photo)
+            post = Post(post_content=new_post_text, created_at=date, photo=photo)
             post.save()
     
             return jsonify(post.serialize()), 200 
     return jsonify(""), 400
      
-          
-
-    
-"""
-@api.route('/profile/post', methods=['POST'])
-def create_post():
-    json = request.get_json()
-
-    new_post_text = json.get('post')
-
-    photo = json.get('photo')
-    
-    
-    post = Post(
-        post_content=new_post_text, 
-        created_at=datetime.date(year=2021, month=11, day=1), 
-        photo=photo
-    )
-    db.session.add(post)
-    db.session.commit()
-    return jsonify(post.serialize()), 200    
-"""
 
 @api.route('/comments',  methods=["GET"])
 def get_all_comments():
@@ -355,37 +335,7 @@ def create_booking():
     )
     booking.save()
     return jsonify(booking.serialize()), 200
-"""
-@api.route('/upload-file', methods=['POST'])  
-def upload_file():
-    files= request.files
-    #post = Post.query.get(1)
-    cloudinary.config( 
-        cloud_name=os.getenv('CLOUD_NAME'), 
-        api_key=os.getenv('API_KEY'), 
-        api_secret=os.getenv('API_SECRET')
-    )
-    #post_content = request.form.get('post_content')
-    #created_at = request.form.get('created_at')
 
-    #photo = None
-    file_to_upload = request.files.get('file')
-    if file_to_upload:
-        upload_result = cloudinary.uploader.upload(file_to_upload)
-        return jsonify({'photo': upload_result['secure_url']}), 200
-        #if upload_result:
-           # photo = upload_result.get('secure_url')
-            
-
-    #post = Post(
-    #    post_content=post_content,
-    #    created_at=created_at, 
-    #    photo=photo
-    #)
-    #post.save()
-
-    #return jsonify(photo), 200
-"""
 @api.route('post/<int:id>/upload-file', methods=['POST'])  
 def upload_file(id):
     files= request.files
