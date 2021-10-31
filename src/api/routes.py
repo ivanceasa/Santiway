@@ -7,10 +7,12 @@ from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
 from flask_jwt_extended import jwt_required
 from flask_jwt_extended import JWTManager
-#modulo para calcular el tiempo
 import datetime
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
-#añadir columna imágenes a user, crear tabla fotos
+import os
 
 
 api = Blueprint('api', __name__)
@@ -36,7 +38,8 @@ def login():
         # the user was not found on the database
         return jsonify({"msg": "Bad email or password"}), 401    
     # create a new token with the user id inside
-    access_token = create_access_token(identity=email)
+    #access_token = create_access_token(identity=email)
+    access_token = create_access_token(user.id)
     return jsonify(access_token=access_token) 
 
 @api.route('/register', methods=["POST"])
@@ -50,7 +53,7 @@ def signUp():
         # name=json.get('name'),
         # surname=json.get('surname'),
         username=json.get('username'),
-        profile_picture=json.get('profile_picture'),
+        #profile_picture=json.get('profile_picture'),
         # age=json.get('age'),
         # country=json.get('country'),
         # city=json.get('city'),
@@ -254,23 +257,45 @@ def update_post(id):
     db.session.commit()
   
     return jsonify(request_body), 200
+   
 
-@api.route('/profile/post', methods=['POST'])
+@api.route('/post', methods=['POST'])
+@jwt_required()
 def create_post():
-    json = request.get_json()
-
-    new_post_text = json.get('post')
-    photo = json.get('file')
+    #token = get_jwt_identity()
+    current_user_id = get_jwt_identity()
+  
     
-    post = Post(
-        post_content=new_post_text, 
-        created_at=datetime.date(year=2021, month=11, day=1), 
-        photo=photo
+    #user = User.query.get(current_user_id)
+    
+    #access_token = create_access_token(user.id)
+    #current_user_id = user.username
+    
+    
+    cloudinary.config(
+        cloud_name= os.getenv('CLOUD_NAME'),
+        api_key= os.getenv('API_KEY'),
+        api_secret= os.getenv('API_SECRET')
     )
-    db.session.add(post)
-    db.session.commit()
-    return jsonify(post.serialize()), 200    
-
+    
+    new_post_text = request.form.get('newPost')
+    date = datetime.datetime.utcnow()
+    photo = None 
+    user_id = current_user_id
+    #username = user.username
+   
+      
+    file_to_upload = request.files.get('file')   
+    if file_to_upload:
+        upload_result = cloudinary.uploader.upload(file_to_upload)
+        if upload_result:
+            photo = upload_result.get('secure_url')
+            post = Post(post_content=new_post_text, created_at=date, photo=photo, user_id=user_id)
+            post.save()
+    
+            return jsonify(post.serialize()), 200 
+    return jsonify(""), 400
+     
 
 @api.route('/comments',  methods=["GET"])
 def get_all_comments():
@@ -296,7 +321,8 @@ def create_comment():
     db.session.commit()
     return jsonify(request_body), 200   
 
-@api.route('/create-booking', methods=['POST'])  
+@api.route('/create-booking', methods=['POST'])
+#@jwt_required()  
 def create_booking():
     json = request.get_json()
     year = json.get('year')
@@ -320,12 +346,6 @@ def create_booking():
     )
     booking.save()
     return jsonify(booking.serialize()), 200
-
-
-
-
-
-
 
  
 
