@@ -1,8 +1,7 @@
 import React, { useState, useContext, useEffect, useReducer } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
-import { useParams } from "react-router-dom";
-import fotoPerfil from "../../img/fotoPerfilPrueba.jpg";
+import fotoPerfil from "../../img/profilePhoto.png";
 
 const MyProfile = () => {
 	const { store, actions } = useContext(Context);
@@ -109,20 +108,13 @@ const MyProfile = () => {
 				{posts.map(post => (
 					<div key={post.id} className="userpost">
 						<div className="header pl-auto">
-							<img
-								className="postProfileImg"
-								// src={Users.filter(e => e.id === postUsers.user_id)[0].profile_picture}
-								src={fotoPerfil}
-								alt=""
-							/>
+							<img className="postProfileImg" src={fotoPerfil} alt="" />
 							<span className="postUsername">
-								{/*{Users.filter((u) => u.id === post?.userId)[0].username}*/}
-
-								{/*{store.users.map((user, id) => (
-									<strong key={id} className="m-3">
-										{user.username}
-									</strong>
-								))}*/}
+								{store.users.map(user => {
+									if (user.id === post.user_id) {
+										return <strong>{user.username}</strong>;
+									}
+								})}
 							</span>
 							<span className="postDate">{post.created_at}</span>
 							<div className="icono1">

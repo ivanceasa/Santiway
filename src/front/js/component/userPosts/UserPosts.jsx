@@ -1,7 +1,6 @@
 import React from "react";
 import "./UserPosts.css";
 import fotoPerfil from "../../../img/fotoPerfilPrueba.jpg";
-import fotoPerfil2 from "../../../img/photoperfil2.jpg";
 import fotoPerfil3 from "../../../img/photoPerfil.jpg";
 import fotocamino1 from "../../../img/fotocamino1.jpg";
 import PropTypes from "prop-types";
