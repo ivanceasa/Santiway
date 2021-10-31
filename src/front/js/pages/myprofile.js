@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext, useEffect, useReducer } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { useParams } from "react-router-dom";
@@ -13,14 +13,22 @@ const MyProfile = () => {
 	useEffect(() => {
 		getPosts();
 	}, []);
+	useEffect(() => {
+		actions.getUsers();
+	}, []);
 
-	async function sendPost() {
+	async function sendPost(id) {
 		const data = new FormData();
 		const date = Date.now();
+		const user_id = id;
 		data.append("newPost", newPost);
 		data.append("file", file);
 		data.append("date", date);
+		data.append("user_id", user_id);
 		const response = await fetch(`${process.env.BACKEND_URL}/api/post`, {
+			headers: {
+				Authorization: "Bearer " + store.token
+			},
 			method: "POST",
 			body: data
 		});
@@ -108,7 +116,13 @@ const MyProfile = () => {
 								alt=""
 							/>
 							<span className="postUsername">
-								<strong>Peregrino1</strong>
+								{/*{Users.filter((u) => u.id === post?.userId)[0].username}*/}
+
+								{/*{store.users.map((user, id) => (
+									<strong key={id} className="m-3">
+										{user.username}
+									</strong>
+								))}*/}
 							</span>
 							<span className="postDate">{post.created_at}</span>
 							<div className="icono1">
