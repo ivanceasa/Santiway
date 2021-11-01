@@ -32,13 +32,9 @@ def handle_hello():
 def login():
     email = request.json.get("email", None)
     password = request.json.get("password", None)
-    # Query your database for username and password
     user = User.query.filter_by(email=email, password=password).first()
     if user is None or password == None:
-        # the user was not found on the database
         return jsonify({"msg": "Bad email or password"}), 401    
-    # create a new token with the user id inside
-    #access_token = create_access_token(identity=email)
     access_token = create_access_token(user.id)
     return jsonify(access_token=access_token) 
 
@@ -50,13 +46,7 @@ def signUp():
         return
 
     user = User(
-        # name=json.get('name'),
-        # surname=json.get('surname'),
         username=json.get('username'),
-        #profile_picture=json.get('profile_picture'),
-        # age=json.get('age'),
-        # country=json.get('country'),
-        # city=json.get('city'),
         email=json.get('email'), 
         password=json.get('password'),
         is_active=True
@@ -74,7 +64,6 @@ def signUp():
 @api.route('/profiles', methods=["GET"])
 #@jwt_required()
 def get_all_profiles():
-    #metodo GET para todos los usuarios
     users = User.query.all()
     users = list(map(lambda user: user.serialize(), users))
     print("GET users: ", users )
@@ -84,7 +73,6 @@ def get_all_profiles():
 #@jwt_required()
 def single_profile(id):
    # token = get_jwt_identity()
-    #metodo GET para 1 usuario
     user = User.query.get(id)
     if user is None:
         raise APIException("User not found", status_code=404)
@@ -94,7 +82,6 @@ def single_profile(id):
 @api.route('/profile/<int:id>', methods=["PUT"])
 #@jwt_required()
 def update_profile(id):
-    #metodo PUT para actualizar Username y password
     request_body = request.get_json()
     user = User.query.get(id)
     if user is None:
@@ -113,7 +100,6 @@ def update_profile(id):
 @api.route('/profile/<int:id>', methods=["DELETE"])
 #@jwt_required()
 def delete_profile(id):
-    #metodo DELETE para borrar a un usuario
     user = User.query.get(id)
     if user is None:
         raise APIException("User not found", status_code=404)
@@ -152,7 +138,6 @@ def create_hostel():
 @api.route('/hostel/<int:id>', methods=["DELETE"])
 #@jwt_required()
 def delete_hostel(id):
-    #metodo DELETE para borrar a un usuario
     hostel = Hostel.query.get(id)
     if hostel is None:
         raise APIException("Hostel not found", status_code=404)
@@ -244,7 +229,6 @@ def single_post(id):
 @api.route('/post/<int:id>', methods=["PUT"])
 #@jwt_required()
 def update_post(id):
-    #metodo PUT para actualizar el Post
     request_body = request.get_json()
     post = Post.query.get(id)
     if post is None:
@@ -264,13 +248,6 @@ def update_post(id):
 def create_post():
     #token = get_jwt_identity()
     current_user_id = get_jwt_identity()
-  
-    
-    #user = User.query.get(current_user_id)
-    
-    #access_token = create_access_token(user.id)
-    #current_user_id = user.username
-    
     
     cloudinary.config(
         cloud_name= os.getenv('CLOUD_NAME'),
@@ -281,9 +258,7 @@ def create_post():
     new_post_text = request.form.get('newPost')
     date = datetime.datetime.utcnow()
     photo = None 
-    user_id = current_user_id
-    #username = user.username
-   
+    user_id = current_user_id  
       
     file_to_upload = request.files.get('file')   
     if file_to_upload:
@@ -328,15 +303,7 @@ def create_booking():
     year = json.get('year')
     month = json.get('month')
     day = json.get('day')
-    hostel_id = json.get('hostelId')
-   
-
-    #hostel = Hostel.query.get(1)
-    #capacity = hostel.capacity
-    #capacity_used = Booking.query.filter_by(year=year, month=month, day=day).count()
-
-    #if capacity_used >= capacity:
-        #return jsonify({"msg": "Plazas no disponibles"}), 401
+    hostel_id = json.get('hostelId')  
 
     booking = Booking(
         year=year,
