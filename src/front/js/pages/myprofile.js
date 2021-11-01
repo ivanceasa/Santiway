@@ -117,11 +117,11 @@ const MyProfile = () => {
 								})}
 							</span>
 							<span className="postDate">{post.created_at}</span>
-							<div className="icono1">
+							<div className="icon1">
 								<i className="fas fa-ellipsis-v fa-2x" />
 							</div>
 						</div>
-						<div className="texto mx-3">{post.post_content}</div>
+						<div className="postText mx-3">{post.post_content}</div>
 						<div className="bodyImage">
 							<img className="bodyImage" src={post.photo} />
 						</div>

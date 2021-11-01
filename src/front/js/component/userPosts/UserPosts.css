@@ -56,11 +56,18 @@ li{
 p{
     margin:0;
 }
-.icono1{
+.icon1{
     float: right;
 }
 
-.texto p:first-child{
+.postText p:first-child{
     margin-bottom: 10px;
     margin-left: 10px;
+}
+
+.postImg{
+    margin-top: 20px;
+    width: 100%;
+    max-height: 500px;
+    object-fit: contain;
 }
