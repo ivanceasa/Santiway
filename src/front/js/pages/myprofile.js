@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect, useReducer } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/myprofile.scss";
-import fotoPerfil from "../../img/profilePhoto.png";
+import profilePhoto from "../../img/profilePhoto.png";
 
 const MyProfile = () => {
 	const { store, actions } = useContext(Context);
@@ -56,7 +56,7 @@ const MyProfile = () => {
 			<div className="share mt-4">
 				<div className="shareWrapper">
 					<div className="shareTop">
-						<img className="shareProfileImg" src={fotoPerfil} alt="" />
+						<img className="shareProfileImg" src={profilePhoto} alt="" />
 
 						<input
 							placeholder="Escribe algo"
@@ -109,7 +109,7 @@ const MyProfile = () => {
 				{posts.map(post => (
 					<div key={post.id} className="userpost">
 						<div className="header pl-auto">
-							<img className="postProfileImg" src={fotoPerfil} alt="" />
+							<img className="postProfileImg" src={profilePhoto} alt="" />
 							<span className="postUsername">
 								{store.users.map(user => {
 									if (user.id === post.user_id) {
