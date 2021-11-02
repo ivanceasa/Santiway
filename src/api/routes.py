@@ -1,7 +1,7 @@
 """
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
-import stripe
+#import stripe
 from flask import Flask, request, jsonify, url_for, Blueprint
 from api.models import db, User, Hostel, Route, Stage, Post, Comment, Booking
 from flask_jwt_extended import create_access_token
