@@ -36,7 +36,7 @@ const Navbar1 = () => {
 						<span className="topbarLink text-white p-1">Consejos</span>
 					</Link>
 					<Link to="/myprofile">
-						<span className="topbarLink text-white p-1">Mi perfil</span>
+						<span className="topbarLink text-white p-1">Experiencias</span>
 					</Link>
 				</div>
 
