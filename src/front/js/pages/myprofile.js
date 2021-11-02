@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect, useReducer } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
+import "../../styles/myprofile.scss";
 import fotoPerfil from "../../img/profilePhoto.png";
 
 const MyProfile = () => {
