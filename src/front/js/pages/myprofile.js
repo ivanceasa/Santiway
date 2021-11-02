@@ -4,7 +4,6 @@ import { Context } from "../store/appContext";
 import { useParams } from "react-router-dom";
 import fotoPerfil from "../../img/fotoPerfilPrueba.jpg";
 
-
 const MyProfile = () => {
 	const { store, actions } = useContext(Context);
 	const [posts, setPosts] = useState([]);
@@ -43,7 +42,6 @@ const MyProfile = () => {
 	}
 
 	return (
-
 		/*
 
 		<div className="text-center mt-5">
@@ -123,7 +121,6 @@ const MyProfile = () => {
 				))}
 			</div>
 		</>
-
 	);
 };
 
@@ -159,4 +156,3 @@ export default MyProfile;
 				))}
 			</div>
 */
-
