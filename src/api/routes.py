@@ -8,10 +8,12 @@ from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
 from flask_jwt_extended import jwt_required
 from flask_jwt_extended import JWTManager
-#modulo para calcular el tiempo
 import datetime
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
-#añadir columna imágenes a user, crear tabla fotos
+import os
 
 
 api = Blueprint('api', __name__)
@@ -56,13 +58,10 @@ def handle_hello():
 def login():
     email = request.json.get("email", None)
     password = request.json.get("password", None)
-    # Query your database for username and password
     user = User.query.filter_by(email=email, password=password).first()
     if user is None or password == None:
-        # the user was not found on the database
         return jsonify({"msg": "Bad email or password"}), 401    
-    # create a new token with the user id inside
-    access_token = create_access_token(identity=email)
+    access_token = create_access_token(user.id)
     return jsonify(access_token=access_token) 
 
 @api.route('/register', methods=["POST"])
@@ -73,13 +72,7 @@ def signUp():
         return
 
     user = User(
-        # name=json.get('name'),
-        # surname=json.get('surname'),
         username=json.get('username'),
-        profile_picture=json.get('profile_picture'),
-        # age=json.get('age'),
-        # country=json.get('country'),
-        # city=json.get('city'),
         email=json.get('email'), 
         password=json.get('password'),
         is_active=True
@@ -97,7 +90,6 @@ def signUp():
 @api.route('/profiles', methods=["GET"])
 #@jwt_required()
 def get_all_profiles():
-    #metodo GET para todos los usuarios
     users = User.query.all()
     users = list(map(lambda user: user.serialize(), users))
     print("GET users: ", users )
@@ -107,7 +99,6 @@ def get_all_profiles():
 #@jwt_required()
 def single_profile(id):
    # token = get_jwt_identity()
-    #metodo GET para 1 usuario
     user = User.query.get(id)
     if user is None:
         raise APIException("User not found", status_code=404)
@@ -117,7 +108,6 @@ def single_profile(id):
 @api.route('/profile/<int:id>', methods=["PUT"])
 #@jwt_required()
 def update_profile(id):
-    #metodo PUT para actualizar Username y password
     request_body = request.get_json()
     user = User.query.get(id)
     if user is None:
@@ -136,7 +126,6 @@ def update_profile(id):
 @api.route('/profile/<int:id>', methods=["DELETE"])
 #@jwt_required()
 def delete_profile(id):
-    #metodo DELETE para borrar a un usuario
     user = User.query.get(id)
     if user is None:
         raise APIException("User not found", status_code=404)
@@ -175,7 +164,6 @@ def create_hostel():
 @api.route('/hostel/<int:id>', methods=["DELETE"])
 #@jwt_required()
 def delete_hostel(id):
-    #metodo DELETE para borrar a un usuario
     hostel = Hostel.query.get(id)
     if hostel is None:
         raise APIException("Hostel not found", status_code=404)
@@ -267,7 +255,6 @@ def single_post(id):
 @api.route('/post/<int:id>', methods=["PUT"])
 #@jwt_required()
 def update_post(id):
-    #metodo PUT para actualizar el Post
     request_body = request.get_json()
     post = Post.query.get(id)
     if post is None:
@@ -280,23 +267,36 @@ def update_post(id):
     db.session.commit()
   
     return jsonify(request_body), 200
+   
 
-@api.route('/profile/post', methods=['POST'])
+@api.route('/post', methods=['POST'])
+@jwt_required()
 def create_post():
-    json = request.get_json()
-
-    new_post_text = json.get('post')
-    photo = json.get('file')
+    #token = get_jwt_identity()
+    current_user_id = get_jwt_identity()
     
-    post = Post(
-        post_content=new_post_text, 
-        created_at=datetime.date(year=2021, month=11, day=1), 
-        photo=photo
+    cloudinary.config(
+        cloud_name= os.getenv('CLOUD_NAME'),
+        api_key= os.getenv('API_KEY'),
+        api_secret= os.getenv('API_SECRET')
     )
-    db.session.add(post)
-    db.session.commit()
-    return jsonify(post.serialize()), 200    
-
+    
+    new_post_text = request.form.get('newPost')
+    date = datetime.datetime.utcnow()
+    photo = None 
+    user_id = current_user_id  
+      
+    file_to_upload = request.files.get('file')   
+    if file_to_upload:
+        upload_result = cloudinary.uploader.upload(file_to_upload)
+        if upload_result:
+            photo = upload_result.get('secure_url')
+            post = Post(post_content=new_post_text, created_at=date, photo=photo, user_id=user_id)
+            post.save()
+    
+            return jsonify(post.serialize()), 200 
+    return jsonify(""), 400
+     
 
 @api.route('/comments',  methods=["GET"])
 def get_all_comments():
@@ -322,21 +322,14 @@ def create_comment():
     db.session.commit()
     return jsonify(request_body), 200   
 
-@api.route('/create-booking', methods=['POST'])  
+@api.route('/create-booking', methods=['POST'])
+#@jwt_required()  
 def create_booking():
     json = request.get_json()
     year = json.get('year')
     month = json.get('month')
     day = json.get('day')
-    hostel_id = json.get('hostelId')
-   
-
-    #hostel = Hostel.query.get(1)
-    #capacity = hostel.capacity
-    #capacity_used = Booking.query.filter_by(year=year, month=month, day=day).count()
-
-    #if capacity_used >= capacity:
-        #return jsonify({"msg": "Plazas no disponibles"}), 401
+    hostel_id = json.get('hostelId')  
 
     booking = Booking(
         year=year,
@@ -346,12 +339,6 @@ def create_booking():
     )
     booking.save()
     return jsonify(booking.serialize()), 200
-
-
-
-
-
-
 
  
 

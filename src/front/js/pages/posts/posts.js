@@ -5,8 +5,7 @@ import UserPosts from "../../component/userPosts/UserPosts.jsx";
 import StripePay from "../../component/StripePay";
 
 const Posts = () => {
-	return <>{/* <Feed />
-			<UserPosts /> */}</>;
+
 };
 
 export default Posts;

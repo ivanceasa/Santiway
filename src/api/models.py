@@ -1,4 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime
 
 db = SQLAlchemy()
 
@@ -6,20 +7,16 @@ db = SQLAlchemy()
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    # name = db.Column(db.String(120), unique=False, nullable=False)
-    # surname = db.Column(db.String(120), unique=False, nullable=False)
-    username = db.Column(db.String(120), unique=True, nullable=False)
-    # age = db.Column(db.Integer, unique=False, nullable=False)
-    # country = db.Column(db.String(120), unique=False, nullable=False)
-    # city = db.Column(db.String(120), unique=False, nullable=False)
+    username = db.Column(db.String(120), unique=True, nullable=False)   
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(80), unique=False, nullable=False)
     is_active = db.Column(db.Boolean(), unique=False, nullable=False)
-    posts_user = db.relationship("Post", backref="user", lazy=True)  #relación 1 a muchos
-    comments_user = db.relationship("Comment", backref="user", lazy=True)  #relación 1 a muchos
-    hostels = db.relationship("Hostel", secondary="user_hostel", backref=db.backref("users")) #muchos a muchos(bidireccional)
-    routes = db.relationship("Route", secondary="user_route", backref=db.backref("users")) #muchos a muchos(bidireccional)
-    stages = db.relationship("Stage", secondary="user_stage", backref=db.backref("users")) #muchos a muchos(bidireccional)
+    posts_user = db.relationship("Post", backref="user", lazy=True)  #One to many
+    comments_user = db.relationship("Comment", backref="user", lazy=True)  #One to many
+    #bookings = db.relationship("Booking", backref="user", lazy=True)  #One to many
+    hostels = db.relationship("Hostel", secondary="user_hostel", backref=db.backref("users")) #many to many
+    routes = db.relationship("Route", secondary="user_route", backref=db.backref("users")) #many to many
+    stages = db.relationship("Stage", secondary="user_stage", backref=db.backref("users")) #many to many
 
     def __repr__(self):
         return '<User %r>' % self.username
@@ -57,7 +54,7 @@ class Hostel(db.Model):
     city = db.Column(db.String(120), unique=False, nullable=False)
     photo_hostel = db.Column(db.String(250), unique=False, nullable=False)
     phone_number = db.Column(db.String(120), unique=False, nullable=False)
-    capacity = db.Column(db.Integer, unique=False, nullable=True)
+    #capacity = db.Column(db.Integer, unique=False, nullable=True)
     booking_hostel = db.relationship("Booking", backref="hostel", lazy=True)
     route_id = db.Column(db.Integer, db.ForeignKey("route.id"), nullable=True)
     stage_id = db.Column(db.Integer, db.ForeignKey("stage.id"), nullable=True)
@@ -134,7 +131,7 @@ class Stage(db.Model):
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     post_content = db.Column(db.String(1000), unique=False, nullable=True)
-    created_at = db.Column(db.Date, unique=False, nullable=True) 
+    created_at = db.Column(db.DateTime, default=datetime.utcnow) 
     photo = db.Column(db.String(120), unique=False, nullable=True)
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=True) 
     comments_post = db.relationship("Comment", backref="post", lazy=True)
@@ -146,10 +143,14 @@ class Post(db.Model):
         return {
             "id": self.id,
             "post_content": self.post_content,
-            "created_at": self.created_at,
+            "created_at": "{0}/{1}/{2}".format(self.created_at.day,self.created_at.month,self.created_at.year),
             "photo": self.photo,
             "user_id": self.user_id
         }
+
+    def save(self):
+        db.session.add(self)
+        db.session.commit()
 
 
 class Comment(db.Model):
@@ -177,6 +178,7 @@ class Booking(db.Model):
     month = db.Column(db.Integer, unique=False, nullable=False)
     day = db.Column(db.Integer, unique=False, nullable=False)
     hostel_id = db.Column(db.Integer, db.ForeignKey("hostel.id"), nullable=True)
+    #user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=True)
          
     def save(self):
         db.session.add(self)
@@ -189,5 +191,9 @@ class Booking(db.Model):
             "id": self.id,
             "year": self.year,
             "month": self.month,
-            "day": self.day    
+            "day": self.day,
+            #"user_id": self.user_id   
         }
+
+
+

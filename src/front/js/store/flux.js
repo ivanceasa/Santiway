@@ -3,6 +3,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			routes: [],
 			hostels: [],
+			users: [],
 			message: null,
 			demo: [
 				{
@@ -28,6 +29,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 				fetch(process.env.BACKEND_URL + "/api/hostels")
 					.then(resp => resp.json())
 					.then(data => setStore({ hostels: data }))
+					.catch(error => console.log(error));
+			},
+			getUsers: () => {
+				fetch(process.env.BACKEND_URL + "/api/profiles")
+					.then(resp => resp.json())
+					.then(data => setStore({ users: data }))
 					.catch(error => console.log(error));
 			},
 
