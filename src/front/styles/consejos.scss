@@ -1,5 +1,5 @@
 
-/*body{
+#advices body{
 
 
     margin: 0;
@@ -9,7 +9,7 @@
     padding: 3% 0;
 
 }
-.container{
+#advices .container{
     width: 100%;
     height: 100vh;
     align-items: center;
@@ -19,13 +19,13 @@
     
 }
 
-.photoAdvice{
+#advices .photoAdvice{
     width: 100%;
     transition: 0.3%;
     border-radius: 8px;
 }
 
-.grid{
+#advices .grid{
     border-radius: 12px;
     padding: 3%;
     margin-bottom: 6%;
@@ -35,15 +35,15 @@
     margin-bottom: 16px;
     position: relative;
 }
-.grid:hover{
+#advices .grid:hover{
     box-shadow: inset 10px 10px 24px -12px rgba(0,0,0,0.75);
 }
 
-.grid:hover img{
+#advices .grid:hover img{
     transform: scale(0.8);
 }
 
-.grid:hover .grid__body {
+#advices .grid:hover .grid__body {
     transition: all 1s;
     transform: scale(1.15);
     display: inline-block;
@@ -51,7 +51,7 @@
 
 @media screen and (max-width: 958px){
 
-    .grid-columns{
+    #advices .grid-columns{
 
         column-count:2;
     }
@@ -59,10 +59,10 @@
 
 @media screen and (max-width: 420px){
 
-    .grid-columns{
+    #advices .grid-columns{
         column-count:1;
     }
 }
-*/
+
 
 

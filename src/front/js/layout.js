@@ -17,6 +17,7 @@ import Navbar1 from "./component/Navbar1";
 import RutasDetails from "./pages/rutasDetails";
 import Booking from "./pages/booking";
 import Confirm from "./pages/confirm";
+import CheckoutBooking from "./pages/checkoutBooking";
 
 import { Footer } from "./component/footer";
 
@@ -64,6 +65,9 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/confirmation">
 							<Confirm />
+						</Route>
+						<Route exact path="/checkout">
+							<CheckoutBooking />
 						</Route>
 
 						<Route exact path="/demo">

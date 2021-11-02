@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect, useReducer } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
-import fotoPerfil from "../../img/profilePhoto.png";
+
 
 const MyProfile = () => {
 	const { store, actions } = useContext(Context);
@@ -46,6 +46,7 @@ const MyProfile = () => {
 	}
 
 	return (
+
 		<>
 			{/*}
 			<div className="getPosts text-center mt-5">
@@ -133,3 +134,4 @@ const MyProfile = () => {
 };
 
 export default MyProfile;
+

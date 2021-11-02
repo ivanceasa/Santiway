@@ -1,6 +1,7 @@
 """
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
+import stripe
 from flask import Flask, request, jsonify, url_for, Blueprint
 from api.models import db, User, Hostel, Route, Stage, Post, Comment, Booking
 from flask_jwt_extended import create_access_token
@@ -16,6 +17,31 @@ import os
 
 
 api = Blueprint('api', __name__)
+
+YOUR_DOMAIN = 'https://3000-fuchsia-pelican-i5ga5ptx.ws-eu17.gitpod.io/checkout'
+
+
+@api.route('/create-checkout-session', methods=['POST'])
+
+def create_checkout_session():
+    request_json = request.get_json()
+    try:
+        checkout_session = stripe.checkout.Session.create(
+            line_items=request_json,
+            payment_method_types=[
+              'card'
+            ],
+            mode='payment',
+            success_url=YOUR_DOMAIN + '/success.html',
+            cancel_url=YOUR_DOMAIN + '/cancel.html',
+        )
+    except Exception as e:
+        return str(e)
+
+    return redirect(checkout_session.url, code=303)
+
+
+
 
 
 @api.route('/hello', methods=['POST', 'GET'])
