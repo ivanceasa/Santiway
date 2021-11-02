@@ -9,7 +9,7 @@ import Consejos from "./pages/consejos";
 import MyProfile from "./pages/myprofile";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
-import Posts from "./pages/posts/posts";
+//import Posts from "./pages/posts/posts";
 import { Demo } from "./pages/demo";
 import { Single } from "./pages/single";
 import injectContext from "./store/appContext";
@@ -41,9 +41,6 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/register">
 							<Register />
-						</Route>
-						<Route exact path="/posts">
-							<Posts />
 						</Route>
 						<Route exact path="/albergues">
 							<Albergues />

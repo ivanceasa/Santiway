@@ -75,3 +75,59 @@
       cursor: pointer;
       color: white;
   }
+
+.userpost{
+    background: white;
+    width: 500px;
+    height: auto;
+    margin:auto;
+    margin-top: 60px;
+    -webkit-box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+    box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+}
+.postProfileImg{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.postDate{
+    font-size: 12px;
+}
+
+.bodyImage{
+    padding:5px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center center;
+    height: auto;
+   
+} 
+
+.header{
+    padding: 10px;
+    margin: 0;
+}
+.header div:first-child{
+    display: inline-flex;
+}
+.header div:nth-child(2){
+    display: inline flow-root list-item;
+}
+
+.header div:last-child{
+    display: inline-flex;
+    align-items: flex-end;
+}
+
+.postUsername{
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0 10px;
+}
+
+.icon1{
+    float: right;
+}
