@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import fourGeeks from "../../img/4geeks.jpg";
 import shell from "../../img/shell.jpg";
-import "../../styles/footer.scss";
+import "../../styles/footer2.scss";
 
 export const Footer = () => (
 	<footer id="footer" className="text-center text-muted bg-light bottom">
@@ -68,7 +68,7 @@ export const Footer = () => (
 
 		<div className="text-center p-3">
 			© 2021 Copyright:{" "}
-			<a className="text-muted" href="https://mdbootstrap.com/">
+			<a className="text-muted" href="#">
 				SantiWayforDummies.com
 			</a>
 		</div>

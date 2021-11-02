@@ -18,7 +18,7 @@ import RutasDetails from "./pages/rutasDetails";
 import Booking from "./pages/booking";
 import Confirm from "./pages/confirm";
 
-import { Footer } from "./component/footer";
+import { Footer } from "./component/footer2";
 
 //create your first component
 const Layout = () => {
