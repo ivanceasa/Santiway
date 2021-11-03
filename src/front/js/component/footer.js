@@ -4,40 +4,46 @@ import shell from "../../img/shell.jpg";
 import "../../styles/footer.scss";
 
 export const Footer = () => (
-	<footer id="footer" className="text-center text-muted bg-light bottom">
+	<footer id="footer" className="text-center text-muted bg-light">
 		<div className="container p-4">
 			<div className="row">
 				<div className="col-12 float-center">
 					<div className="third col-12 text-center p-3">
 						<ul>
 							<li className="contactText">
-								{" "}
-								<a href="https://3000-coral-antelope-t9kum4pk.ws-eu17.gitpod.io/">
-									<img
-										alt=""
-										src={shell}
-										width="30"
-										height="30"
-										className="d-inline-block align-top rounded-circle"
-									/>
-								</a>
-								Santi-Way for Dummies
+								<div>
+									<a href="https://3000-coral-antelope-t9kum4pk.ws-eu17.gitpod.io/">
+										<img
+											alt=""
+											src={shell}
+											width="30"
+											height="30"
+											className="d-inline-block align-top rounded-circle"
+										/>
+									</a>
+									Santi-Way for Dummies
+								</div>
+								<div>
+									<i className="far fa-envelope" />
+									santiwayFD@gmail.com
+								</div>
+								<div>
+									<i className="fas fa-map-marker-alt" />
+									Santiago de Compostela, A Coruña 15705, ES
+								</div>
+							</li>
+
+							{/* <li className="contactText">
 							</li>
 
 							<li className="contactText">
-								<i className="far fa-envelope" /> <p>santiwayFD@gmail.com </p>
-							</li>
-
-							<li className="contactText">
-								<i className="fas fa-map-marker-alt" />
-								<p>Santiago de Compostela, A Coruña 15705, ES</p>
-							</li>
+							</li> */}
 						</ul>
 					</div>
 				</div>
 			</div>
 
-			<div className="row">
+			<div className="row text-muted">
 				<div className="line" />
 				<div className="col-12">
 					<div className="second2">
