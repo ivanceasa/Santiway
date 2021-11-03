@@ -17,6 +17,13 @@
     
 }
 
+#footer{
+    border-top: 1px solid#28a745;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
 #footer i{
     margin-right: 3px;
 }
@@ -24,14 +31,15 @@
 #footer .row{
     display: absolute;
 }
-
-
 .logo4Geeks{
     width: 30px;
     height: 30px;
     border-radius: 50%;
     object-fit: cover;
     margin-right: 3px;
+    
+}.logo4Geeks:hover{
+    box-shadow: 1px 1px 20px rgba(0,0,0,1);
 }
 
 #footer .second {
@@ -43,7 +51,6 @@
     display: inline-flex;
     vertical-align: top;
 }
-
 #footer .second2 {
     margin-top: 40px;
     margin-bottom: 50px;
@@ -51,7 +58,6 @@
     font-family: 'Poppins', sans-serif;
     text-align: center;
 }
-
 #footer .second h4 {
     font-size: 20px;
     letter-spacing: 3px;
@@ -61,7 +67,6 @@
     color: rgb(8, 8, 8);
     padding-bottom: 0.5em;
 }
-
     #footer .second h4::after {
         content: '';
         width: 20%;
@@ -70,13 +75,10 @@
         bottom: 0;
         left: 40%;
     }
-
-
 #footer .second li {
     list-style: none;
     // padding-bottom: 30px;
 }
-
 #footer .second a, .second2 a, .logo4Geeks a{
     color: rgb(206, 206, 206);
     text-decoration: none;
@@ -85,28 +87,20 @@
     font-size: 14px;
     transition: 0.2s;
 }
-
-    #footer .second a:hover, .second2 a:hover,  .logo4Geeks a:hover{
+    #footer .second a:hover, .second2 a:hover{
         color: #fff;
         transition: 0.2s;
         text-shadow: 1px 1px 20px rgba(0,0,0,1);
         text-decoration: none
-
     }
 
-
-
 #footer .third {
-    
-    
     // color: rgb(206,206,206);
     font-family: 'Poppins', sans-serif;
     align-content: space-between;
     justify-content: space-between;
 
 }
-
-
     #footer .third h4 {
         letter-spacing: 3px;
         position: relative;
@@ -115,16 +109,10 @@
         // color:#cecece;
     }
 
-
-     
-
-
-
     #footer .third li {
         list-style: none;
         // padding-bottom: 15px;
     }
-
 
     #footer .third a {
         // color: rgb(206, 206, 206);
@@ -134,8 +122,6 @@
         font-size: 14px;
         transition: 0.2s;
     }
-
-
         #footer .third a:hover {
             color: #fff;
             transition: 0.2s;

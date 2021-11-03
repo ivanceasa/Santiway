@@ -4,7 +4,7 @@ import shell from "../../img/shell.jpg";
 import "../../styles/footer.scss";
 
 export const Footer = () => (
-	<footer id="footer" className="text-center text-muted bg-light bottom">
+	<footer id="footer" className="text-center text-muted bg-light">
 		<div className="container p-4">
 			<div className="row">
 				<div className="col-12 float-center">
