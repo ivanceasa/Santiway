@@ -1,11 +1,16 @@
 
 .contactText{
     display: inline-flex;
-    align-items: center;
+    align-items: flex-start;
     align-content: space-between;
-    margin: 5px;
+    // margin: 5px;
     vertical-align: top;
 }
+
+.contactText div{
+    margin-right: 20px;
+}
+
 .icono1, .icono2, .icono3{
     display: inline-flex;
     vertical-align: top;
@@ -32,7 +37,7 @@
 #footer .second {
     margin-top: 40px;
     margin-bottom: 50px;
-    color: rgb(206,206,206);
+    color: rgb(124, 243, 77);
     font-family: 'Poppins', sans-serif;
     text-align: center;
     display: inline-flex;
@@ -42,7 +47,7 @@
 #footer .second2 {
     margin-top: 40px;
     margin-bottom: 50px;
-    color: rgb(206,206,206);
+    // color: rgb(206,206,206);
     font-family: 'Poppins', sans-serif;
     text-align: center;
 }
@@ -69,7 +74,7 @@
 
 #footer .second li {
     list-style: none;
-    padding-bottom: 30px;
+    // padding-bottom: 30px;
 }
 
 #footer .second a, .second2 a, .logo4Geeks a{
@@ -94,7 +99,7 @@
 #footer .third {
     
     
-    color: rgb(206,206,206);
+    // color: rgb(206,206,206);
     font-family: 'Poppins', sans-serif;
     align-content: space-between;
     justify-content: space-between;
@@ -107,7 +112,7 @@
         position: relative;
         margin-bottom: 30px;
         font-size: 1.6em;
-        color:#cecece;
+        // color:#cecece;
     }
 
 
@@ -117,12 +122,12 @@
 
     #footer .third li {
         list-style: none;
-        padding-bottom: 15px;
+        // padding-bottom: 15px;
     }
 
 
     #footer .third a {
-        color: rgb(206, 206, 206);
+        // color: rgb(206, 206, 206);
         text-decoration: none;
         letter-spacing: 3px;
         font-weight: bold;
