@@ -78,6 +78,7 @@
 	"dependencies": {
 		"@stripe/react-stripe-js": "^1.6.0",
 		"@stripe/stripe-js": "^1.20.3",
+		"@sweetalert2/themes": "^5.0.7",
 		"bootstrap": "^4.6.0",
 		"bootswatch": "^5.1.3",
 		"cors": "^2.8.5",
@@ -87,6 +88,7 @@
 		"react-dom": "^16.8.4",
 		"react-polyfills": "0.0.1",
 		"react-router-dom": "^5.2.0",
-		"stripe": "^8.184.0"
+		"stripe": "^8.184.0",
+		"sweetalert2": "^11.1.9"
 	}
 }

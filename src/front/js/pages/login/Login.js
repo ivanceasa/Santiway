@@ -11,9 +11,13 @@ const Login = () => {
 
 	console.log("This is your token", store.token);
 	const handleClick = () => {
-		actions.login(email, password).then(() => {
-			history.push("/myprofile");
-		});
+		if (store.token && store.token != "" && store.token != undefined) {
+			actions.login(email, password).then(() => {
+				history.push("/myprofile");
+			});
+		} else {
+			alert("Debe registrarse o ingresar datos válidos");
+		}
 	};
 
 	return (
@@ -24,7 +28,7 @@ const Login = () => {
 				<div className="login">
 					<div className="loginWrapper">
 						<div className="loginLeft">
-							<h3 className="loginLogo">Bienvenido!</h3>
+							<h3 className="loginLogo">Bienvenid@!</h3>
 							<span className="loginDesc">Conecta con peregrinos de todo el mundo</span>
 						</div>
 						<div className="loginRight">
@@ -54,6 +58,7 @@ const Login = () => {
 								<button type="submit" className="loginButton" onClick={handleClick}>
 									Log In
 								</button>
+								<span className="loginForgot">Forgot Password?</span>
 								<Link to="/register">
 									<button className="loginRegisterButton">Create a New Account</button>
 								</Link>
