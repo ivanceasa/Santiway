@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { Context } from "../../store/appContext";
 import { useHistory, Link } from "react-router-dom";
 import "./login.css";
+import Swal from "sweetalert2";
 
 const Login = () => {
 	const { store, actions } = useContext(Context);
@@ -16,7 +17,12 @@ const Login = () => {
 				history.push("/myprofile");
 			});
 		} else {
-			alert("Debe registrarse o ingresar datos válidos");
+			Swal.fire({
+				title: "Usuario no identificado",
+				text: "Debe registrarse o ingresar datos válidos",
+				icon: "warning",
+				confirmButtonText: "Ok"
+			});
 		}
 	};
 
