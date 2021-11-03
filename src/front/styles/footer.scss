@@ -1,11 +1,178 @@
-.copyRight{
-    background-color: rgba(0, 0, 0, 0.05);
+
+.contactText{
+    display: inline-flex;
+    align-items: center;
+    align-content: space-between;
+    margin: 5px;
+    vertical-align: top;
+}
+.icono1, .icono2, .icono3{
+    display: inline-flex;
+    vertical-align: top;
+    
 }
 
+#footer i{
+    margin-right: 3px;
+}
+
+#footer .row{
+    display: absolute;
+}
+
+
 .logo4Geeks{
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     object-fit: cover;
-    margin-right: 10px;
+    margin-right: 3px;
 }
+
+#footer .second {
+    margin-top: 40px;
+    margin-bottom: 50px;
+    color: rgb(206,206,206);
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    display: inline-flex;
+    vertical-align: top;
+}
+
+#footer .second2 {
+    margin-top: 40px;
+    margin-bottom: 50px;
+    color: rgb(206,206,206);
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+#footer .second h4 {
+    font-size: 20px;
+    letter-spacing: 3px;
+    position: relative;
+    margin-bottom: 20px;
+    font-size: 1.6em;
+    color: rgb(8, 8, 8);
+    padding-bottom: 0.5em;
+}
+
+    #footer .second h4::after {
+        content: '';
+        width: 20%;
+        height: 2px;
+        position: absolute;
+        bottom: 0;
+        left: 40%;
+    }
+
+
+#footer .second li {
+    list-style: none;
+    padding-bottom: 30px;
+}
+
+#footer .second a, .second2 a, .logo4Geeks a{
+    color: rgb(206, 206, 206);
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+    #footer .second a:hover, .second2 a:hover,  .logo4Geeks a:hover{
+        color: #fff;
+        transition: 0.2s;
+        text-shadow: 1px 1px 20px rgba(0,0,0,1);
+        text-decoration: none
+
+    }
+
+
+
+#footer .third {
+    
+    
+    color: rgb(206,206,206);
+    font-family: 'Poppins', sans-serif;
+    align-content: space-between;
+    justify-content: space-between;
+
+}
+
+
+    #footer .third h4 {
+        letter-spacing: 3px;
+        position: relative;
+        margin-bottom: 30px;
+        font-size: 1.6em;
+        color:#cecece;
+    }
+
+
+     
+
+
+
+    #footer .third li {
+        list-style: none;
+        padding-bottom: 15px;
+    }
+
+
+    #footer .third a {
+        color: rgb(206, 206, 206);
+        text-decoration: none;
+        letter-spacing: 3px;
+        font-weight: bold;
+        font-size: 14px;
+        transition: 0.2s;
+    }
+
+
+        #footer .third a:hover {
+            color: #fff;
+            transition: 0.2s;
+            text-shadow: 1px 1px 20px rgba(0,0,0,1);
+        }
+
+
+@media screen and (max-width:1000px) {
+    #footer .first {
+        text-align: center;
+    }
+
+        #footer .first h4::after {
+            left: 40%;
+        }
+}
+
+@media screen and (max-width:1000px) {
+    #footer .third {
+        text-align: center;
+    }
+
+        #footer .third h4::after {
+            left: 40% !important;
+        }
+}
+
+#footer .margin {
+    margin-left: 20px;
+}
+
+#footer .line {
+    height:2px;
+    background-color:rgb(206,206,206);
+    width:100%;
+}
+
+#footer .container h1{
+    text-align:center;
+    margin-top:100px;
+    margin-bottom:100px;
+}
+
+
+
