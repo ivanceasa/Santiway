@@ -69,8 +69,7 @@ class Hostel(db.Model):
             "name": self.name,
             "city": self.city,
             "photo_hostel": self.photo_hostel,
-            "phone_number": self.phone_number ,
-            "capacity": self.capacity    
+            "phone_number": self.phone_number    
         }
 
 class Route(db.Model):

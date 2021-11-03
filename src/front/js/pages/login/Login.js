@@ -2,7 +2,6 @@ import React, { useContext, useState } from "react";
 import { Context } from "../../store/appContext";
 import { useHistory, Link } from "react-router-dom";
 import "./login.css";
-//import Swal from "sweetalert2/src/sweetalert2.js";
 
 const Login = () => {
 	const { store, actions } = useContext(Context);
@@ -17,15 +16,6 @@ const Login = () => {
 				history.push("/myprofile");
 			});
 		} else {
-			/*
-			const MySwal = withReactContent(Swal)
-
-			await MySwal.fire({
-				title: <strong>Good job!</strong>,
-				html: <i>You clicked the button!</i>,
-				icon: 'success'
-			})
-			*/
 			alert("Debe registrarse o ingresar datos válidos");
 		}
 	};

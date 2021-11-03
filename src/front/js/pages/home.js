@@ -21,9 +21,7 @@ export const Home = () => {
 					<p className="card-text display-4">
 						Conoce las rutas, encuentra tu albergue y recibe consejos para el viaje
 					</p>
-					<p className="card-text display-4 m-4">
-						Regístrate y comparte tu experiencia con otros peregrinos!
-					</p>
+					<p className="card-text display-4 m-4">Regístrate y comparte tu experiencia!</p>
 				</div>
 			</div>
 		</>
