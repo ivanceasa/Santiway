@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import "../../styles/home.scss";
+import "../../styles/cardRutas.scss";
 import { Button, Card, CardGroup, Row } from "react-bootstrap";
 import { Context } from "../store/appContext";
 import { useHistory } from "react-router-dom";
