@@ -12,18 +12,18 @@ const Login = () => {
 
 	console.log("This is your token", store.token);
 	const handleClick = () => {
-		if (store.token && store.token != "" && store.token != undefined) {
-			actions.login(email, password).then(() => {
+		actions.login(email, password).then(() => {
+			if (store.token && store.token != "" && store.token != undefined) {
 				history.push("/myprofile");
-			});
-		} else {
-			Swal.fire({
-				title: "Usuario no identificado",
-				text: "Debe registrarse o ingresar datos válidos",
-				icon: "warning",
-				confirmButtonText: "Ok"
-			});
-		}
+			} else {
+				Swal.fire({
+					title: "Usuario no identificado",
+					text: "Debe registrarse o ingresar datos válidos",
+					icon: "warning",
+					confirmButtonText: "Ok"
+				});
+			}
+		});
 	};
 
 	return (
