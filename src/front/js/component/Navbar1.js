@@ -8,6 +8,7 @@ import shell from "../../img/shell.jpg";
 const Navbar1 = () => {
 	const { store, actions } = useContext(Context);
 	const history = useHistory();
+
 	return (
 		<div>
 			<Navbar /*bg="dark"*/ variant="dark" style={{ background: " #42b72a" }}>
@@ -35,13 +36,21 @@ const Navbar1 = () => {
 					<Link to="/consejos">
 						<span className="topbarLink text-white p-1">Consejos</span>
 					</Link>
-					<Link to="/myprofile">
-						<span className="topbarLink text-white p-1">Experiencias</span>
-					</Link>
+					{!store.token ? (
+						<Link to="/login">
+							<span className="topbarLink text-white p-1">Experiencias</span>
+						</Link>
+					) : (
+						<>
+							<Link to="/myprofile">
+								<span className="topbarLink text-white p-1">Experiencias</span>
+							</Link>
+						</>
+					)}
 				</div>
 
 				<div className="ml-auto">
-					{!store.token ? (
+					{!localStorage.getItem("token") ? (
 						<Link to="/login">
 							<Button variant="warning">Login/Sign up</Button>
 						</Link>
