@@ -1,7 +1,7 @@
 """
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
-#import stripe
+import stripe
 from flask import Flask, request, jsonify, url_for, Blueprint
 from api.models import db, User, Hostel, Route, Stage, Post, Comment, Booking
 from flask_jwt_extended import create_access_token
@@ -12,13 +12,14 @@ import datetime
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
-
 import os
 
 
 api = Blueprint('api', __name__)
 
-YOUR_DOMAIN = 'https://3000-fuchsia-pelican-i5ga5ptx.ws-eu17.gitpod.io/checkout'
+stripe.api_key= "pk_test_51JpGcyErK9vFHAnpjzQwt3orpJwK1DQ3sntDLKbOAfBIEz4zVi13q4SzHy7cqTRVgZk9xJ1bRIaZgGvrVZuDM2gU000wdSvPDI"
+
+YOUR_DOMAIN = 'https://3000-indigo-dingo-lhaf3too.ws-eu17.gitpod.io/checkout'
 
 
 @api.route('/create-checkout-session', methods=['POST'])
@@ -32,13 +33,14 @@ def create_checkout_session():
               'card'
             ],
             mode='payment',
-            success_url=YOUR_DOMAIN + '/success.html',
+            success_url=YOUR_DOMAIN + '/confirmation',
             cancel_url=YOUR_DOMAIN + '/cancel.html',
         )
+        return jsonify({'id':checkout_session.id})
     except Exception as e:
-        return str(e)
+        return jsonify(error=str(e)), 403
 
-    return redirect(checkout_session.url, code=303)
+    
 
 
 

@@ -7,11 +7,12 @@
     padding: 0;
     background: #ecf0f3;
     padding: 3% 0;
+    text-align: justify;
 
 }
 #advices .container{
     width: 100%;
-    height: 100vh;
+    min-height: 70vh;
     align-items: center;
     justify-content: center;
     margin-top: 20px;
@@ -64,5 +65,7 @@
     }
 }
 
-
+#advices .card-columns{
+    text-align: justify;
+}
 

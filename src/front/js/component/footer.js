@@ -4,8 +4,8 @@ import shell from "../../img/shell.jpg";
 import "../../styles/footer.scss";
 
 export const Footer = () => (
-	<footer id="footer" className="text-center text-muted bg-light">
-		<div className="container p-4">
+	<nav id="footer" className="text-center text-muted bg-light">
+		<div className="container mt-4">
 			<div className="row">
 				<div className="col-12 float-center">
 					<div className="third col-12 text-center p-3">
@@ -32,12 +32,6 @@ export const Footer = () => (
 									Santiago de Compostela, A Coruña 15705, ES
 								</div>
 							</li>
-
-							{/* <li className="contactText">
-							</li>
-
-							<li className="contactText">
-							</li> */}
 						</ul>
 					</div>
 				</div>
@@ -78,5 +72,5 @@ export const Footer = () => (
 				SantiWayforDummies.com
 			</a>
 		</div>
-	</footer>
+	</nav>
 );

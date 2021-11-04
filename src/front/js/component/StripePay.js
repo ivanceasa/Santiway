@@ -1,55 +1,45 @@
-import React, { Component } from "react";
+import React, { Component, useContext } from "react";
 import "../../styles/StripePay.css";
+import { Context } from "../store/appContext";
 import { loadStripe } from "@stripe/stripe-js";
-import { Elements, CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
+// import { Elements, CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import { Card } from "react-bootstrap";
 
+const stripePromise = loadStripe(
+	"pk_test_51JpGcyErK9vFHAnpjzQwt3orpJwK1DQ3sntDLKbOAfBIEz4zVi13q4SzHy7cqTRVgZk9xJ1bRIaZgGvrVZuDM2gU000wdSvPDI"
+);
+
 const StripePay = () => {
-	const stripePromise = loadStripe(
-		"pk_test_51JpGcyErK9vFHAnpjzQwt3orpJwK1DQ3sntDLKbOAfBIEz4zVi13q4SzHy7cqTRVgZk9xJ1bRIaZgGvrVZuDM2gU000wdSvPDI"
-	);
+	const { store, actions } = useContext(Context);
 
-	const CheckoutForm = () => {
-		const stripe = useStripe();
-		const elements = useElements();
+	async function handleClick() {
+		const stripe = await stripePromise;
+		const url = process.env.BACKEND_URL + "/api/create-checkout-session";
+		const response = await fetch(url, {
+			method: "POST"
+		});
+		const session = await response.json();
 
-		const handleSubmit = async e => {
-			e.preventDefault();
-
-			const { error, paymentMethod } = await stripe.createPaymentMethod({
-				type: "card",
-				card: elements.getElement(CardElement)
-			});
-
-			if (!error) {
-				return console.log(paymentMethod);
-			}
-		};
-		return (
-			<form onSubmit={handleSubmit} className="card card-body border border-success mt-4">
-				<img
-					src="http://www.turismo.gal/imaxes/mdaw/mtgw/~edisp/~extract/TURGA180658~1~staticrendition/tg_carrusel_cabecera_grande.jpg"
-					alt="Albergue de peregrinos de Gontán"
-					className="img-fluid mb-2"
-				/>
-				<div className="form-group">
-					<CardElement className="form-control" />
-				</div>
-				<button className="btn btn-success">Comprar</button>
-			</form>
-		);
-	};
+		const result = await stripe.redirectToCheckout({
+			sessionId: session.id
+		});
+		if (result.error) {
+		}
+	}
 
 	return (
-		<Elements stripe={stripePromise}>
-			<div className="container">
-				<div className="row">
-					<div className="col-md4 offset-md-4">
-						<CheckoutForm />
-					</div>
+		<div>
+			<div className="product">
+				<img src="https://i.imgur.com/EHyR2nP.png" alt="The cover of Stubborn Attachments" />
+				<div className="description">
+					<h3>Stubborn Attachments</h3>
+					<h5>$20.00</h5>
 				</div>
 			</div>
-		</Elements>
+			<button type="button" id="checkout-button" role="link" onClick={handleClick}>
+				Checkout
+			</button>
+		</div>
 	);
 };
 
