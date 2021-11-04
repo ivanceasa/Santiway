@@ -50,7 +50,7 @@ const Navbar1 = () => {
 				</div>
 
 				<div className="ml-auto">
-					{!store.token ? (
+					{!localStorage.getItem("token") ? (
 						<Link to="/login">
 							<Button variant="warning">Login/Sign up</Button>
 						</Link>
