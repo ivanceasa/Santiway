@@ -28,10 +28,10 @@ const Consejos = () => {
 													corporal (incluyendo el peso del agua). Vas a encontrar
 													establecimientos para reabastecerte.
 												</li>
-												<li>Olvidate del por si a caso.</li>
+												<li>Olvidate del por si acaso.</li>
 												<li>Lo que más pesa, ¡al fondo!</li>
 												<li>
-													organiza tu mochila con bolsas de plástico. Así te será más fácil
+													Organiza tu mochila con bolsas de plástico. Así te será más fácil
 													encontrar las cosas.
 												</li>
 											</ul>
@@ -79,10 +79,9 @@ const Consejos = () => {
 									<div className="mt-auto">
 										<span className="grid__tag">
 											Lo importante es con quién vas ha hacer el camino, por lo que es fundamental
-											la buena compañía y el buen rollo y con el que tengas buena convivencia. Por
-											lo que si no tienes a nadie así o prefieres hacerlo solo. Ni te preocupes.
-											Es fácil conocer a gente durante el camino y que acabes con ellos varias
-											etapas o más... Nunca se sabe.
+											la buena compañía y el buen rollo. Por lo que si no tienes a nadie así o
+											prefieres hacerlo solo, ni te preocupes. Es fácil conocer a gente durante el
+											camino y que acabes con ellos varias etapas o más... Nunca se sabe.
 										</span>
 									</div>
 								</div>
@@ -114,10 +113,10 @@ const Consejos = () => {
 							<div className="grid">
 								<img className="photoAdvice" src={adviceImg7} />
 								<div className="grid__body">
-									<h2 className="grid__title">¿Cuanto tengo que andar al día?</h2>
+									<h2 className="grid__title">¿Cuánto tengo que andar al día?</h2>
 									<div className="mt-auto">
 										<span className="grid__tag">
-											Aunque la distancia media suele ser entre 15-20km, o te obsesiones con la
+											Aunque la distancia media suele ser entre 15-20km, no te obsesiones con la
 											distancia y disfruta el camino ¡día a día!
 										</span>
 									</div>
