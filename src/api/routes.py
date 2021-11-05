@@ -13,6 +13,7 @@ import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 import os
+import json
 
 
 api = Blueprint('api', __name__)
@@ -341,6 +342,38 @@ def create_booking():
     )
     booking.save()
     return jsonify(booking.serialize()), 200
+
+
+@api.route("/data", methods=['GET'])
+def get_database():
+    with open('data.json') as file:
+    data = json.load(file)
+
+    for route in data['routes']:
+        new_route = Route(length = route['length'], map = route['map'], name = route['name'], photo = route['photo'], profile = route['profile'], stages_number = route['stages_number'], start_point = route['start_point'])
+        db.session.add(new_route)
+
+    for hostel in data['hostels']:
+        new_hostel = Hostel(city = hostel['city'], name = hostel['name'], phone_number = hostel['phone_number'], photo_hostel = hostel['photo_hostel'])
+        db.session.add(new_hostel)
+
+    for user in data['users']:
+        new_user = User(username = user['username'], email = user['email'], password = user['password'])
+        db.session.add(new_user)
+
+    for post in data['posts']:
+        new_post = Post(post_content = post['post_content'], created_at = post['created_at'], photo = post['photo'])
+        db.session.add(new_post)
+
+    db.session.commit()
+
+    return jsonify({"msg": "database loaded"})
+    
+    
+
+    
+
+
 
  
 
