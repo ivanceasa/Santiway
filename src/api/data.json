@@ -1,0 +1,547 @@
+{
+    "routes": [
+        {
+            "length": "764 km",
+            "map": "https://www.pilgrim.es/wp-content/uploads/2019/06/mapa_frances.jpg",
+            "name":	"El Camino Francés",
+            "photo": "https://www.pilgrim.es/wp-content/uploads/2019/02/caminos-frances-n6v7kffzfhyoazzjtk9frn4wjqmxbublzp32vgulcw.jpg",
+            "profile": "https://www.pilgrim.es/wp-content/uploads/2019/02/camino_franceCC81s-01-2.jpg",
+            "stages_number": "33",
+            "start_point": "St. Jean Pied de Port (Francia)"
+        },
+        {
+            "length": "620 km",
+            "map": "https://www.pilgrim.es/wp-content/uploads/2019/02/mapa_portugues_nuevo-01.jpg",
+            "name":	"El Camino Portugués",
+            "photo": "https://www.pilgrim.es/wp-content/uploads/2019/02/caminos-portugues-n6v7kbomo5tj0k50fimxho32675gh1won6h4yd061s.jpg",
+            "profile": "https://www.pilgrim.es/wp-content/uploads/2019/02/camino_portugues-01.jpg",
+            "stages_number": "25",
+            "start_point": "Lisboa"
+        },
+        {
+            "length": "824 km",
+            "map": "https://www.pilgrim.es/wp-content/uploads/2019/06/norte3.jpg",
+            "name":	"El Camino del Norte",
+            "photo": "https://www.pilgrim.es/wp-content/uploads/2019/02/caminos-norte-n6v7kcmguzutc63na11k25uirl0tor0ezb4mfmyrvk.jpg",
+            "profile": "https://www.pilgrim.es/wp-content/uploads/2020/03/camino_norte_v2.jpg",
+            "stages_number": "34",
+            "start_point": "Irún"
+        },
+        {
+            "length": "313 km",
+            "map": "https://www.pilgrim.es/wp-content/uploads/2019/06/primitivo2.jpg",
+            "name":	"El Camino Primitivo",
+            "photo": "https://www.pilgrim.es/wp-content/uploads/2019/02/caminos-primitivo-n6v7kaqshbs8oy6dl08ax6blkta39csyb1tnh31k80.jpg",
+            "profile": "https://www.pilgrim.es/wp-content/uploads/2021/02/camino_primitivo.jpg",
+            "stages_number": "14",
+            "start_point": "Oviedo"
+        },
+        {
+            "length": "119 km",
+            "map": "https://www.pilgrim.es/wp-content/uploads/2019/06/ingles.jpg",
+            "name":	"El Camino Inglés",
+            "photo": "https://www.pilgrim.es/wp-content/uploads/2019/02/caminos-ingles-n6v7kei58nxdze0wz1ut75dfycrk457vnkfle6vzj4.jpg",
+            "profile": "https://www.pilgrim.es/wp-content/uploads/2019/06/camino_ingles.jpg",
+            "stages_number": "6",
+            "start_point": "Ferrol"
+        },
+        {
+            "length": "304",
+            "map": "https://www.pilgrim.es/wp-content/uploads/2019/02/camino-portugues-costa.jpg",
+            "name":	"El Camino Portugués por la Costa",
+            "photo": "https://i.ibb.co/DLpDd2F/camino-portugues-por-la-costa.jpg",
+            "profile": "https://www.pilgrim.es/wp-content/uploads/2019/02/perfil-portugus-costa.jpg",
+            "stages_number": "13",
+            "start_point": "Oporto"
+        },
+        {
+            "length": "90 km",
+            "map": "https://www.pilgrim.es/wp-content/uploads/2019/06/mapa_fisterramuxia.jpg",
+            "name":	"Epílogo Fisterra-Muxía",
+            "photo": "https://www.pilgrim.es/wp-content/uploads/2019/02/caminos-fisterra-n6v7kgdtmbzymly6o2o2c4wd54iajjfcbtqkcqt76o.jpg",
+            "profile": "https://www.pilgrim.es/wp-content/uploads/2019/06/perfil_fisterramuxia.jpg",
+            "stages_number": "4",
+            "start_point": "Santiago"
+        },
+        {
+            "length": "263 km",
+            "map": "https://www.pilgrim.es/wp-content/uploads/2019/06/invierno1.jpg",
+            "name":	"El Camino de Invierno",
+            "photo": "https://www.pilgrim.es/wp-content/uploads/2019/02/caminos-invierno-n6v7kdkb1tw3ns2a4jg6mnlzcyw6wg45bfs3wwxdpc.jpg",
+            "profile": "https://www.pilgrim.es/wp-content/uploads/2019/06/camino_invierno-02.jpg",
+            "stages_number": "10",
+            "start_point": "Ponferrada"
+        },
+        {
+            "length": "369 km",
+            "map": "https://www.pilgrim.es/wp-content/uploads/2019/06/sanabres.jpg",
+            "name":	"El Camino Sanabrés",
+            "photo": "https://www.pilgrim.es/wp-content/uploads/2019/02/caminos-sanabres-n6v7k9syahqydc7qqhtocok4zfeq1np7yx65zt2ye8.jpg",
+            "profile": "https://www.pilgrim.es/wp-content/uploads/2019/06/camino_sanabres.jpg",
+            "stages_number": "13",
+            "start_point": "Granja de la Moreruela"
+        },
+        {
+            "length": "960 km",
+            "map": "https://www.pilgrim.es/wp-content/uploads/2019/06/mapa_viaplata.jpg",
+            "name":	"Vía de la Plata",
+            "photo": "https://www.pilgrim.es/wp-content/uploads/2019/02/caminos-viaplata-n6v7k8v43npo1q93vzf1s6soe1jctylhmsioij4ckg.jpg",
+            "profile": "https://www.pilgrim.es/wp-content/uploads/2019/06/perfil_viaplata.jpg",
+            "stages_number": "38",
+            "start_point": "Sevilla"
+        },
+        {
+            "length": "205 km",
+            "map": "https://www.pilgrim.es/wp-content/uploads/2019/02/camino-aragons.jpg",
+            "name":	"El Camino Aragonés",
+            "photo": "https://www.pilgrim.es/wp-content/uploads/2019/02/camino-aragones-nu8aiomz43muwssknbovw9y74z3sycimvxsxe8byjk.jpg",
+            "profile": "v",
+            "stages_number": "6",
+            "start_point": "Somport"
+        },
+        {
+            "length": "252 km / 199 km",
+            "map": "https://www.pilgrim.es/wp-content/uploads/2019/02/pilgrim-camino-01.jpg",
+            "name":	"El Camino Vasco del Interior",
+            "photo": "https://www.pilgrim.es/wp-content/uploads/2019/02/camino-irun-nuy73lfn0qf37i9mfeepw9oxj2i0tynaqf4n4tfxcw.jpg",
+            "profile": "https://www.pilgrim.es/wp-content/uploads/2019/02/perfil-vasco.jpg",
+            "stages_number": "12/9",
+            "start_point": "Irún"
+        }
+    ],
+    "hostels": [
+        {
+            "name": "Albergue de peregrinos de Gontán",
+            "city": "Abadín",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtgw/~edisp/~extract/TURGA180658~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34 607 905 146"
+        },
+        {
+            "name": "Albergue de peregrinos de Arzúa",
+            "city": "Arzúa",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtux/~edisp/~extract/TURGA151255~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34 660 396 824"
+        },
+        {
+            "name": "Albergue de peregrinos de Ribadiso",
+            "city": "Arzúa",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtux/~edisp/~extract/TURGA151370~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34981501185 "
+        },
+        {
+            "name": "Albergue de peregrinos do Cádavo",
+            "city": "Baleira",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtgw/~edisp/~extract/TURGA180676~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34 636 947 117"
+        },
+        {
+            "name": "Albergue de peregrinos de Baamonde",
+            "city": "Begonte",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtux/~edisp/~extract/TURGA151237~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34 628 250 323"
+        },
+        {
+            "name": "Albergue de peregrinos Casa da Pescadería",
+            "city": "Betanzos",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtux/~edisp/~extract/TURGA151344~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34 616 944 470"
+        },
+        {
+            "name": "Albergue de peregrinos Telleira de Baiuca",
+            "city": "Boimorto",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtux/~edisp/~extract/TURGA151234~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34638392024"
+        },
+        {
+            "name": "Albergue de peregrinos de Sergude",
+            "city": "Carral",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtcw/~edisp/~extract/TURGA170470~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34 616 728 143"
+        },
+        {
+            "name": "Albergue de peregrinos de Castroverde",
+            "city": "Castroverde",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtux/~edisp/~extract/TURGA151273~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34 699 832 747"
+        },
+        {
+            "name": "Albergue de peregrinos de Olveiroa",
+            "city": "Dumbría",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtux/~edisp/~extract/TURGA151253~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34 981 744 001"
+        },
+        {
+            "name": "Albergue de peregrinos do Congo",
+            "city": "Dumbría",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtgw/~edisp/~extract/TURGA180702~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34 981 744 001"
+        },
+        {
+            "name": "Albergue de peregrinos de Fisterra",
+            "city": "Fisterra",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtux/~edisp/~extract/TURGA151276~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "981 74 07 81"
+        },
+        {
+            "name": "Albergue Casa de Pasarín",
+            "city": "A Fonsagrada",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mzkw/~edisp/~extract/TURGA390253~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34 699 776 572‬"
+        },
+        {
+            "name": "A Cabana",
+            "city": "Friol",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mzm2/~edisp/~extract/TURGA336286~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34 616 251 462"
+        },
+        {
+            "name": "Albergue de peregrinos da Gudiña",
+            "city": "A Gudiña",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtux/~edisp/~extract/TURGA151353~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "696 82 07 22"
+        },
+        {
+            "name": "Casa da Viúva",
+            "city": "A Gudiña",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/ntmw/~edisp/~extract/TURGA530045~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "988 59 40 03"
+        },
+        {
+            "name": "Albergue de peregrinos San Romao da Retorta",
+            "city": "Guntín",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtgw/~edisp/~extract/TURGA180677~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34 676 610 721"
+        },
+        {
+            "name": "Albergue de peregrinos de Bendoiro",
+            "city": "Lalín",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtgw/~edisp/~extract/TURGA180617~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "658038042"
+        },
+        {
+            "name": "Albergue de peregrinos de Laza",
+            "city": "Laza",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtgw/~edisp/~extract/TURGA180689~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34 988 422 112"
+        },
+        {
+            "name": "Albergue de peregrinos Lourenzá",
+            "city": "Lourenzá",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtux/~edisp/~extract/TURGA151249~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34 652 186 731"
+        },
+        {
+            "name": "Albergue de peregrinos de Lugo",
+            "city": "Lugo",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtux/~edisp/~extract/TURGA151258~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34 618 425 578"
+        },
+        {
+            "name": "Albergue de peregrinos de Melide",
+            "city": "Melide",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtgw/~edisp/~extract/TURGA180646~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34 660 396 822"
+        },
+        {
+            "name": "Albergue de peregrinos Hospital de Bruma",
+            "city": "Mesía",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtux/~edisp/~extract/TURGA151298~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34 981 692 921"
+        },
+        {
+            "name": "Albergue de peregrinos de Miño",
+            "city": "Miño",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtgx/~edisp/~extract/TURGA181144~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34 689 233 678"
+        },
+        {
+            "name": "Albergue de peregrinos de Mondoñedo",
+            "city": "Mondoñedo",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtux/~edisp/~extract/TURGA151290~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34 982 507 040"
+        },
+        {
+            "name": "Albergue de peregrinos de Airexe",
+            "city": "Monterroso",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtux/~edisp/~extract/TURGA151322~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34 982 153 483"
+        },
+        {
+            "name": "Albergue de peregrinos de Mos",
+            "city": "Mos",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtux/~edisp/~extract/TURGA151335~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34 986 348 001"
+        },
+        {
+            "name": "Albergue de peregrinos de Muxía",
+            "city": "Muxía",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtux/~edisp/~extract/TURGA151338~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "610264325"
+        },
+        {
+            "name": "Albergue de peregrinos de Neda",
+            "city": "Neda",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtgw/~edisp/~extract/TURGA180622~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34 671 907 757"
+        },
+        {
+            "name": "Albergue de peregrinos de Negreira",
+            "city": "Negreira",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtux/~edisp/~extract/TURGA151345~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34 664 081 498"
+        },
+        {
+            "name": "Albergue de peregrinos de Poulo",
+            "city": "Ordes",
+            "photo_hostel": "https://www.caminodesantiago.gal/PortalWeb-theme/images/no-image/no_image_160.jpg",
+            "phone_number": " +34 676 966 461"
+        },
+        {
+            "name": "Albergue de peregrinos de Ourense",
+            "city": "Ourense",
+            "photo_hostel": "https://www.caminodesantiago.gal/PortalWeb-theme/images/no-image/no_image_160.jpg",
+            "phone_number": "+34 981 900 643"
+        },
+        {
+            "name": "Albergue de peregrinos de Padrón",
+            "city": "Padrón",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtux/~edisp/~extract/TURGA151270~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34 673 656 173"
+        },
+        {
+            "name": "Albergue de peregrinos de As Seixas",
+            "city": "Palas de Rei",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtgw/~edisp/~extract/TURGA180681~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34 609 669 057"
+        },
+        {
+            "name": "Albergue de peregrinos de Palas de Rei",
+            "city": "Palas de Rei",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtgw/~edisp/~extract/TURGA180650~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34 660 396 820"
+        },
+        {
+            "name": "Albergue de peregrinos de Mato Casanova",
+            "city": "Palas de Rei",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtux/~edisp/~extract/TURGA151263~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34 660396821"
+        },
+        {
+            "name": "Albergue de peregrinos Os Chacotes",
+            "city": "Palas de Rei",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtux/~edisp/~extract/TURGA151329~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34 607 481 536"
+        },
+        {
+            "name": "Albergue de peregrinos de Ferreiros",
+            "city": "Paradela",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtux/~edisp/~extract/TURGA151274~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34 982 157 496"
+        },
+        {
+            "name": "Albergue de peregrinos de Hospital da Condesa",
+            "city": "Pedrafita do Cebreiro",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtux/~edisp/~extract/TURGA151287~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34 982 161 336"
+        },
+        {
+            "name": "Albergue de peregrinos do Cebreiro",
+            "city": "Pedrafita do Cebreiro",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtux/~edisp/~extract/TURGA151217~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34 660 396 809"
+        },
+        {
+            "name": "Albergue de peregrinos de Arca",
+            "city": "O Pino",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtux/~edisp/~extract/TURGA151341~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34 660 396 826"
+        },
+        {
+            "name": "Albergue de peregrinos de Santa Irene",
+            "city": "O Pino",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtux/~edisp/~extract/TURGA151262~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34 981 511 000"
+        },
+        {
+            "name": "Albergue de peregrinos de Pontecesures",
+            "city": "Pontecesures",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtux/~edisp/~extract/TURGA151324~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34 699 832 730"
+        },
+        {
+            "name": "Albergue de peregrinos de Pontevedra",
+            "city": "Pontevedra",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtux/~edisp/~extract/TURGA151327~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "986 844 045"
+        },
+        {
+            "name": "Albergue de peregrinos do Porriño",
+            "city": "O Porriño",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtux/~edisp/~extract/TURGA151300~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34 986 335 428"
+        },
+        {
+            "name": "Albergue de peregrinos de Briallos",
+            "city": "Portas",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtux/~edisp/~extract/TURGA151240~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34 986 536 194"
+        },
+        {
+            "name": "Albergue de peregrinos de Gonzar",
+            "city": "Portomarín",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtux/~edisp/~extract/TURGA151286~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34 982 157 840"
+        },
+        {
+            "name": "Albergue de peregrinos de Portomarín",
+            "city": "Portomarín",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtgw/~edisp/~extract/TURGA180653~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34 660 396 816"
+        },
+        {
+            "name": "Albergue de peregrinos Casa da Torre",
+            "city": "Redondela",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtgw/~edisp/~extract/TURGA180642~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34 986 404 196"
+        },
+        {
+            "name": "Albergue de peregrinos de Ribadeo",
+            "city": "Ribadeo",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtgw/~edisp/~extract/TURGA180616~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34 686 794 389"
+        },
+        {
+            "name": "Albergue de peregrinos Casa Forte",
+            "city": "Samos",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtgw/~edisp/~extract/TURGA180641~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34 659 721 324"
+        },
+        {
+            "name": "Albergue de peregrinos de Casa das Netas",
+            "city": "San Cristovo de Cea",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtux/~edisp/~extract/TURGA151351~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "600 878 289"
+        },
+        {
+            "name": "Albergue de peregrinos de Sandiás",
+            "city": "Sandiás",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtux/~edisp/~extract/TURGA151301~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34 988 465 001"
+        },
+        {
+            "name": "Albergue de peregrinos de Monte do Gozo",
+            "city": "Santiago de Compostela",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtux/~edisp/~extract/TURGA151295~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34 981 558 942"
+        },
+        {
+            "name": "Albergue de peregrinos de San Lázaro",
+            "city": "Santiago de Compostela",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtux/~edisp/~extract/TURGA151350~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34 981 571 488"
+        },
+        {
+            "name": "Albergue de peregrinos de Barbadelo",
+            "city": "Sarria",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtux/~edisp/~extract/TURGA151264~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34 982 530 412"
+        },
+        {
+            "name": "Albergue de peregrinos de Sarria",
+            "city": "Sarria",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtux/~edisp/~extract/TURGA151354~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34 660 396 813"
+        },
+        {
+            "name": "Albergue de peregrinos de Calvor",
+            "city": "Sarria",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtux/~edisp/~extract/TURGA151267~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34 660 396 812"
+        },
+        {
+            "name": "Albergue de peregrinos da Bandeira",
+            "city": "Silleda",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtgw/~edisp/~extract/TURGA180692~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34 670 502 356"
+        },
+        {
+            "name": "Albergue de peregrinos de Sobrado",
+            "city": "Sobrado",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtux/~edisp/~extract/TURGA151250~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34 628 838 965"
+        },
+        {
+            "name": "Albergue de peregrinos de Faramello",
+            "city": "Teo",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtux/~edisp/~extract/TURGA151320~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "No disponible"
+        },
+        {
+            "name": "Albergue de peregrinos de Viladerrei",
+            "city": "Trasmiras",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtgw/~edisp/~extract/TURGA180697~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34 619 081 297"
+        },
+        {
+            "name": "Albergue de peregrinos de Triacastela",
+            "city": "Triacastela",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtux/~edisp/~extract/TURGA151281~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34 982 548 087"
+        },
+        {
+            "name": "Albergue de peregrinos de Tui",
+            "city": "Tui",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtux/~edisp/~extract/TURGA151285~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34 638 276 855"
+        },
+        {
+            "name": "Albergue de peregrinos de Valga",
+            "city": "Valga",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtgw/~edisp/~extract/TURGA180700~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34 638 943 271"
+        },
+        {
+            "name": "Albergue de peregrinos de Vedra",
+            "city": "Vedra",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtux/~edisp/~extract/TURGA151243~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34 689 352 875"
+        },
+        {
+            "name": "Albergue de peregrinos de Casa do Asistente",
+            "city": "Verín",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtux/~edisp/~extract/TURGA151232~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34 616 761 872"
+        },
+        {
+            "name": "Albergue de peregrinos de Vigo",
+            "city": "Vigo",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/ntmw/~edisp/~extract/TURGA530078~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34 699 322 429"
+        },
+        {
+            "name": "Albergue de peregrinos de Vilalba",
+            "city": "Vilalba",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtux/~edisp/~extract/TURGA151293~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34 649 900 391"
+        },
+        {
+            "name": "Albergue de peregrinos de Vilar de Barrio",
+            "city": "Vilar de Barrio",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtgw/~edisp/~extract/TURGA180621~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34 628 353 914"
+        },
+        {
+            "name": "Albergue de Xinzo de Limia",
+            "city": "Xinzo de Limia",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mza0/~edisp/~extract/TURGA304447~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34 619 942 470"
+        },
+        {
+            "name": "Albergue de peregrinos de Xunqueira de Ambía",
+            "city": "Xunqueira de Ambía",
+            "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mtux/~edisp/~extract/TURGA151312~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
+            "phone_number": "+34 689 866 494"
+        }
+          
+    ]
+}
