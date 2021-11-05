@@ -543,8 +543,23 @@
             "phone_number": "+34 689 866 494"
         }
           
+    ],
+    "users": [
+        {
+            "username": "Peregrino1",
+            "email": "peregrino1@example.com",
+            "password": "santiago"
+        },
+        {
+            "username": "Peregrino2",
+            "email": "peregrino2@example.com",
+            "password": "santiago"
+        },
+        {
+            "username": "Peregrino3",
+            "email": "peregrino3@example.com",
+            "password": "santiago"
+        }
     ]
-    
-
    
 }
