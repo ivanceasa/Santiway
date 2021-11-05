@@ -25,6 +25,13 @@ const Login = () => {
 			}
 		});
 	};
+	const forgotPassword = () => {
+		Swal.fire({
+			title: "Revisa tu email",
+			icon: "info",
+			confirmButtonText: "Ok"
+		});
+	};
 
 	return (
 		<div className="text-center mt-5">
@@ -64,7 +71,9 @@ const Login = () => {
 								<button type="submit" className="loginButton" onClick={handleClick}>
 									Log In
 								</button>
-								<span className="loginForgot">Forgot Password?</span>
+								<span className="loginForgot" onClick={forgotPassword}>
+									Forgot Password?
+								</span>
 								<Link to="/register">
 									<button className="loginRegisterButton">Create a New Account</button>
 								</Link>

@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { useParams } from "react-router-dom";
+import IconHostel from "../../img/IconHostel.png";
 
 const Booking = () => {
 	const { store, actions } = useContext(Context);
@@ -54,7 +55,10 @@ const Booking = () => {
 							<div>
 								<div key={id}>
 									<div className="text-center m-4 p-4">
-										<h1>{item.name}</h1>
+										<h1>
+											<img src={IconHostel} className="w-1 h-1 p-2" alt="..." />
+											{item.name}
+										</h1>
 										<h1>({item.city})</h1>
 									</div>
 									<div className="mb-4">
