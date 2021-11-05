@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: 889932b45574
+Revision ID: eb32e55b8d20
 Revises: 
-Create Date: 2021-10-27 17:45:16.391835
+Create Date: 2021-11-05 22:45:47.820302
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '889932b45574'
+revision = 'eb32e55b8d20'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -42,7 +42,7 @@ def upgrade():
     op.create_table('post',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('post_content', sa.String(length=1000), nullable=True),
-    sa.Column('created_at', sa.Date(), nullable=True),
+    sa.Column('created_at', sa.DateTime(), nullable=True),
     sa.Column('photo', sa.String(length=120), nullable=True),
     sa.Column('user_id', sa.Integer(), nullable=True),
     sa.ForeignKeyConstraint(['user_id'], ['user.id'], ),
@@ -81,7 +81,6 @@ def upgrade():
     sa.Column('city', sa.String(length=120), nullable=False),
     sa.Column('photo_hostel', sa.String(length=250), nullable=False),
     sa.Column('phone_number', sa.String(length=120), nullable=False),
-    sa.Column('capacity', sa.Integer(), nullable=True),
     sa.Column('route_id', sa.Integer(), nullable=True),
     sa.Column('stage_id', sa.Integer(), nullable=True),
     sa.ForeignKeyConstraint(['route_id'], ['route.id'], ),
