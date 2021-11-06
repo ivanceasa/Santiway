@@ -276,15 +276,11 @@ def create_post():
     current_user_id = get_jwt_identity()
     
     cloudinary.config(
-        #cloud_name= os.getenv('CLOUD_NAME'),
-        #api_key= os.getenv('API_KEY'),
-        #api_secret= os.getenv('API_SECRET')
-        cloud_name= dxcjhk9bp,
-        api_key= 826714827535581,
-        api_secret= jQllLYklf6iFVrTHS__11bd4z9Q
+        cloud_name= os.getenv('CLOUD_NAME'),
+        api_key= os.getenv('API_KEY'),
+        api_secret= os.getenv('API_SECRET')
     )
-  
-    
+     
     new_post_text = request.form.get('newPost')
     date = datetime.datetime.utcnow()
     photo = None 
