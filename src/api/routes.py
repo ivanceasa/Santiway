@@ -532,7 +532,7 @@ def get_database():
             "name": "Albergue Casa de Pasarín",
             "city": "A Fonsagrada",
             "photo_hostel": "http://www.turismo.gal/imaxes/mdaw/mzkw/~edisp/~extract/TURGA390253~1~staticrendition/tg_carrusel_cabecera_grande.jpg",
-            "phone_number": "+34 699 776 572‬"
+            "phone_number": "+34 699 776 572"
         },
         {
             "name": "A Cabana",
