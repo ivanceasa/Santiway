@@ -28,7 +28,7 @@ const Consejos = () => {
 													corporal (incluyendo el peso del agua). Vas a encontrar
 													establecimientos para reabastecerte.
 												</li>
-												<li>Olvidate del por si acaso.</li>
+												<li>Olvídate del por si acaso.</li>
 												<li>Lo que más pesa, ¡al fondo!</li>
 												<li>
 													Organiza tu mochila con bolsas de plástico. Así te será más fácil
@@ -53,7 +53,7 @@ const Consejos = () => {
 										</span>
 										<h3>Tip extra:</h3>
 										<span>
-											Si el calzado es de suela dura, mucho mejor. Las sandalias o chanclas son
+											Si el calzado es de suela dura, mucho mejor. Las sandalias y chanclas son
 											para la playa.
 										</span>
 									</div>
@@ -64,9 +64,13 @@ const Consejos = () => {
 							<div className="grid">
 								<img className="photoAdvice" src={adviceImg3} />
 								<div className="grid__body">
-									<h2 className="grid__title">Title 3</h2>
+									<h2 className="grid__title">Lo más importante</h2>
 									<div className="mt-auto">
-										<span className="grid__tag">#tag3</span>
+										<span className="grid__tag">
+											Recuerda que realizas el camino para disfutar y no para sufrir. Por lo que
+											si tienes que dejar parte del camino para otra ocasión, no pasa nada. ¡Mejor
+											llevarse un buen recuerdo!
+										</span>
 									</div>
 								</div>
 							</div>
@@ -78,10 +82,10 @@ const Consejos = () => {
 									<h2 className="grid__title">Mejor solo que mal acompañado</h2>
 									<div className="mt-auto">
 										<span className="grid__tag">
-											Lo importante es con quién vas ha hacer el camino, por lo que es fundamental
-											la buena compañía y el buen rollo. Por lo que si no tienes a nadie así o
-											prefieres hacerlo solo, ni te preocupes. Es fácil conocer a gente durante el
-											camino y que acabes con ellos varias etapas o más... Nunca se sabe.
+											Lo importante es con quién vas ha hacer el camino, ya que es fundamental la
+											buena compañía, el buen rollo y la buena convivencia. Y si vas solo, no te
+											preocupes porque es fácil conocer a gente durante el camino y que acabes con
+											ellos varias etapas o más... Nunca se sabe.
 										</span>
 									</div>
 								</div>
@@ -93,7 +97,17 @@ const Consejos = () => {
 								<div className="grid__body">
 									<h2 className="grid__title">¿Qué camino escoger? </h2>
 									<div className="mt-auto">
-										<span className="grid__tag" />
+										<span className="grid__tag">
+											Para una primera toma de contacto con el mundo peregrino escoge el Camino
+											Francés. Es el Camino más asequible, con gran cantidad de albergues,
+											alojamientos y servicios, tiene poca distancia entre poblaciones, buena
+											señalización, por los numerosos peregrinos que encontraremos, etc. También
+											porque es el más rico en monumentos, historia y cultura (junto con el Camino
+											de Le Puy). Para aquellos que ya hayan recorrido este Camino y, por lo
+											tanto, tengan algo de experiencia, el número de otros Caminos interesantes
+											para andar es casi ilimitado: el Camino Aragonés, el Camino del Norte, el
+											Camino de la Plata, el Camino Catalán, etc.
+										</span>
 									</div>
 								</div>
 							</div>
@@ -102,9 +116,32 @@ const Consejos = () => {
 							<div className="grid">
 								<img className="photoAdvice" src={adviceImg6} />
 								<div className="grid__body">
-									<h2 className="grid__title">Title 6</h2>
+									<h2 className="grid__title">Planifica</h2>
 									<div className="mt-auto">
-										<span className="grid__tag">#tag6</span>
+										<span className="grid__tag">
+											Es muy importante la planificación previa antes de empezar el camino:
+											<ul>
+												<li>
+													Planificar las etapas de forma personalizada y adaptándolas a tu
+													esfuerzo y propio ritmo.
+												</li>
+												<li>
+													También es muy importante organizar los sitios donde vas a pasar la
+													noche, ya que realizar el camino de noche no es recomendable.
+												</li>
+												<li>Lo que más pesa, ¡al fondo!</li>
+												<li>
+													Hacer un presupuesto, teniendo el medio de transporte que necesites
+													para llegar y volver del camino. Ten en cuenta el material que vas a
+													necesitar para realizar el camino (botas, mochila, ropa de montaña,
+													saco de dormir, etc.). La cantidad media como máximo que utiliza un
+													peregrino medio puede alcanzar unos 30€ diarios. Esto irá en función
+													de si comes en restaurantes o si vas al supermercado. Además,
+													reserva unos 10€ más para imprevistos.
+												</li>
+												<li>lleva un pequeño botiquín.</li>
+											</ul>
+										</span>
 									</div>
 								</div>
 							</div>
@@ -123,39 +160,6 @@ const Consejos = () => {
 								</div>
 							</div>
 						</div>
-						{/* <div className="card-container">
-							<div className="grid">
-								<img className="photoAdvice" src={adviceImg7} />
-								<div className="grid__body">
-									<h2 className="grid__title">Title 7</h2>
-									<div className="mt-auto">
-										<span className="grid__tag">#tag7</span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div className="card-container">
-							<div className="grid">
-								<img className="photoAdvice" src={adviceImg7} />
-								<div className="grid__body">
-									<h2 className="grid__title">Title 7</h2>
-									<div className="mt-auto">
-										<span className="grid__tag">#tag7</span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div className="card-container">
-							<div className="grid">
-								<img className="photoAdvice" src={adviceImg7} />
-								<div className="grid__body">
-									<h2 className="grid__title">Title 7</h2>
-									<div className="mt-auto">
-										<span className="grid__tag">#tag7</span>
-									</div>
-								</div>
-							</div>
-						</div> */}
 					</div>
 				</div>
 			</div>
