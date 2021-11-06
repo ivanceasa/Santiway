@@ -13,7 +13,7 @@ class User(db.Model):
     is_active = db.Column(db.Boolean(), unique=False, nullable=False)
     posts_user = db.relationship("Post", backref="user", lazy=True)  #One to many
     comments_user = db.relationship("Comment", backref="user", lazy=True)  #One to many
-    #bookings = db.relationship("Booking", backref="user", lazy=True)  #One to many
+    bookings = db.relationship("Booking", backref="user", lazy=True)  #One to many
     hostels = db.relationship("Hostel", secondary="user_hostel", backref=db.backref("users")) #many to many
     routes = db.relationship("Route", secondary="user_route", backref=db.backref("users")) #many to many
     stages = db.relationship("Stage", secondary="user_stage", backref=db.backref("users")) #many to many
@@ -179,7 +179,7 @@ class Booking(db.Model):
     month = db.Column(db.Integer, unique=False, nullable=False)
     day = db.Column(db.Integer, unique=False, nullable=False)
     hostel_id = db.Column(db.Integer, db.ForeignKey("hostel.id"), nullable=True)
-    #user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=True)
+    user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=True)
          
     def save(self):
         db.session.add(self)
