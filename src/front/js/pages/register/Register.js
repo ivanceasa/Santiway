@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import "./register.css";
 import { useHistory } from "react-router-dom";
 import { Context } from "../../store/appContext";
+import Swal from "sweetalert2";
 
 const Register = () => {
 	const { store, actions } = useContext(Context);
@@ -23,7 +24,12 @@ const Register = () => {
 	async function signUp(event) {
 		event.preventDefault();
 		if (password !== confirmPassword) {
-			alert("Las contraseñas no coinciden");
+			/*alert("Las contraseñas no coinciden");*/
+			Swal.fire({
+				title: "Las contraseñas no coinciden",
+				icon: "warning",
+				confirmButtonText: "Ok"
+			});
 			return;
 		}
 		const url = process.env.BACKEND_URL + "/api/register";
@@ -62,10 +68,20 @@ const Register = () => {
 		event.preventDefault();
 		signUp(event);
 		if (signUp) {
-			alert("El registro se ha realizado correctamente!");
+			/*alert("El registro se ha realizado correctamente!");*/
+			Swal.fire({
+				title: "El registro se ha realizado correctamente!",
+				icon: "success",
+				confirmButtonText: "Ok"
+			});
 			return savePersonalData();
 		} else {
-			alert("Ha ocurrido un problema con el registro, vuelva a intentarlo!");
+			/*alert("Ha ocurrido un problema con el registro, vuelva a intentarlo!");*/
+			Swal.fire({
+				title: "Ha ocurrido un problema con el registro, vuelva a intentarlo!",
+				icon: "error",
+				confirmButtonText: "Ok"
+			});
 			return;
 		}
 	}
