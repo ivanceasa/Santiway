@@ -20,7 +20,7 @@ api = Blueprint('api', __name__)
 
 stripe.api_key= "pk_test_51JpGcyErK9vFHAnpjzQwt3orpJwK1DQ3sntDLKbOAfBIEz4zVi13q4SzHy7cqTRVgZk9xJ1bRIaZgGvrVZuDM2gU000wdSvPDI"
 
-YOUR_DOMAIN = process.env.BACKEND_URL + "/api/checkout"
+YOUR_DOMAIN = 'https://3000-indigo-dingo-lhaf3too.ws-eu17.gitpod.io/checkout'
 
 
 @api.route('/create-checkout-session', methods=['POST'])
