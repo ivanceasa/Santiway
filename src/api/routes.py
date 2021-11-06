@@ -44,9 +44,6 @@ def create_checkout_session():
     
 
 
-
-
-
 @api.route('/hello', methods=['POST', 'GET'])
 def handle_hello():
 
