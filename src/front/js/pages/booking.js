@@ -64,7 +64,7 @@ const Booking = () => {
 									<div className="mb-4">
 										<img src={item.photo_hostel} />
 									</div>
-									<Link to="/confirmation">
+									<Link to="/checkout">
 										<button
 											onClick={() => {
 												createBooking(item.id);
