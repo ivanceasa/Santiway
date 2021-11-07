@@ -3,6 +3,7 @@ import { Context } from "../../store/appContext";
 import { useHistory, Link } from "react-router-dom";
 import "./login.css";
 import Swal from "sweetalert2";
+import MyProfile from "../myprofile";
 
 const Login = () => {
 	const { store, actions } = useContext(Context);
@@ -10,7 +11,7 @@ const Login = () => {
 	const [password, setPassword] = useState("");
 	const history = useHistory();
 
-	console.log("This is your token", store.token);
+	// console.log("This is your token", store.token);
 	const handleClick = () => {
 		actions.login(email, password).then(() => {
 			if (store.token && store.token != "" && store.token != undefined) {
@@ -36,8 +37,9 @@ const Login = () => {
 	return (
 		<div className="text-center mt-5">
 			{store.token && store.token != "" && store.token != undefined ? (
-				"You are logged in with this token" + store.token
+				<MyProfile />
 			) : (
+				// "You are logged in with this token" + store.token
 				<div className="login">
 					<div className="loginWrapper">
 						<div className="loginLeft">
