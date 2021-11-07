@@ -15,30 +15,44 @@ import cloudinary.api
 import os
 import json
 
+stripe.api_key= "sk_test_51JpGcyErK9vFHAnpCLQWzWtjLXijhXesdcB8IDuvIzH11QicIkAODbHORzR0jDHQcb5DXzZrNKNSsMpQxLLiC1Pe0062fhc5Q8"
+YOUR_DOMAIN = os.getenv("FRONTEND_URL")
+
 
 api = Blueprint('api', __name__)
 
-stripe.api_key= "pk_test_51JpGcyErK9vFHAnpjzQwt3orpJwK1DQ3sntDLKbOAfBIEz4zVi13q4SzHy7cqTRVgZk9xJ1bRIaZgGvrVZuDM2gU000wdSvPDI"
 
-YOUR_DOMAIN = 'https://3000-indigo-dingo-lhaf3too.ws-eu17.gitpod.io/checkout'
-
-
-@api.route('/create-checkout-session', methods=['POST'])
+@api.route('/create-checkout-session', methods=['POST']) 
 
 def create_checkout_session():
     request_json = request.get_json()
+
     try:
-        checkout_session = stripe.checkout.Session.create(
-            line_items=request_json,
-            payment_method_types=[
-              'card'
+        checkout_session = stripe.checkout.Session.create(            
+            payment_method_types=['card'],
+            line_items=[
+                {
+                    'price_data': {
+                        'currency': 'eur',
+                        'unit_amount': 1200,
+                        'product_data': {
+                            'name': 'Reserva Albergue',
+                            'images': ['https://i.ibb.co/MSn27Qq/hostel1.jpg'],
+                        },
+
+                    },
+                    'quantity': 1,
+                },
             ],
+            
             mode='payment',
-            success_url=YOUR_DOMAIN + '/confirmation',
-            cancel_url=YOUR_DOMAIN + '/cancel.html',
+            success_url=YOUR_DOMAIN + '/confirmation?success=true',
+            cancel_url=YOUR_DOMAIN + '?canceled=true',
         )
-        return jsonify({'id':checkout_session.id})
+        return jsonify({'id': checkout_session.id})
+
     except Exception as e:
+
         return jsonify(error=str(e)), 403
 
     

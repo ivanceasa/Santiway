@@ -5,6 +5,7 @@ import portada from "../../img/santiago-path.jpg";
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
+
 	useEffect(
 		() => {
 			if (store.token && store.token != "" && store.token != undefined) actions.getMessage();
