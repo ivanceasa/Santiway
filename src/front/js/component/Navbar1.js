@@ -10,9 +10,7 @@ const Navbar1 = () => {
 	const history = useHistory();
 
 	function userNotRegister() {
-
 		if (!localStorage.getItem("token")) {
-
 			Swal.fire({
 				title: "Debe estar registrado para acceder al sitio",
 				icon: "warning",
