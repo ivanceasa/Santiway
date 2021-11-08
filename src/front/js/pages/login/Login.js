@@ -37,6 +37,9 @@ const Login = () => {
 	return (
 		<div className="text-center mt-5">
 			{store.token && store.token != "" && store.token != undefined ? (
+
+				//"You are logged in with this token" + store.token
+
 				<MyProfile />
 			) : (
 				// "You are logged in with this token" + store.token
@@ -62,7 +65,7 @@ const Login = () => {
 
 								<input
 									type="password"
-									placeholder="Password"
+									placeholder="Contraseña"
 									value={password}
 									className="form-control"
 									id="exampleInputPassword1"
@@ -71,13 +74,13 @@ const Login = () => {
 									}}
 								/>
 								<button type="submit" className="loginButton" onClick={handleClick}>
-									Log In
+									Acceder
 								</button>
 								<span className="loginForgot" onClick={forgotPassword}>
-									Forgot Password?
+									¿Olvidaste la contraseña?
 								</span>
 								<Link to="/register">
-									<button className="loginRegisterButton">Create a New Account</button>
+									<button className="loginRegisterButton">Crear una cuenta</button>
 								</Link>
 							</div>
 						</div>

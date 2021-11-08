@@ -80,7 +80,7 @@ const Navbar1 = () => {
 				<div className="ml-auto">
 					{!localStorage.getItem("token") ? (
 						<Link to="/login">
-							<Button variant="warning">Login/Sign up</Button>
+							<Button variant="warning">Acceder/Registro</Button>
 						</Link>
 					) : (
 						<Button
@@ -89,7 +89,7 @@ const Navbar1 = () => {
 								history.push("/");
 							}}
 							variant="warning">
-							Log out
+							Salir
 						</Button>
 					)}
 				</div>

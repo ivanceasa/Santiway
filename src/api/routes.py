@@ -46,7 +46,7 @@ def create_checkout_session():
             ],
             
             mode='payment',
-            success_url=YOUR_DOMAIN + '/confirmation?success=true',
+            success_url=YOUR_DOMAIN + 'confirmation?success=true',
             cancel_url=YOUR_DOMAIN + '?canceled=true',
         )
         return jsonify({'id': checkout_session.id})

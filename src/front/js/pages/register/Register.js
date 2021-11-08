@@ -41,7 +41,7 @@ const Register = () => {
 		});
 		const responseJson = await response.json();
 		if (responseJson.access_token) {
-			localStorage.setItem("accessToken", responseJson.accessToken);
+			localStorage.setItem("token", responseJson.access_Token);
 		}
 		if (response.ok) {
 			Swal.fire({
@@ -92,14 +92,16 @@ const Register = () => {
 		<div className="login">
 			<div className="loginWrapper">
 				<div className="loginLeft">
-					<h3 className="loginLogo">Bienvenido!</h3>
+					<h3 className="loginLogo">Bienvenid@!</h3>
 					<span className="loginDesc">Conecta con peregrinos de todo el mundo.</span>
 				</div>
 				<div className="loginRight">
 					<form className="loginBox" onSubmit={signUp}>
 						<input
 							type="text"
-							placeholder="Username"
+
+							placeholder="Nombre de usuario"
+
 							className="loginInput"
 							onChange={event => setUserName(event.target.value)}
 							required
@@ -114,19 +116,21 @@ const Register = () => {
 						/>
 						<input
 							type="password"
-							placeholder="Password"
+							placeholder="Contraseña"
 							className="loginInput"
 							onChange={event => setPassword(event.target.value)}
 							required
 						/>
 						<input
 							type="password"
-							placeholder="Password Again"
+							placeholder="Repite la contraseña"
 							className="loginInput"
 							onChange={event => setConfirmPassword(event.target.value)}
 							required
 						/>
-						<input type="submit" value="Save" className="loginButton" />
+
+						<input type="submit" value="Guardar" className="loginButton" />
+
 					</form>
 				</div>
 			</div>
