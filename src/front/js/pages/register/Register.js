@@ -99,7 +99,9 @@ const Register = () => {
 					<form className="loginBox" onSubmit={signUp}>
 						<input
 							type="text"
+
 							placeholder="Nombre de usuario"
+
 							className="loginInput"
 							onChange={event => setUserName(event.target.value)}
 							required
@@ -126,7 +128,9 @@ const Register = () => {
 							onChange={event => setConfirmPassword(event.target.value)}
 							required
 						/>
+
 						<input type="submit" value="Guardar" className="loginButton" />
+
 					</form>
 				</div>
 			</div>
