@@ -36,7 +36,7 @@ const Stripe = () => {
 					<h5>12€</h5>
 				</div>
 			</div>
-			<button className="btn btn-success" type="submit" id="checkout-button" role="link" onClick={handleClick}>
+			<button className="btn btn-warning" type="submit" id="checkout-button" role="link" onClick={handleClick}>
 				Checkout
 			</button>
 		</div>
