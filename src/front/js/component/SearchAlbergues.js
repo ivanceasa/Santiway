@@ -76,7 +76,7 @@ const SearchAlbergues = () => {
 										<Card.Text> {`Teléfono: ${item.phone_number}`}</Card.Text>
 										<Button
 											className="m-2"
-											variant="outline-primary"
+											variant="btn btn-warning"
 											onClick={() => history.push(`/albergues/${item.name}`)}>
 											Reservar
 										</Button>

@@ -48,31 +48,42 @@ const Booking = () => {
 	*/}
 			</div>
 
-			<div className="text-center m-4">
+			<div className="text-center mb-5 m-4 pb-5">
 				{store.hostels.map((item, id) => {
 					if (item.name === detailsId) {
 						return (
-							<div>
-								<div key={id}>
-									<div className="text-center m-4 p-4">
-										<h1>
-											<img src={IconHostel} className="w-1 h-1 p-2" alt="..." />
-											{item.name}
-										</h1>
-										<h1>({item.city})</h1>
+							<div key={id} className="card m-auto" style={{ width: " 750px" }}>
+								<div className="row no-gutters">
+									<div className="col-md-4">
+										<img src={item.photo_hostel} style={{ width: " 260px", height: "280px" }} />
 									</div>
-									<div className="mb-4">
-										<img src={item.photo_hostel} />
+									<div className="col-md-8">
+										<div className="card-body">
+											<h5 className="card-title">
+												<strong>{item.name}</strong>
+											</h5>
+											<h5>Precio por noche: 12€</h5>
+											<h5>
+												{`Teléfono de contacto: ${item.phone_number}`}
+												(llámenos para cualquier consulta)
+											</h5>
+
+											<p className="card-text">
+												Para realizar una reserva en este albergue introduzca previamente su
+												fecha de preferencia.
+											</p>
+
+											<Link to="/checkout">
+												<button
+													onClick={() => {
+														createBooking(item.id);
+													}}
+													className="btn btn-warning">
+													Realizar reserva
+												</button>
+											</Link>
+										</div>
 									</div>
-									<Link to="/checkout">
-										<button
-											onClick={() => {
-												createBooking(item.id);
-											}}
-											className="btn btn-warning">
-											Realizar reserva
-										</button>
-									</Link>
 								</div>
 							</div>
 						);

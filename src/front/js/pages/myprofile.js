@@ -66,7 +66,7 @@ const MyProfile = () => {
 					</div>
 
 					<hr className="shareHr" />
-					{/*
+					{/*}
 					{file && (
 						<div className="shareImgContainer">
 							<img className="shareImg" src={URL.createObjectURL(file)} alt="" />
