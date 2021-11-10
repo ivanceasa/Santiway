@@ -52,25 +52,6 @@ const Booking = () => {
 				{store.hostels.map((item, id) => {
 					if (item.name === detailsId) {
 						return (
-							/*<>
-								<div key={id} className="text-center m-4 p-4">
-									<h1>{item.name}</h1>
-									<h1>({item.city})</h1>
-								</div>
-								<div className="mb-4">
-									<img src={item.photo_hostel} />
-								</div>
-								<Link to="/checkout">
-									<button
-										onClick={() => {
-											createBooking(item.id);
-										}}
-										className="btn btn-warning">
-										Realizar reserva
-									</button>
-								</Link>
-							</>*/
-
 							<div key={id} className="card m-auto" style={{ width: " 750px" }}>
 								<div className="row no-gutters">
 									<div className="col-md-4">
