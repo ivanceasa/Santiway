@@ -4,6 +4,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			routes: [],
 			hostels: [],
 			users: [],
+			user: null,
 			message: null,
 			demo: [
 				{
@@ -73,8 +74,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 					}
 					const data = await resp.json();
 					console.log("This came from the backend", data);
-					localStorage.setItem("token", data.access_token);
-					setStore({ token: data.access_token });
+					localStorage.setItem("token", data[0].access_token);
+					setStore({ token: data[0].access_token });
+					setStore({ user: data[1].id });
+					localStorage.setItem("user", data[1].id);
 					return true;
 				} catch (error) {
 					console.log("There has been an error login in");

@@ -40,6 +40,7 @@ const Booking = () => {
 		<>
 			<div className=" text-center mt-5">
 				<input type="date" onChange={setDate} className="p-1 m-3" />
+
 				{/*<Link to="/confirmation">
 					<button onClick={createBooking} className="btn btn-warning">
 						Realizar reserva
