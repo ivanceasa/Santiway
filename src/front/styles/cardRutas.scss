@@ -1,4 +1,43 @@
 .content{
     min-height: 90vh;
     margin-bottom: 50px;
+    margin: 0 auto;
+}
+
+.h1-rutas{
+    color: #42b72a;
+}
+
+.imagen-rutas{
+    border-radius: 20px 20px 0px 0px;
+}
+.card-rutas{
+    border-radius: 20px;
+    box-shadow: 3px 10px 30px #ccc ;
+}
+
+.titulo-ruta{
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #47753E ;
+}
+.texto-ruta{
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.boton-ruta{
+    width: 100%;
+    border: 2px solid #47753E ;
+    color: #47753E;
+    border-radius: 6px;
+    font-weight: bold;
+}
+.boton-ruta:hover{
+    background: #47753E;
+    color: white;
+    border: 2px solid #47753E;
+}
+.fila-rutas{
+    justify-content: center;
 }
