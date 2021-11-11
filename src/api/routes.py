@@ -76,7 +76,7 @@ def login():
     if user is None or password == None:
         return jsonify({"msg": "Bad email or password"}), 401    
     access_token = create_access_token(user.id)
-    return jsonify(access_token=access_token) 
+    return jsonify({"access_token" : access_token}, user.serialize()) 
 
 @api.route('/register', methods=["POST"])
 def signUp():
@@ -310,6 +310,19 @@ def create_post():
     
             return jsonify(post.serialize()), 200 
     return jsonify(""), 400
+
+@api.route('/post/<int:id>', methods=["DELETE"])
+#@jwt_required()
+def delete_post(id):
+    post = Post.query.get(id)
+    #if post is None:
+        #raise APIException("Post not found", status_code=404)
+    db.session.delete(post)
+    db.session.commit()
+    response_body = {
+        "msg": "Post successfully deleted"
+    }
+    return jsonify(response_body), 200
      
 
 @api.route('/comments',  methods=["GET"])

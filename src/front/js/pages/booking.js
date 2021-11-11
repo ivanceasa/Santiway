@@ -39,9 +39,16 @@ const Booking = () => {
 	return (
 		<>
 			<div className=" text-center mt-5">
-				<h1 className="text-success text-center pt-3 font-weight-bold">Haga su reserva</h1>
-				<input type="date" onChange={setDate} className=" date p-1 m-3 border border-success" />
-				<i className="fas fa-calendar" />
+
+				<input type="date" onChange={setDate} className="p-1 m-3" />
+
+				{/*<Link to="/confirmation">
+					<button onClick={createBooking} className="btn btn-warning">
+						Realizar reserva
+					</button>
+				</Link>
+	*/}
+
 			</div>
 
 			<div className="text-center mb-5 m-4 pb-5">

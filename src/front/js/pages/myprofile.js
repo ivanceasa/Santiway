@@ -46,6 +46,15 @@ const MyProfile = () => {
 		setPosts(responseJson);
 	}
 
+	async function deletePost(id) {
+		const response = await fetch(`${process.env.BACKEND_URL}/api/post/${parseInt(id)}`, {
+			method: "DELETE"
+		});
+		const responseJson = await response.json();
+		console.log(responseJson);
+		getPosts();
+	}
+
 	return (
 		<>
 			{/*}
@@ -118,8 +127,13 @@ const MyProfile = () => {
 								})}
 							</span>
 							<span className="postDate">{post.created_at}</span>
+
 							<div className="icon1">
-								<i className="fas fa-ellipsis-v fa-2x" />
+								{localStorage.getItem("user") == post.user_id ? (
+									<i className="fas fa-trash-alt" onClick={() => deletePost(post.id)} />
+								) : (
+									""
+								)}
 							</div>
 						</div>
 						<div className="postText mx-3">{post.post_content}</div>
