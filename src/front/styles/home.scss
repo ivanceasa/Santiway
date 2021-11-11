@@ -5,4 +5,32 @@
 
 #contentHome{
     min-height: 70vh;
+
+}
+.texto-home{
+    margin-top: 15%;
+    
+
+}
+
+.texto-home h1{
+    font-size: 50px;
+}
+
+.texto-home p{
+    font-size: 30px;
+
+}
+.button-home{
+    background: transparent;
+    font-size: 20px;
+    font-weight: bold;
+    border: 2px solid #ffc107;
+    color: #ffc107;
+}
+
+.button-home:hover{
+    background:#ffc107;
+    border: 2px solid #ffc107;
+    color: white;
 }

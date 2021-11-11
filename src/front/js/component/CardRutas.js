@@ -10,19 +10,27 @@ const CardRutas = () => {
 	const { store, actions } = useContext(Context);
 	return (
 		<div className="content">
-			<h1 className="text-success text-center pt-3 font-weight-bold">RUTAS</h1>
+			<h1 className=" h1-rutas text-success text-center pt-3 font-weight-bold">RUTAS</h1>
 			<div className="card-Container">
-				<Row lg="auto" className="ml-4">
+				<Row lg="auto" className=" fila-rutas ml-4">
 					{store.routes.map((item, id) => (
-						<Card key={id} className="m-3 card">
-							<Card.Img variant="top" src={item.photo} />
+						<Card key={id} className="m-3 card-rutas">
+							<Card.Img className="imagen-rutas" variant="top" src={item.photo} />
 							<Card.Body>
-								<Card.Title>{item.name}</Card.Title>
-								<Card.Text>{`Inicio: ${item.start_point}`}</Card.Text>
-								<Card.Text> {`Etapas: ${item.stages_number}`}</Card.Text>
-								<Card.Text>{`Longitud: ${item.length}`}</Card.Text>
+								<Card.Title className="titulo-ruta">{item.name}</Card.Title>
+								<Card.Text>
+									<span className="texto-ruta">Inicio:</span>
+									{` ${item.start_point}`}
+								</Card.Text>
+								<Card.Text>
+									<span className="texto-ruta">Etapas:</span> {` ${item.stages_number}`}
+								</Card.Text>
+								<Card.Text>
+									<span className="texto-ruta">Longitud:</span>
+									{` ${item.length}`}
+								</Card.Text>
 								<Button
-									className="m-2"
+									className=" boton-ruta"
 									variant="outline-primary"
 									onClick={() => history.push(`/rutas/${id}`)}>
 									Ver más
