@@ -17,8 +17,8 @@ export const Home = () => {
 		<>
 			<div className="card bg-dark text-white">
 				<img src={portada} className="img" alt="..." />
-				<div className="card-img-overlay text-center m-4">
-					<h1 className="card-title font-weight-bold display-1 m-4">Bienvenido Peregrino!</h1>
+				<div className=" texto-home card-img-overlay text-center m-4">
+					<h1 className="card-title-home font-weight-bold display-1 m-4">Bienvenido Peregrino!</h1>
 					<p className="card-text display-4">
 						Conoce las rutas, encuentra tu albergue y recibe consejos para el viaje
 					</p>

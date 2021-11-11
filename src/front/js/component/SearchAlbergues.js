@@ -34,7 +34,7 @@ const SearchAlbergues = () => {
 		<div className="card">
 			<img src={hostelImage} className="img-hostel" alt="..." />
 			<div className="card-img-overlay">
-				<h1 className="text-center p-4 font-weight-bold">ENCUENTRA TU ALBERGUE</h1>
+				<h1 className="text-success text-center pt-3 font-weight-bold">ENCUENTRA TU ALBERGUE</h1>
 				<div className="container mt-3">
 					<div className="input-group  mx-auto w-75 p-3">
 						<input
