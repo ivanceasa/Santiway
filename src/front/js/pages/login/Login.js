@@ -19,7 +19,7 @@ const Login = () => {
 			} else {
 				Swal.fire({
 					title: "Usuario no identificado",
-					text: "Debe registrarse o ingresar datos válidos",
+					text: "Debe ingresar datos válidos",
 					icon: "warning",
 					confirmButtonText: "Ok"
 				});

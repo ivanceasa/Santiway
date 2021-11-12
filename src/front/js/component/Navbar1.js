@@ -9,23 +9,12 @@ const Navbar1 = () => {
 	const { store, actions } = useContext(Context);
 	const history = useHistory();
 
-	function userNotRegister() {
-		if (!localStorage.getItem("token")) {
-			Swal.fire({
-				title: "Debe estar registrado para acceder al sitio",
-				icon: "warning",
-				confirmButtonText: "Ok"
-			});
-			return (
-				<Link to="/login">
-					<span className="topbarLink text-white p-1">Experiencias</span>
-				</Link>
-			);
-		} else {
-			<Link to="/myprofile">
-				<button className="topbarLink text-white p-1">Experiencias</button>
-			</Link>;
-		}
+	function NoRegister() {
+		Swal.fire({
+			title: "Debe estar registrado para acceder al sitio",
+			icon: "warning",
+			confirmButtonText: "Ok"
+		});
 	}
 
 	return (
@@ -55,24 +44,20 @@ const Navbar1 = () => {
 					<Link to="/consejos">
 						<span className="topbarLink text-white p-1">Consejos</span>
 					</Link>
-					<Link to="/login">
-						<span onClick={userNotRegister} className="topbarLink text-white p-1">
-							Experiencias
-						</span>
-					</Link>
 
-					{/* {!store.token ? (
+					{!localStorage.getItem("token") ? (
 						<Link to="/login">
-							
-							<span className="topbarLink text-white p-1">Experiencias</span>
+							<span onClick={NoRegister} className="topbarLink text-white p-1">
+								Experiencias
+							</span>
 						</Link>
 					) : (
 						<>
 							<Link to="/myprofile">
-								<button className="topbarLink text-white p-1">Experiencias</button>
+								<span className="topbarLink text-white p-1">Experiencias</span>
 							</Link>
 						</>
-					)} */}
+					)}
 				</div>
 
 				<div className="ml-auto">
