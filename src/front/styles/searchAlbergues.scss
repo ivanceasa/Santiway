@@ -2,12 +2,58 @@
     background-size: cover;
     
 }
+.card-img-top{
+    height: 370px;
+}
 
 ul li {
     list-style:none
 }
-
 .card-albergues{
-    
+    min-height: 90vh;
+}
+.card-albergues-ind{
+    border-radius: 20px;
+    box-shadow: 3px 10px 30px #ccc ;
+    justify-content: center;
+}
+.h1-albergues{
+    color: #47753E;
+}
+.img-albergues{
+    border-radius: 20px 20px 0px 0px;
+}
+.button-reservas{
+    width: 100%;
+    border: 2px solid #ffc107 ;
+    color: #ffc107;
+    border-radius: 6px;
+    font-weight: bold;
+    background: white;
+}
+.button-reservas:hover{
+    background: #ffc107;
+    color: white;
+    border: 2px solid #ffc107;
+}
+.titulo-albergue{
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #47753E ;
+}
+.texto-albergue{
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: left;
+    line-height: 1.5;
+}
+.card-body{
+    text-align: left;
+    line-height: 1.5;
+}
+.hostels-Container{
+    margin-bottom: 50px;
+}
+.row-albergues{
     justify-content: center;
 }

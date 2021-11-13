@@ -4,6 +4,7 @@ import { Link, useHistory } from "react-router-dom";
 import { Navbar, Nav, Button } from "react-bootstrap";
 import Swal from "sweetalert2";
 import shell from "../../img/shell.jpg";
+import navbar1 from "../../styles/navbar1.scss";
 
 const Navbar1 = () => {
 	const { store, actions } = useContext(Context);
@@ -37,12 +38,12 @@ const Navbar1 = () => {
 						src={shell}
 						width="30"
 						height="30"
-						className="d-inline-block align-top rounded-circle"
+						className=" camino-santi d-inline-block align-top rounded-circle"
 					/>{" "}
 					Camino de Santiago
 				</Navbar.Brand>
 
-				<div className="d-flex justify-content-center ml-auto">
+				<div className=" links-nav d-flex justify-content-center ml-auto">
 					<Link to="/">
 						<span className="topbarLink text-white p-1">Home</span>
 					</Link>
@@ -78,10 +79,13 @@ const Navbar1 = () => {
 				<div className="ml-auto">
 					{!localStorage.getItem("token") ? (
 						<Link to="/login">
-							<Button variant="warning">Acceder/Registro</Button>
+							<Button className="button-nav" variant="warning">
+								Acceder/Registro
+							</Button>
 						</Link>
 					) : (
 						<Button
+							className="button-nav"
 							onClick={() => {
 								actions.logout();
 								history.push("/");
