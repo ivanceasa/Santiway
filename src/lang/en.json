@@ -21,6 +21,8 @@
     "login.password": "Password",
     "username": "Username",
     "password.repeat": "Password again",
+
+    "modal.loginButton": "Unidentified user",
     
 
     "cardRoutes.title": "ROUTES",

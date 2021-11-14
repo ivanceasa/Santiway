@@ -35,7 +35,7 @@ const SearchAlbergues = ({ intl }) => {
 
 	return (
 		<div className="card">
-			<img src={hostelImage} className="img-hostel" alt="..." />
+			<img src={hostelImage} className="img-hostel" style={{ height: "1250px" }} alt="..." />
 			<div className="card-albergues">
 				<div className="card-img-overlay">
 					<h1 className="text-success text-center pt-3 font-weight-bold">
