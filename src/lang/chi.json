@@ -21,6 +21,7 @@
     "login.register": "创建一个帐户",
     "login.email": "电子邮件",
     "login.password": "密码",
+    "register.save": "节省",
     
     "cardRoutes.title": "路线",
     "cardRoutes.start": "起点：",

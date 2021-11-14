@@ -21,6 +21,7 @@
     "login.password": "Password",
     "username": "Username",
     "password.repeat": "Password again",
+    "register.save": "Save",
 
     "modal.loginButton": "Unidentified user",
     

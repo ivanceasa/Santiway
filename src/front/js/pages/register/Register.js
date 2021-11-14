@@ -18,6 +18,7 @@ const Register = ({ intl }) => {
 	const placeholderPass = intl.formatMessage({ id: "login.password" });
 	const placeholderUsername = intl.formatMessage({ id: "username" });
 	const placeholderPassAgain = intl.formatMessage({ id: "password.repeat" });
+	const registerSave = intl.formatMessage({ id: "register.save" });
 
 	function savePersonalData() {
 		history.push("/login");
@@ -138,7 +139,7 @@ const Register = ({ intl }) => {
 							required
 						/>
 
-						<input type="submit" value="Guardar" className="loginButton" />
+						<input type="submit" value={registerSave} className="loginButton" />
 					</form>
 				</div>
 			</div>

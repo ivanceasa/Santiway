@@ -21,6 +21,7 @@
     "login.password": "Contraseña",
     "username": "Nombre de usuario",
     "password.repeat": "Repite la contraseña",
+    "register.save": "Guardar",
     
 
     "cardRoutes.title": "RUTAS",
