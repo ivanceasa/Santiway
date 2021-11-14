@@ -40,7 +40,7 @@ const Stripe = () => {
 				</div>
 			</div>
 			<button className="btn btn-warning" type="submit" id="checkout-button" role="link" onClick={handleClick}>
-				<FormattedMessage id="stripe.button" defaultMessage="Checkout" />
+				<FormattedMessage id="stripe.button" defaultMessage="Verificar" />
 			</button>
 		</div>
 	);
