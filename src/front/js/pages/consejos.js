@@ -20,7 +20,6 @@ const Consejos = () => {
 							<div className="grid">
 								<img className="photoAdvice" src={adviceImg1} />
 								<div className="grid__body">
-
 									<h2 className="grid__title">
 										<FormattedMessage id="advice.backpackTitle" defaultMessage="La mochila" />
 									</h2>
@@ -30,7 +29,6 @@ const Consejos = () => {
 												id="advice.backpack"
 												defaultMessage="El peso de la mochila no debe superar el 10 o 12% de tu peso corporal (incluyendo el peso del agua). Vas a encontrar establecimientos para reabastecerte. Lo que más pesa, ¡al fondo!"
 											/>
-
 										</span>
 									</div>
 								</div>
@@ -40,7 +38,6 @@ const Consejos = () => {
 							<div className="grid">
 								<img className="photoAdvice" src={adviceImg2} />
 								<div className="grid__body">
-
 									<h2 className="grid__title">
 										<FormattedMessage
 											id="advice.shoesTitle"
@@ -53,7 +50,6 @@ const Consejos = () => {
 												id="advice.shoes"
 												defaultMessage="Por favor, no te compres unas botas de montaña y las estrenes en el camino. El calzado ya tiene que estar usado y adaptado a tu pie. También es recomendable llevar siempre unos calcetines de repuesto. Si el calzado es de suela dura, mucho mejor."
 											/>
-
 										</span>
 									</div>
 								</div>
@@ -63,14 +59,12 @@ const Consejos = () => {
 							<div className="grid">
 								<img className="photoAdvice" src={adviceImg3} />
 								<div className="grid__body">
-
 									<h2 className="grid__title">
 										<FormattedMessage
 											id="advice.importantTitle"
 											defaultMessage="Lo más importante"
 										/>
 									</h2>
-
 									<div className="mt-auto">
 										<span className="grid__tag">
 											<FormattedMessage
@@ -86,14 +80,12 @@ const Consejos = () => {
 							<div className="grid">
 								<img className="photoAdvice" src={adviceImg4} />
 								<div className="grid__body">
-
 									<h2 className="grid__title">
 										<FormattedMessage
 											id="advice.companyTitle"
 											defaultMessage="Mejor solo que mal acompañado"
 										/>
 									</h2>
-
 									<div className="mt-auto">
 										<span className="grid__tag">
 											<FormattedMessage
@@ -109,11 +101,9 @@ const Consejos = () => {
 							<div className="grid">
 								<img className="photoAdvice" src={adviceImg5} />
 								<div className="grid__body">
-
 									<h2 className="grid__title">
 										<FormattedMessage id="advice.wayTitle" defaultMessage="¿Qué camino escoger?" />
 									</h2>
-
 									<div className="mt-auto">
 										<span className="grid__tag">
 											<FormattedMessage
@@ -129,7 +119,6 @@ const Consejos = () => {
 							<div className="grid">
 								<img className="photoAdvice" src={adviceImg6} />
 								<div className="grid__body">
-
 									<h2 className="grid__title">
 										<FormattedMessage id="advice.planTitle" defaultMessage="Planifica" />
 									</h2>
@@ -139,7 +128,6 @@ const Consejos = () => {
 												id="advice.plan"
 												defaultMessage="Planifica las etapas de forma personalizada y adaptándolas a tu esfuerzo y propio ritmo. También es muy importante organizar los sitios donde vas a pasar la noche, ya que realizar el camino de noche no es recomendable. Hacer un presupuesto, teniendo el medio de transporte que necesites para llegar y volver del camino. Lleva un pequeño botiquín"
 											/>
-
 										</span>
 									</div>
 								</div>
@@ -149,14 +137,12 @@ const Consejos = () => {
 							<div className="grid">
 								<img className="photoAdvice" src={adviceImg7} />
 								<div className="grid__body">
-
 									<h2 className="grid__title">
 										<FormattedMessage
 											id="advice.walkTitle"
 											defaultMessage="¿Cuánto andar al día?"
 										/>
 									</h2>
-
 									<div className="mt-auto">
 										<span className="grid__tag">
 											<FormattedMessage

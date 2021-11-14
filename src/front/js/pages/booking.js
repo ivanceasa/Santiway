@@ -2,9 +2,7 @@ import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { useParams } from "react-router-dom";
-
 import { FormattedMessage } from "react-intl";
-
 
 const Booking = () => {
 	const { store, actions } = useContext(Context);
@@ -41,45 +39,40 @@ const Booking = () => {
 	return (
 		<>
 			<div className=" text-center mt-5">
-
 				<h1 className="text-success text-center pt-3 font-weight-bold">
 					<FormattedMessage id="booking.title" defaultMessage="Haga su reserva" />
 				</h1>
-
 				<input type="date" onChange={setDate} className=" date p-1 m-3 border border-success" />
-				<i className="icono-date fas fa-calendar" />
+				<i className="fas fa-calendar" />
 			</div>
 
 			<div className="text-center mb-5 m-4 pb-5">
 				{store.hostels.map((item, id) => {
 					if (item.name === detailsId) {
 						return (
-							<div key={id} className="card-reservas card m-auto" style={{ width: " 750px" }}>
+							<div key={id} className="card m-auto" style={{ width: " 750px" }}>
 								<div className="row no-gutters">
 									<div className="col-md-4">
-										<img className="img-reserva" src={item.photo_hostel} />
+										<img src={item.photo_hostel} style={{ width: " 260px", height: "280px" }} />
 									</div>
 									<div className="col-md-8">
 										<div className="card-body">
-											<ul className="list-booking">
+											<ul>
 												<li>
-													<h5 className="hostel-title">
+													<h5 className="card-title">
 														<strong>{item.name}</strong>
 													</h5>
 												</li>
 												<li>
-
 													<h5>
 														<FormattedMessage
 															id="booking.prize"
 															defaultMessage="Precio por noche: 12€"
 														/>
-
 													</h5>
 												</li>
 												<li>
 													<h5>
-
 														<FormattedMessage
 															id="hostel.phone"
 															defaultMessage="Teléfono: "
@@ -103,7 +96,6 @@ const Booking = () => {
 															defaultMessage="Para realizar una reserva en este albergue introduzca
 															previamente su fecha de preferencia."
 														/>
-
 													</p>
 												</li>
 											</ul>
@@ -113,13 +105,11 @@ const Booking = () => {
 													onClick={() => {
 														createBooking(item.id);
 													}}
-
 													className="btn btn-warning">
 													<FormattedMessage
 														id="booking.button"
 														defaultMessage="Realizar reserva"
 													/>
-
 												</button>
 											</Link>
 										</div>

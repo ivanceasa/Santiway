@@ -4,10 +4,8 @@ import { useHistory, Link } from "react-router-dom";
 import { Card, Row, Button } from "react-bootstrap";
 import hostelImage from "../../img/orreo.jpg";
 import "../../styles/searchAlbergues.scss";
-
 import { FormattedMessage, injectIntl } from "react-intl";
 import PropTypes from "prop-types";
-
 
 const SearchAlbergues = ({ intl }) => {
 	const { store, actions } = useContext(Context);
@@ -36,7 +34,6 @@ const SearchAlbergues = ({ intl }) => {
 	console.log(filteredResults);
 
 	return (
-
 		<div className="card">
 			<img src={hostelImage} className="img-hostel" style={{ height: "1250px" }} alt="..." />
 			<div className="card-albergues">
@@ -66,10 +63,8 @@ const SearchAlbergues = ({ intl }) => {
 									</svg>
 								</button>
 							</span>
-
 						</div>
-						<img className="hostel-icono" src={hostelIcono} />
-
+					</div>
 
 					{filteredResults.length == 0 && search.length != 0 ? (
 						<h1 className="text-center text-white font-weight-bold mt-4 font-italic">
@@ -108,7 +103,6 @@ const SearchAlbergues = ({ intl }) => {
 							</Row>
 						</div>
 					)}
-
 				</div>
 			</div>
 		</div>

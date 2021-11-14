@@ -5,7 +5,6 @@ import { Navbar, Button } from "react-bootstrap";
 import "../../styles/navbar1.scss";
 import Swal from "sweetalert2";
 import shell from "../../img/shell.jpg";
-
 import es from "../../img/spain.png";
 import it from "../../img/italy.png";
 import uk from "../../img/united-kingdom.png";
@@ -13,7 +12,6 @@ import ger from "../../img/germany.png";
 import chi from "../../img/china.png";
 import { FormattedMessage } from "react-intl";
 import { langContext } from "../store/langContext";
-
 
 const Navbar1 = () => {
 	const { store, actions } = useContext(Context);
@@ -38,14 +36,12 @@ const Navbar1 = () => {
 						src={shell}
 						width="30"
 						height="30"
-
 						className="d-inline-block align-top rounded-circle"
 					/>
 					<FormattedMessage id="menu.brand" defaultMessage="Camino de Santiago" />
-
 				</Navbar.Brand>
 
-				<div className=" links-nav d-flex justify-content-center ml-auto">
+				<div className="d-flex justify-content-center ml-auto">
 					<Link to="/">
 						<span className="topbarLink text-white p-1">
 							<FormattedMessage id="menu.home" defaultMessage="Inicio" />
@@ -105,15 +101,12 @@ const Navbar1 = () => {
 				<div className="ml-auto">
 					{!localStorage.getItem("token") ? (
 						<Link to="/login">
-
 							<Button variant="warning">
 								<FormattedMessage id="menu.login" defaultMessage="Acceder/Registro" />
-
 							</Button>
 						</Link>
 					) : (
 						<Button
-							className="button-nav"
 							onClick={() => {
 								actions.logout();
 								history.push("/");
