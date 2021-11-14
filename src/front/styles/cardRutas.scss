@@ -19,12 +19,14 @@
 .card-rutas{
     border-radius: 20px;
     box-shadow: 3px 10px 30px #ccc ;
+    width: 400px;
 }
 
 .titulo-ruta{
     font-size: 1.5rem;
     font-weight: 700;
     color: #47753E ;
+    height: 50px;
 }
 .texto-ruta{
     font-size: 1rem;
@@ -45,4 +47,7 @@
 }
 .fila-rutas{
     justify-content: center;
+}
+.container-rutas{
+    margin-bottom: 50px;
 }

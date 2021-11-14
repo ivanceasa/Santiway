@@ -34,11 +34,12 @@ const SearchAlbergues = () => {
 	return (
 		<div className="content-albergues">
 			<div className="card">
+				<h1 className="h1-albergues text-success text-center pt-3 font-weight-bold">ENCUENTRA TU ALBERGUE</h1>
 				{/* <img src={hostelImage} className="img-hostel" alt="..." /> */}
 				<div className="card-albergues">
 					<div className="">
 						<div className="container mt-3">
-							<div className="input-group  mx-auto w-75 p-3">
+							<div className="input-group  p-3">
 								<input
 									type="text"
 									className="form-control mt-4"
@@ -62,9 +63,6 @@ const SearchAlbergues = () => {
 							</div>
 						</div>
 						<img className="hostel-icono" src={hostelIcono} />
-						<h1 className="h1-albergues text-success text-center pt-3 font-weight-bold">
-							ENCUENTRA TU ALBERGUE
-						</h1>
 
 						{filteredResults.length == 0 && search.length != 0 ? (
 							<h1 className=" h1-albergues-2 text-center font-weight-bold  font-italic">
@@ -72,7 +70,7 @@ const SearchAlbergues = () => {
 							</h1>
 						) : (
 							<div className="hostels-Container text-center">
-								<Row lg="4" className="row-albergues ml-5">
+								<Row lg="4" className="row-albergues ">
 									{filteredResults.map((item, id) => (
 										<Card key={id} className="card-albergues-ind m-3 card">
 											<Card.Img className="img-albergues" variant="top" src={item.photo_hostel} />

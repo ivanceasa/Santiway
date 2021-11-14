@@ -62,7 +62,7 @@ const Booking = () => {
 													</h5>
 												</li>
 												<li>
-													<h5>
+													<h5 className="margin-card">
 														<span className="texto-reserva">Precio por noche: </span>
 														12€
 													</h5>

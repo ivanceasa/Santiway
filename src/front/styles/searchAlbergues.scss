@@ -35,12 +35,6 @@
 .h1-albergues{
     color: #47753E;
     margin-top: 50px;
-    z-index: 0;
-    position: absolute;
-    top: 100px;
-    left: 0;
-    right: 0;
-    bottom: 0;
 }
 .h1-albergues-2{
     color: #47753E;
@@ -58,22 +52,23 @@
 .button-reservas{
     width: 100%;
     border: 2px solid #ffc107 ;
-    color: #ffc107;
+    color: white;
     border-radius: 6px;
     font-weight: bold;
-    background: white;
+    background: #ffc107;
     height: auto;
   
 }
-.button-reservas:hover{
-    background: #ffc107;
-    color: white;
-    border: 2px solid #ffc107;
-}
+ .button-reservas:hover{
+    //  background: #ffc107;
+     color: white;
+     border: 2px solid #ffc107;
+ }
 .titulo-albergue{
     font-size: 1.5rem;
     font-weight: 700;
     color: #47753E ;
+    height: 50px;
 }
 .texto-albergue{
     font-size: 1rem;
@@ -90,4 +85,9 @@
 }
 .row-albergues{
     justify-content: center;
+}
+.input-group{
+    display: flex;
+    justify-content: center;
+    margin-top: -40px;
 }

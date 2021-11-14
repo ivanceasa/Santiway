@@ -29,7 +29,7 @@ const Stripe = () => {
 	}
 
 	return (
-		<div className="text-center mt-5 mb-5">
+		<div className="container-checkout text-center mt-5 mb-5">
 			<div className="product m-5">
 				<img className="img-booking" src={booking} alt="The cover of Stubborn Attachments" />
 				<div className="description-reserva">
