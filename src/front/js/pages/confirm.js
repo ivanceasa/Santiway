@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../../styles/confirm.scss";
+
 import { FormattedMessage } from "react-intl";
+
 
 const Confirm = () => {
 	return (
