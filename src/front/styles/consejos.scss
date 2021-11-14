@@ -1,16 +1,14 @@
 #advices{
-    margin-bottom: 20px;
+    margin-bottom: 50px;
+    margin-top: 50px;
 }
 #advices body{
-
-
     margin: 0;
     margin-top: -40px;
     padding: 0;
     background: #ecf0f3;
     padding: 3% 0;
-    text-align: justify;
-    
+    text-align: justify;   
 
 }
 #advices .container{
@@ -20,39 +18,49 @@
     justify-content: center;
     margin-top: 20px;
     margin-bottom: 50px;
-
-    
+}
+#advices .list-text{
+    list-style-type: circle;
 }
 
 #advices .photoAdvice{
     width: 100%;
-    transition: 0.3%;
     border-radius: 8px;
+    border-radius: 20px 20px 0px 0px;
 }
-
+#advices .grid__body{
+     padding: 20px;
+ }
+#advices .grid__title{
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #47753E ;
+}
 #advices .grid{
     border-radius: 12px;
-    padding: 3%;
     margin-bottom: 6%;
     background: #fff;
-    box-shadow: 10px 10px 24px -12px rgba(0,0,0,0.75);
     display: inline-block;
-    margin-bottom: 16px;
+    margin-bottom: 25px;
     position: relative;
+    border-radius: 20px;
+    box-shadow: 3px 10px 30px #ccc ;
+    justify-content: center;
+    
 }
-#advices .grid:hover{
-    box-shadow: inset 10px 10px 24px -12px rgba(0,0,0,0.75);
-}
+// #advices .grid:hover{
+//     box-shadow: inset 10px 10px 24px -12px rgba(0,0,0,0.75);
+// }
 
-#advices .grid:hover img{
-    transform: scale(0.8);
-}
+// #advices .grid:hover img{
+//     transform: scale(0.8);
+// }
 
-#advices .grid:hover .grid__body {
-    transition: all 1s;
-    transform: scale(1.15);
-    display: inline-block;
-  }
+// #advices .grid:hover .grid__body {
+//     transition: all 1s;
+//     transform: scale(1.15);
+//     display: inline-block;
+//   }
 
 @media screen and (max-width: 958px){
 

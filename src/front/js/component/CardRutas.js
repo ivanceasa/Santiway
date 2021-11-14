@@ -11,7 +11,7 @@ const CardRutas = () => {
 	return (
 		<div className="content">
 			<h1 className=" h1-rutas text-success text-center pt-3 font-weight-bold">RUTAS</h1>
-			<div className="card-Container">
+			<div className="container-rutas">
 				<Row lg="auto" className=" fila-rutas ml-4">
 					{store.routes.map((item, id) => (
 						<Card key={id} className="m-3 card-rutas">

@@ -19,10 +19,10 @@ const Consejos = () => {
 							<div className="grid">
 								<img className="photoAdvice" src={adviceImg1} />
 								<div className="grid__body">
-									<h2 className="grid__title">La mochila</h2>
+									<h1 className="grid__title">La mochila</h1>
 									<div className="mt-auto">
 										<span className="grid__tag">
-											<ul>
+											<ul className="list-text">
 												<li>
 													El peso de la mochila no debe superar el 10 o 12% de tu peso
 													corporal (incluyendo el peso del agua). Vas a encontrar
@@ -44,14 +44,14 @@ const Consejos = () => {
 							<div className="grid">
 								<img className="photoAdvice" src={adviceImg2} />
 								<div className="grid__body">
-									<h2 className="grid__title">¿Qué calzado llevar?</h2>
+									<h1 className="grid__title">¿Qué calzado llevar?</h1>
 									<div className="mt-auto">
 										<span className="grid__tag">
 											Por favor, no te compres unas botas de montaña y las estrenes en el camino.
 											El calzado ya tiene que estar usado y adaptado a tu pie. También es
 											recomendable llevar siempre unos calcetines de repuesto.
 										</span>
-										<h3>Tip extra:</h3>
+										<h3 className="grid__title">Tip extra:</h3>
 										<span>
 											Si el calzado es de suela dura, mucho mejor. Las sandalias y chanclas son
 											para la playa.
@@ -64,7 +64,7 @@ const Consejos = () => {
 							<div className="grid">
 								<img className="photoAdvice" src={adviceImg3} />
 								<div className="grid__body">
-									<h2 className="grid__title">Lo más importante</h2>
+									<h1 className="grid__title">Lo más importante</h1>
 									<div className="mt-auto">
 										<span className="grid__tag">
 											Recuerda que realizas el camino para disfutar y no para sufrir. Por lo que
@@ -79,7 +79,7 @@ const Consejos = () => {
 							<div className="grid">
 								<img className="photoAdvice" src={adviceImg4} />
 								<div className="grid__body">
-									<h2 className="grid__title">Mejor solo que mal acompañado</h2>
+									<h1 className="grid__title">Mejor solo que mal acompañado</h1>
 									<div className="mt-auto">
 										<span className="grid__tag">
 											Lo importante es con quién vas ha hacer el camino, ya que es fundamental la
@@ -95,7 +95,7 @@ const Consejos = () => {
 							<div className="grid">
 								<img className="photoAdvice" src={adviceImg5} />
 								<div className="grid__body">
-									<h2 className="grid__title">¿Qué camino escoger? </h2>
+									<h1 className="grid__title">¿Qué camino escoger? </h1>
 									<div className="mt-auto">
 										<span className="grid__tag">
 											Para una primera toma de contacto con el mundo peregrino escoge el Camino
@@ -116,11 +116,11 @@ const Consejos = () => {
 							<div className="grid">
 								<img className="photoAdvice" src={adviceImg6} />
 								<div className="grid__body">
-									<h2 className="grid__title">Planifica</h2>
+									<h1 className="grid__title">Planifica</h1>
 									<div className="mt-auto">
 										<span className="grid__tag">
 											Es muy importante la planificación previa antes de empezar el camino:
-											<ul>
+											<ul className="list-text">
 												<li>
 													Planificar las etapas de forma personalizada y adaptándolas a tu
 													esfuerzo y propio ritmo.
@@ -150,7 +150,7 @@ const Consejos = () => {
 							<div className="grid">
 								<img className="photoAdvice" src={adviceImg7} />
 								<div className="grid__body">
-									<h2 className="grid__title">¿Cuánto tengo que andar al día?</h2>
+									<h1 className="grid__title">¿Cuánto tengo que andar al día?</h1>
 									<div className="mt-auto">
 										<span className="grid__tag">
 											Aunque la distancia media suele ser entre 15-20km, no te obsesiones con la

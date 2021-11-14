@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { useParams } from "react-router-dom";
 import IconHostel from "../../img/IconHostel.png";
-
+import "../../styles/booking.scss";
 const Booking = () => {
 	const { store, actions } = useContext(Context);
 	const { detailsId } = useParams();
@@ -39,39 +39,45 @@ const Booking = () => {
 	return (
 		<>
 			<div className=" text-center mt-5">
-				<h1 className="text-success text-center pt-3 font-weight-bold">Haga su reserva</h1>
+				<h1 className="h1-reservas text-success text-center pt-3 font-weight-bold">Haga su reserva</h1>
 				<input type="date" onChange={setDate} className=" date p-1 m-3 border border-success" />
-				<i className="fas fa-calendar" />
+				<i className="icono-date fas fa-calendar" />
 			</div>
 
 			<div className="text-center mb-5 m-4 pb-5">
 				{store.hostels.map((item, id) => {
 					if (item.name === detailsId) {
 						return (
-							<div key={id} className="card m-auto" style={{ width: " 750px" }}>
+							<div key={id} className="card-reservas card m-auto" style={{ width: " 750px" }}>
 								<div className="row no-gutters">
 									<div className="col-md-4">
-										<img src={item.photo_hostel} style={{ width: " 260px", height: "280px" }} />
+										<img className="img-reserva" src={item.photo_hostel} />
 									</div>
 									<div className="col-md-8">
 										<div className="card-body">
-											<ul>
+											<ul className="list-booking">
 												<li>
-													<h5 className="card-title">
+													<h5 className="hostel-title">
 														<strong>{item.name}</strong>
 													</h5>
 												</li>
 												<li>
-													<h5>Precio por noche: 12€</h5>
+													<h5 className="margin-card">
+														<span className="texto-reserva">Precio por noche: </span>
+														12€
+													</h5>
 												</li>
 												<li>
-													<h5>{`Teléfono de contacto: ${item.phone_number}`}</h5>
+													<h5>
+														<span className="texto-reserva">Teléfono de contacto:</span>
+														{` ${item.phone_number}`}
+													</h5>
 												</li>
 												<li>
-													<h6>(llámenos para cualquier consulta)</h6>
+													<h6 className="h6-text">(llámenos para cualquier consulta)</h6>
 												</li>
 												<li>
-													<p className="card-text">
+													<p className="texto-reserva card-text">
 														Para realizar una reserva en este albergue introduzca
 														previamente su fecha de preferencia.
 													</p>
@@ -83,7 +89,7 @@ const Booking = () => {
 													onClick={() => {
 														createBooking(item.id);
 													}}
-													className="btn btn-warning">
+													className="btn-reserva btn btn-warning">
 													Realizar reserva
 												</button>
 											</Link>
