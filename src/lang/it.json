@@ -1,0 +1,70 @@
+{
+    "home.welcome": "Benvenuto Pellegrino!",
+    "home.desc": "Scopri i percorsi, trova il tuo ostello e ricevi consigli per il viaggio",
+    "home.button": "Iscriviti e condividi la tua esperienza",
+
+    "menu.brand": "Il cammino di Santiago",
+    "menu.home": "Inizio",
+    "menu.routes": "Itinerari",
+    "menu.hostels": "Ostelli",
+    "menu.advice": "Consigli",
+    "menu.experiences": "Esperienze",
+    "menu.login": "Accedi / Registrati",
+    "menu.logout": "Uscire",
+
+    "login.welcome": "Benvenuto!",
+    "login.desc": "Connettiti con i pellegrini di tutto il mondo",
+    "login.login": "Accedere",
+    "login.forgot": "Hai dimenticato la password?",
+    "login.register": "Creare un account",
+    "login.email": "E-mail",
+    "login.password": "Password",
+    "username": "Nome utente",
+    "password.repeat": "Password di nuovo",
+    "register.save": "Salva",
+    
+
+    "cardRoutes.title": "ITINERARI",
+    "cardRoutes.start": "Inizio:",
+    "cardRoutes.stages": "Tappe:",
+    "cardRoutes.length": "Lunghezza:",
+    "cardRoutes.button": "Vedi altro",
+
+    "routes.profile": "Profilo-Tappe",
+
+    "hostels.notFound": "Non ci sono ostelli in quel comune",
+    "hostels.title": "TROVA IL TUO OSTELLO",
+    "hostels.search": "Ricerca per comune",
+    "hostel.city": "Villaggio: ",
+    "hostel.phone": "Telefono: ",
+    "hostel.book": "Prenotare",
+
+    "booking.title": "Fai la tua prenotazione",
+    "booking.prize": "Prezzo per notte: 12€",
+    "booking.question": "(chiamaci per qualsiasi domanda)",
+    "booking.p": "Per effettuare una prenotazione in questo ostello, inserisci in precedenza la data che preferisci.",
+    "booking.button": "Prenotare",
+
+    "stripe.title": "Prenota Ostello",
+    "stripe.button": "Guardare",
+
+    "confirm": "La tua prenotazione è stata effettuata con successo",
+
+    "advice.backpackTitle": "Zaino",
+    "advice.backpack": "Il peso dello zaino non deve superare il 10 o il 12% del peso corporeo (compreso il peso dell'acqua). Troverai stabilimenti per rifornirti. Quello che pesa di più, in fondo!",
+    "advice.shoesTitle": "Quali calzature indossare?",                                                 
+    "advice.shoes": "Le calzature devono essere già utilizzate e adattate al tuo piede. Si consiglia inoltre di portare sempre con sé calzini di ricambio. Se la scarpa ha la suola dura, molto meglio.",
+    "advice.importantTitle": "Il più importante",
+    "advice.important": "Ricorda che percorri la strada per godere e non per soffrire. Quindi, se devi lasciare una parte del percorso per un'altra occasione, non succede nulla. Meglio portare con sé un bel ricordo!", 
+    "advice.companyTitle": "Meglio soli che in cattiva compagnia",
+    "advice.company": "L'importante è con chi farai il viaggio, poiché una buona compagnia, buone vibrazioni e una buona convivenza sono essenziali. E se vai da solo, non preoccuparti perché è facile incontrare persone lungo la strada.",  
+    "advice.wayTitle": "Quale modo scegliere?",  
+    "advice.way": "Per un primo contatto con il mondo dei pellegrini, scegli il Cammino Francese. È il modo più conveniente, con un gran numero di ostelli, alloggi e servizi. Inoltre, ha una breve distanza tra le città e una buona segnaletica.",      
+    "advice.planTitle": "Pianifica",
+    "advice.plan": "Pianifica le tappe in modo personalizzato adattandole al tuo sforzo e al tuo ritmo. È molto importante anche organizzare i luoghi dove pernottare, poiché è sconsigliato fare il viaggio di notte. Fai un budget, avendo i mezzi di trasporto di cui hai bisogno per andare e tornare dalla strada. Porta un piccolo armadietto dei medicinali.",    
+    "advice.walkTitle": "Quanto camminare al giorno?",
+    "advice.walk": "Anche se la distanza media è di solito tra i 15-20 km, non lasciarti ossessionare e goditi la strada.",
+    "post.photo": "Aggiungere una foto",
+    "post.share": "Condividere"
+         
+}

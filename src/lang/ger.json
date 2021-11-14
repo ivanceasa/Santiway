@@ -1,0 +1,70 @@
+{
+    "home.welcome": "Willkommenspilger!",
+    "home.desc": "Kennen Sie die Routen, finden Sie Ihr Hostel und lassen Sie sich für die Reise beraten",
+    "home.button": "Registriere dich und teile deine Erfahrungen",
+
+    "menu.brand": "Der Jakobsweg",
+    "menu.home": "Heim",
+    "menu.routes": "Routen",
+    "menu.hostels": "Herbergen",
+    "menu.advice": "Rat",
+    "menu.experiences": "Erfahrungen",
+    "menu.login": "Anmeldung/Registrieren",
+    "menu.logout": "Ausloggen",
+
+    "login.welcome": "Willkommen!",
+    "login.desc": "Verbinde dich mit Pilgern aus der ganzen Welt",
+    "login.login": "Anmeldung",
+    "login.forgot": "Passwort vergessen?",
+    "login.register": "Ein Konto erstellen",
+    "login.email": "Email",
+    "login.password": "Passwort",
+    "username": "Nutzername",
+    "password.repeat": "Passwort erneut",
+    "register.save": "Speichern",
+    
+
+    "cardRoutes.title": "ROUTEN",
+    "cardRoutes.start": "Startpunkt:",
+    "cardRoutes.stages": "Etappen:",
+    "cardRoutes.length": "Länge:",
+    "cardRoutes.button": "Mehr sehen",
+
+    "routes.profile": "Etappen-Profil",
+
+    "hostels.notFound": "In dieser Stadt gibt es keine Hostels",
+    "hostels.title": "FINDEN SIE IHR HOSTEL",
+    "hostels.search": "Suche nach Gemeinde",
+    "hostel.city": "Stadt: ",
+    "hostel.phone": "Telefon: ",
+    "hostel.book": "Buchen Sie jetzt",
+
+    "booking.title": "Machen Sie Ihre Reservierung",
+    "booking.prize": "Preis pro Nacht: 12€",
+    "booking.question": "(Bitte rufen Sie uns bei Fragen an)",
+    "booking.p": "Um eine Reservierung in diesem Hostel vorzunehmen, geben Sie bitte Ihr Wunschdatum im Voraus ein.",
+    "booking.button": "buchen Sie jetzt",
+
+    "stripe.title": "Hostel-Reservierung",
+    "stripe.button": "Auschecken",
+    "confirm": "Ihre Reservierung wurde erfolgreich durchgeführt",
+
+    "advice.backpackTitle": "Rucksack",
+    "advice.backpack": "Das Gewicht des Rucksacks sollte 10 oder 12% Ihres Gewichts (einschließlich Wassergewicht) nicht überschreiten. Sie finden Einrichtungen zum Auffüllen. Was wiegt am meisten, ganz unten!", 
+    "advice.shoesTitle": "Schuhe",                                                 
+    "advice.shoes": "Das Schuhwerk muss bereits verwendet und an Ihren Fuß angepasst sein. Es ist auch ratsam, immer Ersatzsocken mitzuführen. Wenn der Schuh eine harte Sohle hat, viel besser.",
+    "advice.importantTitle": "Das wichtigste",
+    "advice.important": "Denken Sie daran, dass Sie den Weg gehen, um zu genießen und nicht zu leiden. Wenn Sie also für eine andere Gelegenheit ein Stück des Weges verlassen müssen, passiert nichts.", 
+    "advice.companyTitle": "Besser allein als in schlechter Gesellschaft",
+    "advice.company": "Wichtig ist, mit wem Sie die Reise unternehmen, denn gute Gesellschaft, gute Stimmung und Geselligkeit sind unerlässlich. Und wenn du alleine gehst, mach dir keine Sorgen, denn es ist einfach, unterwegs Leute zu treffen.",  
+    "advice.wayTitle": "Welchen Weg wählen?",  
+    "advice.way": "Für einen ersten Kontakt mit der Pilgerwelt wählen Sie den französischen Weg. Es ist der günstigste Weg, mit einer großen Anzahl von Hostels und Dienstleistungen. Hat auch kurze Entfernungen zwischen den Städten.",  
+    "advice.planTitle": "Planen",
+    "advice.plan": "Planen Sie die Etappen individuell. Es ist auch sehr wichtig, die Orte zu organisieren, an denen Sie übernachten werden, da eine Nachtfahrt nicht empfohlen wird. Tragen Sie einen kleinen Medizinschrank",
+    "advice.walkTitle": "Wie viel muss ich am Tag laufen?",
+    "advice.walk": "Obwohl die durchschnittliche Entfernung normalerweise zwischen 15-20 km liegt, werden Sie nicht von der Entfernung besessen und genießen Sie es",
+
+    "post.photo": "Füge ein Foto hinzu",
+    "post.share": "Teilen"
+        
+}

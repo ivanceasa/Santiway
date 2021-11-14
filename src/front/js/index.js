@@ -11,5 +11,12 @@ import "../styles/index.scss";
 //import your own components
 import Layout from "./layout";
 
+import { LangProvider } from "./store/langContext";
+
 //render your react application
-ReactDOM.render(<Layout />, document.querySelector("#app"));
+ReactDOM.render(
+	<LangProvider>
+		<Layout />
+	</LangProvider>,
+	document.querySelector("#app")
+);

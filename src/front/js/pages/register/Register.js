@@ -3,14 +3,22 @@ import "./register.css";
 import { useHistory } from "react-router-dom";
 import { Context } from "../../store/appContext";
 import Swal from "sweetalert2";
+import { FormattedMessage, injectIntl } from "react-intl";
+import PropTypes from "prop-types";
 
-const Register = () => {
+const Register = ({ intl }) => {
 	const { store, actions } = useContext(Context);
 	const history = useHistory();
 	const [username, setUserName] = useState("");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [confirmPassword, setConfirmPassword] = useState("");
+
+	const placeholderMail = intl.formatMessage({ id: "login.email" });
+	const placeholderPass = intl.formatMessage({ id: "login.password" });
+	const placeholderUsername = intl.formatMessage({ id: "username" });
+	const placeholderPassAgain = intl.formatMessage({ id: "password.repeat" });
+	const registerSave = intl.formatMessage({ id: "register.save" });
 
 	function savePersonalData() {
 		history.push("/login");
@@ -92,14 +100,18 @@ const Register = () => {
 		<div className="login">
 			<div className="loginWrapper">
 				<div className="loginLeft">
-					<h3 className="loginLogo">Bienvenid@!</h3>
-					<span className="loginDesc">Conecta con peregrinos de todo el mundo.</span>
+					<h3 className="loginLogo">
+						<FormattedMessage id="login.welcome" defaultMessage="Bienvenid@!" />
+					</h3>
+					<span className="loginDesc">
+						<FormattedMessage id="login.desc" defaultMessage="Conecta con peregrinos de todo el mundo" />
+					</span>
 				</div>
 				<div className="loginRight">
 					<form className="loginBox" onSubmit={signUp}>
 						<input
 							type="text"
-							placeholder="Nombre de usuario"
+							placeholder={placeholderUsername}
 							className="loginInput"
 							onChange={event => setUserName(event.target.value)}
 							required
@@ -107,27 +119,27 @@ const Register = () => {
 
 						<input
 							type="email"
-							placeholder="Email"
+							placeholder={placeholderMail}
 							className="loginInput"
 							onChange={event => setEmail(event.target.value)}
 							required
 						/>
 						<input
 							type="password"
-							placeholder="Contraseña"
+							placeholder={placeholderPass}
 							className="loginInput"
 							onChange={event => setPassword(event.target.value)}
 							required
 						/>
 						<input
 							type="password"
-							placeholder="Repite la contraseña"
+							placeholder={placeholderPassAgain}
 							className="loginInput"
 							onChange={event => setConfirmPassword(event.target.value)}
 							required
 						/>
 
-						<input type="submit" value="Guardar" className="loginButton" />
+						<input type="submit" value={registerSave} className="loginButton" />
 					</form>
 				</div>
 			</div>
@@ -135,4 +147,7 @@ const Register = () => {
 	);
 };
 
-export default Register;
+Register.propTypes = {
+	intl: PropTypes.object
+};
+export default injectIntl(Register);

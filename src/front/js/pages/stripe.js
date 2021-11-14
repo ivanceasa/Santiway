@@ -4,7 +4,9 @@ import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { loadStripe } from "@stripe/stripe-js";
 import booking from "../../img/iconobuencamino.jpg";
-import "../../styles/StripePay.scss";
+
+import { FormattedMessage } from "react-intl";
+
 
 const stripePromise = loadStripe(
 	"pk_test_51JpGcyErK9vFHAnpjzQwt3orpJwK1DQ3sntDLKbOAfBIEz4zVi13q4SzHy7cqTRVgZk9xJ1bRIaZgGvrVZuDM2gU000wdSvPDI"
@@ -31,19 +33,18 @@ const Stripe = () => {
 	return (
 		<div className="container-checkout text-center mt-5 mb-5">
 			<div className="product m-5">
-				<img className="img-booking" src={booking} alt="The cover of Stubborn Attachments" />
-				<div className="description-reserva">
-					<h1>Reserva Albergue</h1>
-					<h2>12€</h2>
+
+				<img src={booking} className="w-200 h-200 m-5" alt="The cover of Stubborn Attachments" />
+				<div className="description">
+					<h3>
+						<FormattedMessage id="stripe.title" defaultMessage="Reserva Albergue" />
+					</h3>
+					<h5>12€</h5>
 				</div>
 			</div>
-			<button
-				className="btn-checkout btn btn-warning"
-				type="submit"
-				id="checkout-button"
-				role="link"
-				onClick={handleClick}>
-				Checkout
+			<button className="btn btn-warning" type="submit" id="checkout-button" role="link" onClick={handleClick}>
+				<FormattedMessage id="stripe.button" defaultMessage="Verificar" />
+
 			</button>
 		</div>
 	);

@@ -1,0 +1,72 @@
+{
+    "home.welcome": "Bienvenido Peregrino!",
+    "home.desc": "Conoce las rutas, encuentra tu albergue y recibe consejos para el viaje",
+    "home.button": "Regístrate y comparte tu experiencia",
+
+    "menu.brand": "Camino de Santiago",
+    "menu.home": "Inicio",
+    "menu.routes": "Rutas",
+    "menu.hostels": "Albergues",
+    "menu.advice": "Consejos",
+    "menu.experiences": "Experiencias",
+    "menu.login": "Acceder/Registro",
+    "menu.logout": "Salir",
+
+    "login.welcome": "Bienvenido!",
+    "login.desc": "Conecta con peregrinos de todo el mundo",
+    "login.login": "Acceder",
+    "login.forgot": "¿Olvidaste la contraseña?",
+    "login.register": "Crear una cuenta",
+    "login.email": "Correo electrónico",
+    "login.password": "Contraseña",
+    "username": "Nombre de usuario",
+    "password.repeat": "Repite la contraseña",
+    "register.save": "Guardar",
+    
+
+    "cardRoutes.title": "RUTAS",
+    "cardRoutes.start": "Inicio:",
+    "cardRoutes.stages": "Etapas:",
+    "cardRoutes.length": "Longitud:",
+    "cardRoutes.button": "Ver más",
+
+    "routes.profile": "Perfil-etapas",
+
+    "hostels.notFound": "No hay albergues en ese municipio",
+    "hostels.title": "ENCUENTRA TU ALBERGUE",
+    "hostels.search": "Búsqueda por municipio",
+    "hostel.city": "Municipio: ",
+    "hostel.phone": "Teléfono: ",
+    "hostel.book": "Reservar",
+
+    "booking.title": "Haga su reserva",
+    "booking.prize": "Precio por noche: 12€",
+    "booking.question": "(llámenos para cualquier consulta)",
+    "booking.p": "Para realizar una reserva en este albergue introduzca previamente su fecha de preferencia.",
+    "booking.button": "Realizar reserva",
+
+    "stripe.title": "Reserva Albergue",
+    "stripe.button": "Verificar",
+
+    "confirm": "Su reserva ha sido realizada con éxito",
+
+    "advice.backpackTitle": "La mochila",
+    "advice.backpack": "El peso de la mochila no debe superar el 10 o 12% de tu peso corporal (incluyendo el peso del agua). Vas a encontrar establecimientos para reabastecerte. Lo que más pesa, ¡al fondo!",
+    "advice.shoesTitle": "¿Qué calzado llevar?",                                                 
+    "advice.shoes": "Por favor, no te compres unas botas de montaña y las estrenes en el camino. El calzado ya tiene que estar usado y adaptado a tu pie. También es recomendable llevar siempre unos calcetines de repuesto. Si el calzado es de suela dura, mucho mejor.",
+    "advice.importantTitle": "Lo más importante",
+    "advice.important": "Recuerda que realizas el camino para disfutar y no para sufrir. Por lo que si tienes que dejar parte del camino para otra ocasión, no pasa nada. ¡Mejor  llevarse un buen recuerdo!", 
+    "advice.companyTitle": "Mejor solo que mal acompañado",
+    "advice.company": "Lo importante es con quién vas ha hacer el camino, ya que es fundamental la buena compañía, el buen rollo y la buena convivencia. Y si vas solo, no te preocupes porque es fácil conocer a gente durante el camino.",  
+    "advice.wayTitle": "¿Qué camino escoger?",  
+    "advice.way": "Para una primera toma de contacto con el mundo peregrino escoge el Camino Francés. Es el Camino más asequible, con gran cantidad de albergues, alojamientos y servicios. Además, tiene poca distancia entre poblaciones y buena señalización.",      
+    "advice.planTitle": "Planifica",
+    "advice.plan": "Planifica las etapas de forma personalizada y adaptándolas a tu esfuerzo y propio ritmo. También es muy importante organizar los sitios donde vas a pasar la noche, ya que realizar el camino de noche no es recomendable. Hacer un presupuesto, teniendo el medio de transporte que necesites para llegar y volver del camino. Lleva un pequeño botiquín.",    
+    "advice.walkTitle": "¿Cuánto andar al día?",
+    "advice.walk": "Aunque la distancia media suele ser entre 15-20km, no te obsesiones y disfruta el camino ¡día a día!",
+
+    "post.photo": "Añade una foto",
+    "post.share": "Compartir"
+    
+     
+}
