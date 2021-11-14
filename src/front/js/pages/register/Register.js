@@ -3,6 +3,7 @@ import "./register.css";
 import { useHistory } from "react-router-dom";
 import { Context } from "../../store/appContext";
 import Swal from "sweetalert2";
+import { FormattedMessage } from "react-intl";
 
 const Register = () => {
 	const { store, actions } = useContext(Context);
@@ -92,8 +93,12 @@ const Register = () => {
 		<div className="login">
 			<div className="loginWrapper">
 				<div className="loginLeft">
-					<h3 className="loginLogo">Bienvenid@!</h3>
-					<span className="loginDesc">Conecta con peregrinos de todo el mundo.</span>
+					<h3 className="loginLogo">
+						<FormattedMessage id="login.welcome" defaultMessage="Bienvenid@!" />
+					</h3>
+					<span className="loginDesc">
+						<FormattedMessage id="login.desc" defaultMessage="Conecta con peregrinos de todo el mundo" />
+					</span>
 				</div>
 				<div className="loginRight">
 					<form className="loginBox" onSubmit={signUp}>
