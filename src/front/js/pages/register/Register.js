@@ -3,15 +3,21 @@ import "./register.css";
 import { useHistory } from "react-router-dom";
 import { Context } from "../../store/appContext";
 import Swal from "sweetalert2";
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, injectIntl } from "react-intl";
+import PropTypes from "prop-types";
 
-const Register = () => {
+const Register = ({ intl }) => {
 	const { store, actions } = useContext(Context);
 	const history = useHistory();
 	const [username, setUserName] = useState("");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [confirmPassword, setConfirmPassword] = useState("");
+
+	const placeholderMail = intl.formatMessage({ id: "login.email" });
+	const placeholderPass = intl.formatMessage({ id: "login.password" });
+	const placeholderUsername = intl.formatMessage({ id: "username" });
+	const placeholderPassAgain = intl.formatMessage({ id: "password.repeat" });
 
 	function savePersonalData() {
 		history.push("/login");
@@ -104,7 +110,7 @@ const Register = () => {
 					<form className="loginBox" onSubmit={signUp}>
 						<input
 							type="text"
-							placeholder="Nombre de usuario"
+							placeholder={placeholderUsername}
 							className="loginInput"
 							onChange={event => setUserName(event.target.value)}
 							required
@@ -112,21 +118,21 @@ const Register = () => {
 
 						<input
 							type="email"
-							placeholder="Email"
+							placeholder={placeholderMail}
 							className="loginInput"
 							onChange={event => setEmail(event.target.value)}
 							required
 						/>
 						<input
 							type="password"
-							placeholder="Contraseña"
+							placeholder={placeholderPass}
 							className="loginInput"
 							onChange={event => setPassword(event.target.value)}
 							required
 						/>
 						<input
 							type="password"
-							placeholder="Repite la contraseña"
+							placeholder={placeholderPassAgain}
 							className="loginInput"
 							onChange={event => setConfirmPassword(event.target.value)}
 							required
@@ -140,4 +146,7 @@ const Register = () => {
 	);
 };
 
-export default Register;
+Register.propTypes = {
+	intl: PropTypes.object
+};
+export default injectIntl(Register);

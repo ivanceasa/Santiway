@@ -11,12 +11,15 @@
     "menu.experiences": "经验",
     "menu.login": "登录/注册",
     "menu.logout": "登出",
+    "username": "用户名",
+    "password.repeat": "再次输入密码",
 
     "login.welcome": "欢迎！",
     "login.desc": "与来自世界各地的朝圣者联系",
     "login.login": "登录",
     "login.forgot": "忘记密码？",
     "login.register": "创建一个帐户",
+    "login.email": "电子邮件",
     "login.password": "密码",
     
     "cardRoutes.title": "路线",
@@ -29,6 +32,7 @@
 
     "hostels.notFound": "这个城市没有旅馆",
     "hostels.title": "寻找你的旅馆",
+    "hostels.search": "按市政府搜索",
     "hostel.city": "城市: ",
     "hostel.phone": "电话：",
     "hostel.book": "现在预订",

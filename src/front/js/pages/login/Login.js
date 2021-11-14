@@ -4,13 +4,17 @@ import { useHistory, Link } from "react-router-dom";
 import "./login.css";
 import Swal from "sweetalert2";
 import MyProfile from "../myprofile";
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, injectIntl } from "react-intl";
+import PropTypes from "prop-types";
 
-const Login = () => {
+const Login = ({ intl }) => {
 	const { store, actions } = useContext(Context);
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const history = useHistory();
+
+	const placeholderMail = intl.formatMessage({ id: "login.email" });
+	const placeholderPass = intl.formatMessage({ id: "login.password" });
 
 	// console.log("This is your token", store.token);
 	const handleClick = () => {
@@ -56,11 +60,12 @@ const Login = () => {
 								/>
 							</span>
 						</div>
+
 						<div className="loginRight">
 							<div className="loginBox">
 								<input
 									type="email"
-									placeholder="Email"
+									placeholder={placeholderMail}
 									value={email}
 									className="form-control"
 									id="exampleInputEmail1"
@@ -69,10 +74,9 @@ const Login = () => {
 										setEmail(e.target.value);
 									}}
 								/>
-
 								<input
 									type="password"
-									placeholder="Contraseña"
+									placeholder={placeholderPass}
 									value={password}
 									className="form-control"
 									id="exampleInputPassword1"
@@ -100,4 +104,7 @@ const Login = () => {
 	);
 };
 
-export default Login;
+Login.propTypes = {
+	intl: PropTypes.object
+};
+export default injectIntl(Login);

@@ -4,11 +4,13 @@ import { useHistory, Link } from "react-router-dom";
 import { Card, Row, Button } from "react-bootstrap";
 import hostelImage from "../../img/orreo.jpg";
 import "../../styles/searchAlbergues.scss";
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, injectIntl } from "react-intl";
+import PropTypes from "prop-types";
 
-const SearchAlbergues = () => {
+const SearchAlbergues = ({ intl }) => {
 	const { store, actions } = useContext(Context);
 	const history = useHistory();
+	const placeholderSearch = intl.formatMessage({ id: "hostels.search" });
 
 	const [search, setSearch] = useState("");
 
@@ -46,7 +48,7 @@ const SearchAlbergues = () => {
 								className="form-control"
 								value={search}
 								onChange={handleChange}
-								placeholder="Búsqueda por municipio"
+								placeholder={placeholderSearch}
 							/>
 							<span className="input-group-btn">
 								<button className="btn btn-success" type="submit">
@@ -99,4 +101,7 @@ const SearchAlbergues = () => {
 	);
 };
 
-export default SearchAlbergues;
+SearchAlbergues.propTypes = {
+	intl: PropTypes.object
+};
+export default injectIntl(SearchAlbergues);

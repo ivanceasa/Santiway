@@ -17,7 +17,11 @@
     "login.login": "Login",
     "login.forgot": "Forgot password?",
     "login.register": "Create an account",
+    "login.email": "Email",
     "login.password": "Password",
+    "username": "Username",
+    "password.repeat": "Password again",
+    
 
     "cardRoutes.title": "ROUTES",
     "cardRoutes.start": "Start point:",
@@ -29,6 +33,7 @@
 
     "hostels.notFound": "There are no hostels in this city",
     "hostels.title": "FIND YOUR HOSTEL",
+    "hostels.search": "Search by municipality",
     "hostel.city": "City:",
     "hostel.phone": "Phone:",
     "hostel.book": "Book now",

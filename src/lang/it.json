@@ -17,7 +17,11 @@
     "login.login": "Accedere",
     "login.forgot": "Hai dimenticato la password?",
     "login.register": "Creare un account",
+    "login.email": "E-mail",
     "login.password": "Password",
+    "username": "Nome utente",
+    "password.repeat": "Password di nuovo",
+    
 
     "cardRoutes.title": "ITINERARI",
     "cardRoutes.start": "Inizio:",
@@ -29,6 +33,7 @@
 
     "hostels.notFound": "Non ci sono ostelli in quel comune",
     "hostels.title": "TROVA IL TUO OSTELLO",
+    "hostels.search": "Ricerca per comune",
     "hostel.city": "Villaggio:",
     "hostel.phone": "Telefono:",
     "hostel.book": "Prenotare",
