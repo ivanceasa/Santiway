@@ -4,6 +4,7 @@ import { useHistory, Link } from "react-router-dom";
 import { Card, Row, Button } from "react-bootstrap";
 import hostelImage from "../../img/orreo.jpg";
 import "../../styles/searchAlbergues.scss";
+import hostelIcono from "../../img/hostelIcono.jpg";
 
 const SearchAlbergues = () => {
 	const { store, actions } = useContext(Context);
@@ -36,14 +37,11 @@ const SearchAlbergues = () => {
 				{/* <img src={hostelImage} className="img-hostel" alt="..." /> */}
 				<div className="card-albergues">
 					<div className="">
-						<h1 className="h1-albergues text-success text-center pt-3 font-weight-bold">
-							ENCUENTRA TU ALBERGUE
-						</h1>
 						<div className="container mt-3">
 							<div className="input-group  mx-auto w-75 p-3">
 								<input
 									type="text"
-									className="form-control"
+									className="form-control mt-4"
 									value={search}
 									onChange={handleChange}
 									placeholder="Búsqueda por municipio"
@@ -63,9 +61,13 @@ const SearchAlbergues = () => {
 								</span> */}
 							</div>
 						</div>
+						<img className="hostel-icono" src={hostelIcono} />
+						<h1 className="h1-albergues text-success text-center pt-3 font-weight-bold">
+							ENCUENTRA TU ALBERGUE
+						</h1>
 
 						{filteredResults.length == 0 && search.length != 0 ? (
-							<h1 className=" h1-albergues text-center font-weight-bold mt-4 font-italic">
+							<h1 className=" h1-albergues-2 text-center font-weight-bold  font-italic">
 								No hay albergues en ese municipio
 							</h1>
 						) : (
@@ -86,7 +88,7 @@ const SearchAlbergues = () => {
 													{` ${item.phone_number}`}
 												</Card.Text>
 												<Button
-													className="button-reservas m-2"
+													className="button-reservas"
 													variant="btn btn-warning"
 													onClick={() => history.push(`/albergues/${item.name}`)}>
 													Reservar

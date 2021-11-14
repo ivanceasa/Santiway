@@ -1,7 +1,57 @@
-i .fas fa-calendar{
+.icono-date{
     margin-left: -17px;
     border: 1px solid green;
-    padding: 8px;
+    padding: 7px;
     line-height: 17px;
     height: 34px;
+}
+.btn-reserva{
+    width: 100%;
+    border: 2px solid #ffc107 ;
+    color: #ffc107;
+    border-radius: 6px;
+    font-weight: bold;
+    background: white;
+    height: auto;
+  
+}
+.btn-reserva:hover{
+    background: #ffc107;
+    color: white;
+    border: 2px solid #ffc107;
+}
+.h1-reservas{
+    color: #47753E;
+   
+}
+.hostel-title{
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #47753E;
+    margin-left: -35px;
+}
+.texto-reserva{
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: left;
+    line-height: 1.5;
+    margin-left: -35px;
+}
+.h6-text{
+    margin-left: -35px;
+
+}
+.card-reservas{
+    border-radius: 20px;
+    box-shadow: 3px 10px 30px #ccc ;
+    justify-content: center;
+}
+.img-reserva{
+    border-radius: 20px 0px 0px 20px;
+    width: 260px;
+    height:306px;
+    background-size: cover;
+}
+.list-booking{
+    list-style: none;
 }
