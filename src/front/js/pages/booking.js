@@ -72,7 +72,14 @@ const Booking = () => {
 													</h5>
 												</li>
 												<li>
-													<h5>{`Teléfono: ${item.phone_number}`}</h5>
+													<h5>
+														<FormattedMessage
+															id="hostel.phone"
+															defaultMessage="Teléfono: "
+														/>
+														{`${item.phone_number}`}
+														{/*{`Teléfono: ${item.phone_number}`}*/}
+													</h5>
 												</li>
 												<li>
 													<h6>

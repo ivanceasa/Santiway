@@ -81,8 +81,16 @@ const SearchAlbergues = ({ intl }) => {
 										<Card.Img variant="top" src={item.photo_hostel} />
 										<Card.Body>
 											<Card.Title>{item.name}</Card.Title>
-											<Card.Text>{`Municipio: ${item.city}`}</Card.Text>
-											<Card.Text> {`Teléfono: ${item.phone_number}`}</Card.Text>
+											<Card.Text>
+												<FormattedMessage id="hostel.city" defaultMessage="Municipio: " />
+												{`${item.city}`}
+												{/*{`Municipio: ${item.city}`}*/}
+											</Card.Text>
+											<Card.Text>
+												<FormattedMessage id="hostel.phone" defaultMessage="Teléfono: " />
+												{`${item.phone_number}`}
+												{/*{`Teléfono: ${item.phone_number}`}*/}
+											</Card.Text>
 											<Button
 												className="m-2"
 												variant="btn btn-warning"

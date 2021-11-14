@@ -34,8 +34,8 @@
     "hostels.notFound": "Non ci sono ostelli in quel comune",
     "hostels.title": "TROVA IL TUO OSTELLO",
     "hostels.search": "Ricerca per comune",
-    "hostel.city": "Villaggio:",
-    "hostel.phone": "Telefono:",
+    "hostel.city": "Villaggio: ",
+    "hostel.phone": "Telefono: ",
     "hostel.book": "Prenotare",
 
     "booking.title": "Fai la tua prenotazione",

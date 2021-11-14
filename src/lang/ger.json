@@ -34,8 +34,8 @@
     "hostels.notFound": "In dieser Stadt gibt es keine Hostels",
     "hostels.title": "FINDEN SIE IHR HOSTEL",
     "hostels.search": "Suche nach Gemeinde",
-    "hostel.city": "Stadt:",
-    "hostel.phone": "Telefon:",
+    "hostel.city": "Stadt: ",
+    "hostel.phone": "Telefon: ",
     "hostel.book": "Buchen Sie jetzt",
 
     "booking.title": "Machen Sie Ihre Reservierung",
