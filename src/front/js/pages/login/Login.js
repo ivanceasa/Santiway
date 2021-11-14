@@ -4,6 +4,7 @@ import { useHistory, Link } from "react-router-dom";
 import "./login.css";
 import Swal from "sweetalert2";
 import MyProfile from "../myprofile";
+import { FormattedMessage } from "react-intl";
 
 const Login = () => {
 	const { store, actions } = useContext(Context);
@@ -45,8 +46,15 @@ const Login = () => {
 				<div className="login">
 					<div className="loginWrapper">
 						<div className="loginLeft">
-							<h3 className="loginLogo">Bienvenid@!</h3>
-							<span className="loginDesc">Conecta con peregrinos de todo el mundo</span>
+							<h3 className="loginLogo">
+								<FormattedMessage id="login.welcome" defaultMessage="Bienvenid@!" />
+							</h3>
+							<span className="loginDesc m-1">
+								<FormattedMessage
+									id="login.desc"
+									defaultMessage="Conecta con peregrinos de todo el mundo"
+								/>
+							</span>
 						</div>
 						<div className="loginRight">
 							<div className="loginBox">
@@ -73,13 +81,15 @@ const Login = () => {
 									}}
 								/>
 								<button type="submit" className="loginButton" onClick={handleClick}>
-									Acceder
+									<FormattedMessage id="login.login" defaultMessage="Acceder" />
 								</button>
 								<span className="loginForgot" onClick={forgotPassword}>
-									¿Olvidaste la contraseña?
+									<FormattedMessage id="login.forgot" defaultMessage="¿Olvidaste la contraseña?" />
 								</span>
 								<Link to="/register">
-									<button className="loginRegisterButton">Crear una cuenta</button>
+									<button className="loginRegisterButton">
+										<FormattedMessage id="login.register" defaultMessage="Crear una cuenta" />
+									</button>
 								</Link>
 							</div>
 						</div>

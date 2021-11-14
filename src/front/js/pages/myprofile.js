@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/myprofile.scss";
 import profilePhoto from "../../img/profilePhoto.png";
+import { FormattedMessage } from "react-intl";
 
 const MyProfile = () => {
 	const { store, actions } = useContext(Context);
@@ -98,7 +99,9 @@ const MyProfile = () => {
 						<div className="shareOptions">
 							<label htmlFor="file" className="shareOption">
 								<i className="fas fa-camera " />
-								<span className="shareOptionText ml-1">Añade una foto</span>
+								<span className="shareOptionText ml-1">
+									<FormattedMessage id="post.photo" defaultMessage="Añade una foto" />
+								</span>
 								<input
 									style={{ display: "none" }}
 									type="file"
@@ -109,7 +112,7 @@ const MyProfile = () => {
 							</label>
 						</div>
 						<button className="shareButton" onClick={sendPost}>
-							Compartir
+							<FormattedMessage id="post.share" defaultMessage="Compartir" />
 						</button>
 					</div>
 				</div>

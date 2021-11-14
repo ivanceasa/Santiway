@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { useParams } from "react-router-dom";
-import IconHostel from "../../img/IconHostel.png";
+import { FormattedMessage } from "react-intl";
 
 const Booking = () => {
 	const { store, actions } = useContext(Context);
@@ -39,7 +39,9 @@ const Booking = () => {
 	return (
 		<>
 			<div className=" text-center mt-5">
-				<h1 className="text-success text-center pt-3 font-weight-bold">Haga su reserva</h1>
+				<h1 className="text-success text-center pt-3 font-weight-bold">
+					<FormattedMessage id="booking.title" defaultMessage="Haga su reserva" />
+				</h1>
 				<input type="date" onChange={setDate} className=" date p-1 m-3 border border-success" />
 				<i className="fas fa-calendar" />
 			</div>
@@ -62,18 +64,31 @@ const Booking = () => {
 													</h5>
 												</li>
 												<li>
-													<h5>Precio por noche: 12€</h5>
+													<h5>
+														<FormattedMessage
+															id="booking.prize"
+															defaultMessage="Precio por noche: 12€"
+														/>
+													</h5>
 												</li>
 												<li>
-													<h5>{`Teléfono de contacto: ${item.phone_number}`}</h5>
+													<h5>{`Teléfono: ${item.phone_number}`}</h5>
 												</li>
 												<li>
-													<h6>(llámenos para cualquier consulta)</h6>
+													<h6>
+														<FormattedMessage
+															id="booking.question"
+															defaultMessage="(llámenos para cualquier consulta)"
+														/>
+													</h6>
 												</li>
 												<li>
 													<p className="card-text">
-														Para realizar una reserva en este albergue introduzca
-														previamente su fecha de preferencia.
+														<FormattedMessage
+															id="booking.p"
+															defaultMessage="Para realizar una reserva en este albergue introduzca
+															previamente su fecha de preferencia."
+														/>
 													</p>
 												</li>
 											</ul>
@@ -84,7 +99,10 @@ const Booking = () => {
 														createBooking(item.id);
 													}}
 													className="btn btn-warning">
-													Realizar reserva
+													<FormattedMessage
+														id="booking.button"
+														defaultMessage="Realizar reserva"
+													/>
 												</button>
 											</Link>
 										</div>

@@ -1,0 +1,65 @@
+{
+    "home.welcome": "Welcome Pilgrim!",
+    "home.desc": "Know the routes, find your hostel and receive advice for the trip",
+    "home.button": "Register and share your experience",
+
+    "menu.brand": "The Way of Saint James",
+    "menu.home": "Home",
+    "menu.routes": "Routes",
+    "menu.hostels": "Hostels",
+    "menu.advice": "Advice",
+    "menu.experiences": "Experiences",
+    "menu.login": "Login/Register",
+    "menu.logout": "Logout",
+
+    "login.welcome": "Welcome!",
+    "login.desc": "Connect with pilgrims from all over the world",
+    "login.login": "Login",
+    "login.forgot": "Forgot password?",
+    "login.register": "Create an account",
+    "login.password": "Password",
+
+    "cardRoutes.title": "ROUTES",
+    "cardRoutes.start": "Start point:",
+    "cardRoutes.stages": "Stages:",
+    "cardRoutes.length": "Length:",
+    "cardRoutes.button": "View more",
+
+    "routes.profile": "Stages-profile",
+
+    "hostels.notFound": "There are no hostels in this city",
+    "hostels.title": "FIND YOUR HOSTEL",
+    "hostel.city": "City:",
+    "hostel.phone": "Phone:",
+    "hostel.book": "Book now",
+
+    "booking.title": "Make your reservation",
+    "booking.prize": "Price per night: 12€",
+    "booking.question": "(Please call us for any questions)",
+    "booking.p": "To make a reservation at this hostel, please enter your preferred date in advance.",
+    "booking.button": "Book now",
+
+    "stripe.title": "Hostel Reservation",
+    "stripe.button": "Checkout",
+    "confirm": "Your reservation has been made successfully",
+
+    "advice.backpackTitle": "Backpack",
+    "advice.backpack": "The weight of the backpack should not exceed 10 or 12% of your weight (including water weight). You will find establishments to restock. What weighs the most, at the bottom!", 
+    "advice.shoesTitle": "Shoes",                                                 
+    "advice.shoes": "The footwear must already be used and adapted to your foot. It is also advisable to always carry spare socks. If the shoe has a hard sole, much better.",
+    "advice.importantTitle": "The most important",
+    "advice.important": "Remember that you walk the path to enjoy and not to suffer. So if you have to leave part of the way for another occasion, nothing happens.", 
+    "advice.companyTitle": "Better alone than in bad company",
+    "advice.company": "The important thing is who you are going to do the journey with, since it is essential to have good company, good vibes and conviviality. And if you go alone, don't worry because it is easy to meet people along the way.",  
+    "advice.wayTitle": "Which way to choose?",  
+    "advice.way": "For a first contact with the pilgrim world, choose the French way. It is the most affordable way, with a large number of hostels accommodation and services. Also has short distance between towns.",  
+    "advice.planTitle": "Plan",
+    "advice.plan": "Plan the stages in a personalized way.It is also very important to organize the places where you are going to spend the night, since making the journey at night is not recommended. Carry a small medicine cabinet",
+    "advice.walkTitle": "How much do I have to walk a day?",
+    "advice.walk": "Although the average distance is usually between 15-20km, do not get obsessed with the distance and enjoy",
+
+    "post.photo": "Add a photo",
+    "post.share": "Share"
+     
+    
+}

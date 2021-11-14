@@ -1,0 +1,64 @@
+{
+    "home.welcome": "欢迎朝圣者",
+    "home.desc": "了解路线，找到您的旅馆并获得旅行建议",
+    "home.button": "注册并分享您的经验",
+
+    "menu.brand": "圣雅各之路",
+    "menu.home": "家",
+    "menu.routes": "路线",
+    "menu.hostels": "旅馆",
+    "menu.advice": "建议",
+    "menu.experiences": "经验",
+    "menu.login": "登录/注册",
+    "menu.logout": "登出",
+
+    "login.welcome": "欢迎！",
+    "login.desc": "与来自世界各地的朝圣者联系",
+    "login.login": "登录",
+    "login.forgot": "忘记密码？",
+    "login.register": "创建一个帐户",
+    "login.password": "密码",
+    
+    "cardRoutes.title": "路线",
+    "cardRoutes.start": "起点：",
+    "cardRoutes.stages": "阶段：",
+    "cardRoutes.length": "长度：",
+    "cardRoutes.button": "查看更多",
+
+    "routes.profile": "阶段简介",
+
+    "hostels.notFound": "这个城市没有旅馆",
+    "hostels.title": "寻找你的旅馆",
+    "hostel.city": "城市: ",
+    "hostel.phone": "电话：",
+    "hostel.book": "现在预订",
+
+    "booking.title": "预订",
+    "booking.prize": "每晚价格：12€",
+    "booking.question": "（有任何问题请致电我们）",
+    "booking.p": "要预订这家旅馆，请提前输入您的首选日期。",
+    "booking.button": "现在预订",
+
+    "stripe.title": "旅舍预订",
+    "stripe.button": "查看",
+    "confirm": "您的预订已成功",
+
+    "advice.backpackTitle": "背包",
+    "advice.backpack": "背包的重量不应超过您体重（包括水重）的 10% 或 12%。您会找到可以补货的场所。最重的，在底部！", 
+    "advice.shoesTitle": "鞋",                                                 
+    "advice.shoes": "鞋子必须已经使用过并适合您的脚。还建议始终携带备用袜子。如果鞋子有硬底，那就更好了。",
+    "advice.importantTitle": "最重要的",
+    "advice.important": "记住，你走这条路是为了享受，而不是为了受苦。因此，如果您不得不中途离开去另一个场合，则什么也不会发生。", 
+    "advice.companyTitle": "单独比在坏公司更好",
+    "advice.company": "重要的是你要和谁一起旅行，因为拥有良好的陪伴、良好的氛围和欢乐是必不可少的。如果你一个人去，不要担心，因为一路上很容易遇到人。",  
+    "advice.wayTitle": "选择哪种方式？",  
+    "advice.way": "第一次接触朝圣者世界，选择法式方式。它是最实惠的方式，有大量的旅馆住宿和服务。城镇之间的距离也很短。",  
+    "advice.planTitle": "计划",
+    "advice.plan": "以个性化的方式计划阶段。安排您将要过夜的地方也很重要，因为不建议在夜间旅行。携带一个小药柜",
+    "advice.walkTitle": "我一天要走多少路？",
+    "advice.walk": "虽然平均距离通常在 15-20 公里之间，但不要迷恋距离并享受",
+
+    "post.photo": "添加照片",
+    "post.share": "分享"
+        
+}

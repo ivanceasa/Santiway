@@ -4,6 +4,7 @@ import { useHistory, Link } from "react-router-dom";
 import { Card, Row, Button } from "react-bootstrap";
 import hostelImage from "../../img/orreo.jpg";
 import "../../styles/searchAlbergues.scss";
+import { FormattedMessage } from "react-intl";
 
 const SearchAlbergues = () => {
 	const { store, actions } = useContext(Context);
@@ -35,7 +36,9 @@ const SearchAlbergues = () => {
 			<img src={hostelImage} className="img-hostel" alt="..." />
 			<div className="card-albergues">
 				<div className="card-img-overlay">
-					<h1 className="text-success text-center pt-3 font-weight-bold">ENCUENTRA TU ALBERGUE</h1>
+					<h1 className="text-success text-center pt-3 font-weight-bold">
+						<FormattedMessage id="hostels.title" defaultMessage="ENCUENTRA TU ALBERGUE" />
+					</h1>
 					<div className="container mt-3">
 						<div className="input-group  mx-auto w-75 p-3">
 							<input
@@ -63,7 +66,10 @@ const SearchAlbergues = () => {
 
 					{filteredResults.length == 0 && search.length != 0 ? (
 						<h1 className="text-center text-white font-weight-bold mt-4 font-italic">
-							No hay albergues en ese municipio
+							<FormattedMessage
+								id="hostels.notFound"
+								defaultMessage="No hay albergues en ese municipio"
+							/>
 						</h1>
 					) : (
 						<div className="hostels-Container text-center">
@@ -79,7 +85,7 @@ const SearchAlbergues = () => {
 												className="m-2"
 												variant="btn btn-warning"
 												onClick={() => history.push(`/albergues/${item.name}`)}>
-												Reservar
+												<FormattedMessage id="hostel.book" defaultMessage="Reservar" />
 											</Button>
 										</Card.Body>
 									</Card>

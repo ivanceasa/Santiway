@@ -1,0 +1,14 @@
+.flags button {
+	border: none;
+	cursor: pointer;
+	background: #42b72a;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	display: inline-block;
+	width: 30px;
+}
+
+.flags button img {
+	width: 100%;
+}

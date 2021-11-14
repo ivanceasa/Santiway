@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
+import { FormattedMessage } from "react-intl";
 
 const RutasDetails = () => {
 	const { store, actions } = useContext(Context);
@@ -18,7 +19,9 @@ const RutasDetails = () => {
 									<img src={item.map} />
 								</div>
 								<div className="text-center text-success px-3 mx-3">
-									<h1>Perfil-etapas</h1>
+									<h1>
+										<FormattedMessage id="routes.profile" defaultMessage="Perfil-etapas" />
+									</h1>
 									<img src={item.profile} />
 								</div>
 							</div>
