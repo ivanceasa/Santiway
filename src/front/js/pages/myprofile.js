@@ -3,13 +3,16 @@ import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/myprofile.scss";
 import profilePhoto from "../../img/profilePhoto.png";
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, injectIntl } from "react-intl";
+import PropTypes from "prop-types";
 
-const MyProfile = () => {
+const MyProfile = ({ intl }) => {
 	const { store, actions } = useContext(Context);
 	const [posts, setPosts] = useState([]);
 	const [newPost, setNewPost] = useState("");
 	const [file, setFile] = useState(null);
+
+	const placeholderPost = intl.formatMessage({ id: "post.write" });
 
 	useEffect(() => {
 		getPosts();
@@ -69,7 +72,7 @@ const MyProfile = () => {
 						<img className="shareProfileImg" src={profilePhoto} alt="" />
 
 						<input
-							placeholder="Escribe algo"
+							placeholder={placeholderPost}
 							className="shareInput"
 							onChange={event => setNewPost(event.target.value)}
 						/>
@@ -150,4 +153,7 @@ const MyProfile = () => {
 	);
 };
 
-export default MyProfile;
+MyProfile.propTypes = {
+	intl: PropTypes.object
+};
+export default injectIntl(MyProfile);
