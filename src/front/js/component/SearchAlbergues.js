@@ -67,7 +67,7 @@ const SearchAlbergues = ({ intl }) => {
 								</span>
 							</div>
 						</div>
-						{/*<img className="hostel-icono" src={hostelIcono} />*/}
+						<img className="hostel-icono" src={hostelIcono} />
 
 						{filteredResults.length == 0 && search.length != 0 ? (
 							<h1 className="h1-albergues-2 text-center font-weight-bold font-italic">
