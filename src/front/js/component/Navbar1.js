@@ -101,12 +101,13 @@ const Navbar1 = () => {
 				<div className="ml-auto">
 					{!localStorage.getItem("token") ? (
 						<Link to="/login">
-							<Button variant="warning">
+							<Button className="button-nav" variant="warning">
 								<FormattedMessage id="menu.login" defaultMessage="Acceder/Registro" />
 							</Button>
 						</Link>
 					) : (
 						<Button
+							className="button-nav"
 							onClick={() => {
 								actions.logout();
 								history.push("/");

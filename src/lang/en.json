@@ -42,7 +42,7 @@
     "hostel.book": "Book now",
 
     "booking.title": "Make your reservation",
-    "booking.prize": "Price per night: 12€",
+    "booking.prize": "Price per night: ",
     "booking.question": "(Please call us for any questions)",
     "booking.p": "To make a reservation at this hostel, please enter your preferred date in advance.",
     "booking.button": "Book now",

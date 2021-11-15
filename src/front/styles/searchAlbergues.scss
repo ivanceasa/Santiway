@@ -1,8 +1,4 @@
-.img-hostel {
-    background-size: cover;
-    
-}
-
+/*
 ul li {
     list-style:none
 }
@@ -10,4 +6,104 @@ ul li {
 .card-albergues{
     
     justify-content: center;
+}
+*/
+
+
+
+.img-hostel {
+    background-size: cover;
+    
+}
+.hostel-icono{
+    padding-top: 30px;
+    margin: auto;
+    display: inline;
+    z-index: 0;
+    position: absolute;
+    top: 100px;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    height: 400px;
+    opacity: 0.1;
+    vertical-align: middle;
+    width: 500px;
+}
+
+.card-img-top{
+    height: 370px;
+}
+
+// ul li {
+//     list-style:none
+// }
+.card-albergues{
+    min-height: 90vh;
+}
+.card-albergues-ind{
+    border-radius: 20px;
+    box-shadow: 3px 10px 30px #ccc ;
+    justify-content: center;
+    width: 429.717px;
+    height: 594px;
+}
+.h1-albergues{
+    color: #47753E;
+    margin-top: 50px;
+}
+.h1-albergues-2{
+    color: #47753E;
+    margin-top: 150px;
+    z-index: 0;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.img-albergues{
+    border-radius: 20px 20px 0px 0px;
+}
+.button-reservas{
+    width: 100%;
+    border: 2px solid #ffc107 ;
+    color: white;
+    border-radius: 6px;
+    font-weight: bold;
+    background: #ffc107;
+    height: auto;
+  
+}
+ .button-reservas:hover{
+    //  background: #ffc107;
+     color: white;
+     border: 2px solid #ffc107;
+ }
+.titulo-albergue{
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #47753E ;
+    height: 50px;
+}
+.texto-albergue{
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: left;
+    line-height: 1.5;
+}
+.card-body{
+    text-align: left;
+    line-height: 1.5;
+}
+.hostels-Container{
+    margin-bottom: 50px;
+}
+.row-albergues{
+    justify-content: center;
+}
+.input-group{
+    display: flex;
+    justify-content: center;
+    margin-top: -40px;
 }

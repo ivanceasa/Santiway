@@ -12,7 +12,7 @@
     "menu.login": "Acceder/Registro",
     "menu.logout": "Salir",
 
-    "login.welcome": "Bienvenido!",
+    "login.welcome": "Bienvenid@!",
     "login.desc": "Conecta con peregrinos de todo el mundo",
     "login.login": "Acceder",
     "login.forgot": "¿Olvidaste la contraseña?",
@@ -40,7 +40,7 @@
     "hostel.book": "Reservar",
 
     "booking.title": "Haga su reserva",
-    "booking.prize": "Precio por noche: 12€",
+    "booking.prize": "Precio por noche: ",
     "booking.question": "(llámenos para cualquier consulta)",
     "booking.p": "Para realizar una reserva en este albergue introduzca previamente su fecha de preferencia.",
     "booking.button": "Realizar reserva",

@@ -13,13 +13,13 @@
     font-weight: bold;
     background: #ffc107;
     height: auto;
-    margin-top: 80px;
+    margin-top: 8px;
   
 }
  .btn-reserva:hover{
     //  background: #ffc107;
-     color: white;
-     border: 2px solid #ffc107;
+    color: white;
+    border: 2px solid #ffc107;
  }
 .h1-reservas{
     color: #47753E;
@@ -42,15 +42,18 @@
     margin-bottom: 20px;
 }
 .h6-text{
-    margin-left: -35px;
+    margin-left: -245px;
 
+}
+.h5-text{
+    margin-left: -230px;
 }
 .card-reservas{
     border-radius: 20px;
     box-shadow: 3px 10px 30px #ccc ;
     justify-content: center;
-    width: 750px;
-    height: 394px;
+    width: 800px;
+    height: 325px;
 }
 .img-reserva{
     border-radius: 20px 0px 0px 20px;
@@ -65,4 +68,8 @@
 }
 .margin-card{
     margin-top:30px;
+    margin-left: -276px;
+}
+.searchIcon{
+    margin-top: 24px;
 }
