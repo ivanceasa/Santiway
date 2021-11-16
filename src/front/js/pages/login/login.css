@@ -1,7 +1,7 @@
 .login {
   width: 100vw;
-  height: 100vh;
-  background-color: #f0f2f5;
+  min-height: 57vh;
+  background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -26,10 +26,12 @@
   font-weight: 800;
   color: #42b72a;
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .loginDesc {
   font-size: 24px;
+  text-align: center;
 }
 
 .loginBox{
@@ -40,4 +42,10 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    border-radius: 20px;
+    box-shadow: 3px 10px 30px #ccc ;
+}
+.loginRegisterButton{
+  width: 200px;
+  height: 50px;
 }

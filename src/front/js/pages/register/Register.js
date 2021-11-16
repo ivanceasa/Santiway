@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import "./register.css";
+import "../register/register.css";
 import { useHistory } from "react-router-dom";
 import { Context } from "../../store/appContext";
 import Swal from "sweetalert2";
