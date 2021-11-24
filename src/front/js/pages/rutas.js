@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import "../../styles/home.scss";
 import { Context } from "../store/appContext";
-import { Link } from "react-router-dom";
 import CardRutas from "../component/CardRutas";
 
 const Rutas = () => {
